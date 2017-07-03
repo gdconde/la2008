@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:weightSum="100"
+    >
+
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        />
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="25"
+        android:cursorVisible="false"
+        android:backgroundTint="@android:color/transparent"
+        />
+
+    <Chronometer
+        android:id="@+id/chrono"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="15"
+        android:tag="0"
+        />
+
+    <Button
+        android:id="@+id/simpleButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="10"
+        android:layout_gravity="center_vertical"
+        android:text="1"
+        android:textSize="10dp"
+        android:clickable="false"
+        />
+
+    <Button
+        android:id="@+id/twoPointsButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="10"
+        android:layout_gravity="center_vertical"
+        android:text="2"
+        android:textSize="10dp"
+        android:clickable="false"
+        />
+
+    <Button
+        android:id="@+id/threePointsButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="10"
+        android:layout_gravity="center_vertical"
+        android:text="3"
+        android:textSize="10dp"
+        android:clickable="false"
+        />
+
+    <Button
+        android:id="@+id/reboundButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="10"
+        android:layout_gravity="center_vertical"
+        android:text="R"
+        android:textSize="10dp"
+        android:clickable="false"
+        />
+
+    <Button
+        android:id="@+id/assistButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="10"
+        android:layout_gravity="center_vertical"
+        android:text="A"
+        android:textSize="10dp"
+        android:clickable="false"
+        />
+
+    <Button
+        android:id="@+id/foulButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="10"
+        android:layout_gravity="center_vertical"
+        android:text="F"
+        android:textSize="10dp"
+        android:clickable="false"
+        />
+
+</LinearLayout>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:weightSum="100"
+    tools:context="app.la2008.com.ar.la2008.Activities.MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="92"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <app.la2008.com.ar.la2008.Views.PlayerView
+                android:id="@+id/player1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:name="Eze"
+                />
+
+            <app.la2008.com.ar.la2008.Views.PlayerView
+                android:id="@+id/player2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/darker_gray"
+                app:name="Palmer"
+                />
+
+            <app.la2008.com.ar.la2008.Views.PlayerView
+                android:id="@+id/player3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:name="Nico"
+                />
+
+            <app.la2008.com.ar.la2008.Views.PlayerView
+                android:id="@+id/player4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/darker_gray"
+                app:name="Tuti"
+                />
+
+            <app.la2008.com.ar.la2008.Views.PlayerView
+                android:id="@+id/player5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:name="Jonas"
+                />
+
+            <app.la2008.com.ar.la2008.Views.PlayerView
+                android:id="@+id/player6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/darker_gray"
+                app:name="Lucho"
+                />
+
+            <app.la2008.com.ar.la2008.Views.PlayerView
+                android:id="@+id/player7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:name="Mercado"
+                />
+
+            <app.la2008.com.ar.la2008.Views.PlayerView
+                android:id="@+id/player8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/darker_gray"
+                app:name="Franco"
+                />
+
+            <app.la2008.com.ar.la2008.Views.PlayerView
+                android:id="@+id/player9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:name="Ivan"
+                />
+
+            <app.la2008.com.ar.la2008.Views.PlayerView
+                android:id="@+id/player10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/darker_gray"
+                app:name="Matias"
+                />
+
+            <app.la2008.com.ar.la2008.Views.PlayerView
+                android:id="@+id/player11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:name="Mgt"
+                />
+
+            <app.la2008.com.ar.la2008.Views.PlayerView
+                android:id="@+id/player12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/darker_gray"
+                app:name="Balda"
+                />
+            
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        >
+
+        <Button
+            android:id="@+id/startButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="8"
+            android:text="Start"
+            android:background="@color/colorAccent"
+            />
+
+        <Button
+            android:id="@+id/summaryButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="Resumen"
+            android:textSize="10dp"
+            android:background="@color/colorPrimaryDark"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>
+
