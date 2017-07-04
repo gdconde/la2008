@@ -20,8 +20,7 @@ import butterknife.ButterKnife;
 
 public class SummaryActivity extends AppCompatActivity {
 
-    @BindView(R.id.player1)
-    PlayerSummaryView player1;
+    @BindView(R.id.player1) PlayerSummaryView player1;
     @BindView(R.id.player2) PlayerSummaryView player2;
     @BindView(R.id.player3) PlayerSummaryView player3;
     @BindView(R.id.player4) PlayerSummaryView player4;

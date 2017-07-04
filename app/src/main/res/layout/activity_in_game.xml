@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="100"
+    tools:context="app.la2008.com.ar.la2008.Activities.InGameActivity"
+    >
+
+    <app.la2008.com.ar.la2008.Views.PlayerViewFull
+        android:id="@+id/player1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="20"
+        />
+
+    <app.la2008.com.ar.la2008.Views.PlayerViewFull
+        android:id="@+id/player2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="20"
+        />
+
+    <app.la2008.com.ar.la2008.Views.PlayerViewFull
+        android:id="@+id/player3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="20"
+        />
+
+    <app.la2008.com.ar.la2008.Views.PlayerViewFull
+        android:id="@+id/player4"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="20"
+        />
+
+    <app.la2008.com.ar.la2008.Views.PlayerViewFull
+        android:id="@+id/player5"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="20"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="8"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:id="@+id/stopButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="8"
+            android:text="STOP"
+            android:background="@color/colorAccent"
+            />
+
+        <Button
+            android:id="@+id/summaryButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="Resumen"
+            android:textSize="10dp"
+            android:background="@color/colorPrimaryDark"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

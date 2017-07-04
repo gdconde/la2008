@@ -12,27 +12,20 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <meta-data
-            android:name="io.fabric.ApiKey"
-            android:value="bb3a6d294ab8387f531aeea9803bc07387dd3720"
-            />
-
         <activity
             android:name=".Activities.MainActivity"
             android:windowSoftInputMode="adjustPan">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-
         <activity
             android:name=".Activities.SummaryActivity"
-            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
-            android:parentActivityName=".Activities.MainActivity"/>
-
+            android:parentActivityName=".Activities.MainActivity"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
+        <activity android:name=".Activities.InGameActivity"></activity>
     </application>
 
 </manifest>

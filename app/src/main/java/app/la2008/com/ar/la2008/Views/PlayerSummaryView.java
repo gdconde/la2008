@@ -40,11 +40,11 @@ public class PlayerSummaryView extends LinearLayout {
     public PlayerSummaryView setSummary(PlayerSummary summary) {
         this.nameTextView.setText(summary.name);
         this.timeTextView.setText(String.valueOf(summary.timePlayed));
-        this.pointsTextView.setText(String.valueOf(summary.totalPoints));
-        this.reboundsTextView.setText(String.valueOf(summary.rebounds));
-        this.assistsTextView.setText(String.valueOf(summary.assists));
-        this.triplesTextView.setText(String.valueOf(summary.threePointsConversions));
-        this.foulsTextView.setText(String.valueOf(summary.fouls));
+        this.pointsTextView.setText(String.valueOf(summary.pts));
+        this.reboundsTextView.setText(String.valueOf(summary.reb));
+        this.assistsTextView.setText(String.valueOf(summary.ast));
+        this.triplesTextView.setText(String.valueOf(summary.tpm));
+        this.foulsTextView.setText(String.valueOf(summary.pf));
         return this;
     }
 }

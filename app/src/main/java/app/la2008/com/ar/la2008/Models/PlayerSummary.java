@@ -12,13 +12,19 @@ public class PlayerSummary implements Parcelable {
     public String name;
     public String timePlayed;
     public long base;
-    public int simplesConversions;
-    public int twoPointsConversions;
-    public int threePointsConversions;
-    public int totalPoints;
-    public int rebounds;
-    public int assists;
-    public int fouls;
+    public int ftm;
+    public int fta;
+    public int fgm;
+    public int fga;
+    public int tpm;
+    public int tpa;
+    public int pts;
+    public int reb;
+    public int ast;
+    public int pf;
+    public int rob;
+    public int per;
+    public int tap;
 
     @Override
     public int describeContents() {
@@ -30,13 +36,13 @@ public class PlayerSummary implements Parcelable {
         dest.writeString(this.name);
         dest.writeString(this.timePlayed);
         dest.writeLong(this.base);
-        dest.writeInt(this.simplesConversions);
-        dest.writeInt(this.twoPointsConversions);
-        dest.writeInt(this.threePointsConversions);
-        dest.writeInt(this.totalPoints);
-        dest.writeInt(this.rebounds);
-        dest.writeInt(this.assists);
-        dest.writeInt(this.fouls);
+        dest.writeInt(this.ftm);
+        dest.writeInt(this.fgm);
+        dest.writeInt(this.tpm);
+        dest.writeInt(this.pts);
+        dest.writeInt(this.reb);
+        dest.writeInt(this.ast);
+        dest.writeInt(this.pf);
     }
 
     public PlayerSummary() {
@@ -46,13 +52,13 @@ public class PlayerSummary implements Parcelable {
         this.name = in.readString();
         this.timePlayed = in.readString();
         this.base = in.readLong();
-        this.simplesConversions = in.readInt();
-        this.twoPointsConversions = in.readInt();
-        this.threePointsConversions = in.readInt();
-        this.totalPoints = in.readInt();
-        this.rebounds = in.readInt();
-        this.assists = in.readInt();
-        this.fouls = in.readInt();
+        this.ftm = in.readInt();
+        this.fgm = in.readInt();
+        this.tpm = in.readInt();
+        this.pts = in.readInt();
+        this.reb = in.readInt();
+        this.ast = in.readInt();
+        this.pf = in.readInt();
     }
 
     public static final Parcelable.Creator<PlayerSummary> CREATOR = new Parcelable.Creator<PlayerSummary>() {

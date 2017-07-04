@@ -20,7 +20,7 @@ import app.la2008.com.ar.la2008.R;
  * Created by gdconde on 31/3/17.
  */
 
-public class PlayerView extends LinearLayout {
+public class PlayerViewCompact extends LinearLayout {
 
     private CheckBox checkBox;
     private EditText name;
@@ -31,18 +31,14 @@ public class PlayerView extends LinearLayout {
     private Button rebound;
     private Button assist;
     private Button foul;
-    private int simples = 0;
-    private int doubles = 0;
-    private int triples = 0;
-    private int rebounds = 0;
-    private int assists = 0;
-    private int fouls = 0;
 
-    public PlayerView(final Context context, AttributeSet attributes) {
+    private PlayerSummary player = new PlayerSummary();
+
+    public PlayerViewCompact(final Context context, AttributeSet attributes) {
         super(context, attributes);
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        inflater.inflate(R.layout.view_player, this, true);
+        inflater.inflate(R.layout.view_player_compact, this, true);
         checkBox = (CheckBox) findViewById(R.id.checkbox);
         name = (EditText) findViewById(R.id.name);
         chrono = (Chronometer) findViewById(R.id.chrono);
@@ -56,7 +52,7 @@ public class PlayerView extends LinearLayout {
         onePoint.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                onePoint();
+                player.ftm++;
                 Toast.makeText(context, "Libre", Toast.LENGTH_SHORT).show();
             }
         });
@@ -64,7 +60,7 @@ public class PlayerView extends LinearLayout {
         twoPoints.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                twoPoints();
+                player.fgm++;
                 Toast.makeText(context, "2 puntos", Toast.LENGTH_SHORT).show();
             }
         });
@@ -72,7 +68,7 @@ public class PlayerView extends LinearLayout {
         threePoints.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                threePoints();
+                player.tpm++;
                 Toast.makeText(context, "3 puntos", Toast.LENGTH_SHORT).show();
             }
         });
@@ -80,7 +76,7 @@ public class PlayerView extends LinearLayout {
         rebound.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                rebound();
+                player.reb++;
                 Toast.makeText(context, "Rebote", Toast.LENGTH_SHORT).show();
             }
         });
@@ -88,7 +84,7 @@ public class PlayerView extends LinearLayout {
         assist.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                assist();
+                player.ast++;
                 Toast.makeText(context, "Asistencia", Toast.LENGTH_SHORT).show();
             }
         });
@@ -96,26 +92,29 @@ public class PlayerView extends LinearLayout {
         foul.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                foul();
+                player.pf++;
                 Toast.makeText(context, "Falta", Toast.LENGTH_SHORT).show();
             }
         });
 
         this.setButtonsClickable(false);
 
-        TypedArray a = context.obtainStyledAttributes(attributes, R.styleable.PlayerView);
+        TypedArray a = context.obtainStyledAttributes(attributes, R.styleable.PlayerViewCompact);
 
-        String playerName = a.getString(R.styleable.PlayerView_name);
-        if(playerName != null) name.setText(playerName);
+        String playerName = a.getString(R.styleable.PlayerViewCompact_name);
+        if(playerName != null) {
+            name.setText(playerName);
+            this.player.name = playerName;
+        }
     }
 
-    public PlayerView startChrono() {
+    public PlayerViewCompact startChrono() {
         chrono.setBase(SystemClock.elapsedRealtime() + Integer.valueOf((String)chrono.getTag()));
         chrono.start();
         return this;
     }
 
-    public PlayerView stopChrono() {
+    public PlayerViewCompact stopChrono() {
         chrono.setTag(String.valueOf(chrono.getBase() - SystemClock.elapsedRealtime()));
         chrono.stop();
         return this;
@@ -125,42 +124,12 @@ public class PlayerView extends LinearLayout {
         return checkBox.isChecked();
     }
 
-    public PlayerView setChecked(boolean check) {
+    public PlayerViewCompact setChecked(boolean check) {
         checkBox.setChecked(check);
         return this;
     }
 
-    public PlayerView onePoint() {
-        this.simples++;
-        return this;
-    }
-
-    public PlayerView twoPoints() {
-        this.doubles++;
-        return this;
-    }
-
-    public PlayerView threePoints() {
-        this.triples++;
-        return this;
-    }
-
-    public PlayerView rebound() {
-        this.rebounds++;
-        return this;
-    }
-
-    public PlayerView assist() {
-        this.assists++;
-        return this;
-    }
-
-    public PlayerView foul() {
-        this.fouls++;
-        return this;
-    }
-
-    public PlayerView setButtonsClickable(boolean clickable) {
+    public PlayerViewCompact setButtonsClickable(boolean clickable) {
         this.onePoint.setClickable(clickable);
         this.twoPoints.setClickable(clickable);
         this.threePoints.setClickable(clickable);
@@ -171,29 +140,19 @@ public class PlayerView extends LinearLayout {
     }
 
     public PlayerSummary getPlayerSummary() {
-        PlayerSummary summary = new PlayerSummary();
-        summary.name = this.name.getText().toString();
-        summary.timePlayed = this.chrono.getText().toString();
-        summary.simplesConversions = this.simples;
-        summary.twoPointsConversions = this.doubles;
-        summary.threePointsConversions = this.triples;
-        summary.rebounds = this.rebounds;
-        summary.assists = this.assists;
-        summary.fouls = this.fouls;
-        summary.totalPoints = this.simples + this.doubles * 2 + this.triples * 3;
-        return summary;
+        return player;
     }
 
-    public PlayerView setData(PlayerSummary data) {
+    public PlayerViewCompact setData(PlayerSummary data) {
         this.name.setText(data.name);
         this.chrono.setBase(data.base);
         this.chrono.setText(data.timePlayed);
-        this.simples = data.simplesConversions;
-        this.doubles = data.twoPointsConversions;
-        this.triples = data.threePointsConversions;
-        this.assists = data.assists;
-        this.rebounds = data.rebounds;
-        this.fouls = data.fouls;
+        this.player.ftm = data.ftm;
+        this.player.fgm = data.fgm;
+        this.player.tpm = data.tpm;
+        this.player.ast = data.ast;
+        this.player.reb = data.reb;
+        this.player.pf = data.pf;
         return this;
     }
 }

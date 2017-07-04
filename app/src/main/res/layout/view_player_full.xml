@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="100"
+        style="?android:attr/buttonBarStyle"
+        >
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="25"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="Ezequiel"
+            android:gravity="center"
+            />
+
+        <Chronometer
+            android:id="@+id/chrono"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="15"
+            android:gravity="center"
+            android:tag="0"
+            />
+
+        <Button
+            android:id="@+id/reb"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:text="REB"
+            android:textSize="12sp"
+            android:gravity="center"
+            style="?android:attr/buttonBarStyle"
+            />
+
+        <Button
+            android:id="@+id/ast"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:text="AST"
+            android:textSize="12sp"
+            android:gravity="center"
+            style="?android:attr/buttonBarStyle"
+            />
+
+        <Button
+            android:id="@+id/rob"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:text="ROB"
+            android:textSize="12sp"
+            android:gravity="center"
+            style="?android:attr/buttonBarStyle"
+            />
+
+        <Button
+            android:id="@+id/tap"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:text="TAP"
+            android:textSize="12sp"
+            android:gravity="center"
+            style="?android:attr/buttonBarStyle"
+            />
+
+        <Button
+            android:id="@+id/per"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:text="PER"
+            android:textSize="12sp"
+            android:gravity="center"
+            style="?android:attr/buttonBarStyle"
+            />
+
+        <Button
+            android:id="@+id/fal"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:text="FAL"
+            android:textSize="12sp"
+            android:gravity="center"
+            style="?android:attr/buttonBarStyle"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="100"
+        style="?android:attr/buttonBarStyle"
+        android:gravity="center_horizontal"
+        >
+
+        <Button
+            android:id="@+id/ftm"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="15"
+            android:layout_margin="2dp"
+            android:text="FTM"
+            android:textSize="12sp"
+            android:gravity="center"
+            style="?android:attr/buttonBarButtonStyle"
+            android:background="@android:color/darker_gray"
+            />
+        
+        <Button
+            android:id="@+id/fta"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="15"
+            android:layout_margin="2dp"
+            android:text="FTA"
+            android:textSize="12sp"
+            android:gravity="center"
+            style="?android:attr/buttonBarButtonStyle"
+            android:background="@android:color/darker_gray"
+            />
+        
+        <Button
+            android:id="@+id/fgm"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="15"
+            android:layout_margin="2dp"
+            android:text="FGM"
+            android:textSize="12sp"
+            android:gravity="center"
+            style="?android:attr/buttonBarButtonStyle"
+            android:background="@android:color/darker_gray"
+            />
+        
+        <Button
+            android:id="@+id/fga"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="15"
+            android:layout_margin="2dp"
+            android:text="FGA"
+            android:textSize="12sp"
+            android:gravity="center"
+            style="?android:attr/buttonBarButtonStyle"
+            android:background="@android:color/darker_gray"
+            />
+        
+        <Button
+            android:id="@+id/tpm"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="15"
+            android:layout_margin="2dp"
+            android:text="3PM"
+            android:textSize="12sp"
+            android:gravity="center"
+            style="?android:attr/buttonBarButtonStyle"
+            android:background="@android:color/darker_gray"
+            />
+        
+        <Button
+            android:id="@+id/tpa"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="15"
+            android:layout_margin="2dp"
+            android:text="3PA"
+            android:textSize="12sp"
+            android:gravity="center"
+            style="?android:attr/buttonBarButtonStyle"
+            android:background="@android:color/darker_gray"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>
