@@ -108,18 +108,6 @@ public class PlayerViewCompact extends LinearLayout {
         }
     }
 
-    public PlayerViewCompact startChrono() {
-        chrono.setBase(SystemClock.elapsedRealtime() + Integer.valueOf((String)chrono.getTag()));
-        chrono.start();
-        return this;
-    }
-
-    public PlayerViewCompact stopChrono() {
-        chrono.setTag(String.valueOf(chrono.getBase() - SystemClock.elapsedRealtime()));
-        chrono.stop();
-        return this;
-    }
-
     public Boolean isChecked() {
         return checkBox.isChecked();
     }
@@ -146,7 +134,7 @@ public class PlayerViewCompact extends LinearLayout {
     public PlayerViewCompact setData(PlayerSummary data) {
         this.name.setText(data.name);
         this.chrono.setBase(data.base);
-        this.chrono.setText(data.timePlayed);
+//        this.chrono.setText(data.timePlayed);
         this.player.ftm = data.ftm;
         this.player.fgm = data.fgm;
         this.player.tpm = data.tpm;

@@ -1,7 +1,7 @@
 package app.la2008.com.ar.la2008.Activities;
 
+import android.content.Context;
 import android.content.Intent;
-import android.os.PersistableBundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -24,6 +24,8 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
+
+    private static final int IN_GAME_ACTIVITY_REQUEST = 2;
 
     @BindViews({
             R.id.player1,
@@ -86,14 +88,24 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.apply(this.players, SET_LISTENER);
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == IN_GAME_ACTIVITY_REQUEST && resultCode == RESULT_OK) {
+            playersOnCourt = data.getParcelableArrayListExtra("players");
+        }
+    }
+
     @OnClick(R.id.startButton)
     public void chronometer() {
         if (this.playersOnCourt.size() > 5 || this.playersOnCourt.size() < 4) {
             Toast.makeText(this, "Debes seleccionar 5 jugadores", Toast.LENGTH_SHORT).show();
             return;
         }
-        InGameActivity.start(this, this.playersOnCourt);
-        finish();
+        Intent inGameActivityIntent = new Intent(this, InGameActivity.class);
+        inGameActivityIntent.putParcelableArrayListExtra("players", this.playersOnCourt);
+        startActivityForResult(inGameActivityIntent, IN_GAME_ACTIVITY_REQUEST);
     }
 
     @OnClick(R.id.summaryButton)

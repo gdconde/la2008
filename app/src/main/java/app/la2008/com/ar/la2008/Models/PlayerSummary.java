@@ -9,8 +9,9 @@ import android.os.Parcelable;
 
 public class PlayerSummary implements Parcelable {
 
+    public int index;
     public String name;
-    public String timePlayed;
+    public long secondsPlayed;
     public long base;
     public int ftm;
     public int fta;
@@ -33,8 +34,9 @@ public class PlayerSummary implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(this.index);
         dest.writeString(this.name);
-        dest.writeString(this.timePlayed);
+        dest.writeLong(this.secondsPlayed);
         dest.writeLong(this.base);
         dest.writeInt(this.ftm);
         dest.writeInt(this.fgm);
@@ -49,8 +51,9 @@ public class PlayerSummary implements Parcelable {
     }
 
     protected PlayerSummary(Parcel in) {
+        this.index = in.readInt();
         this.name = in.readString();
-        this.timePlayed = in.readString();
+        this.secondsPlayed = in.readLong();
         this.base = in.readLong();
         this.ftm = in.readInt();
         this.fgm = in.readInt();

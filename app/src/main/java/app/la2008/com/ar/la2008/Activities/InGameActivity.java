@@ -39,12 +39,6 @@ public class InGameActivity extends AppCompatActivity {
         }
     };
 
-    public static void start(Context context, ArrayList<PlayerSummary> players) {
-        Intent starter = new Intent(context, InGameActivity.class);
-        starter.putParcelableArrayListExtra("players", players);
-        context.startActivity(starter);
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,5 +71,14 @@ public class InGameActivity extends AppCompatActivity {
     @OnClick(R.id.stopButton)
     public void stop() {
         ButterKnife.apply(this.playersOnCourt, SET_CHRONO, false);
+
+        ArrayList<PlayerSummary> playerSummaries = new ArrayList<>();
+        for (PlayerViewFull playerView: this.playersOnCourt) {
+            playerSummaries.add(playerView.getPlayerSummary());
+        }
+        Intent resultIntent = new Intent();
+        resultIntent.putParcelableArrayListExtra("players", playerSummaries);
+        setResult(RESULT_OK, resultIntent);
+        finish();
     }
 }

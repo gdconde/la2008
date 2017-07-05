@@ -80,6 +80,8 @@ public class PlayerViewFull extends LinearLayout {
     public PlayerViewFull stopChrono() {
         timeChronometer.setTag(String.valueOf(timeChronometer.getBase() - SystemClock.elapsedRealtime()));
         timeChronometer.stop();
+        this.playerSummary.secondsPlayed =
+                (SystemClock.elapsedRealtime() - timeChronometer.getBase()) / 1000;
         return this;
     }
 
