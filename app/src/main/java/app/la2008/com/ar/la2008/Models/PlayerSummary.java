@@ -12,7 +12,7 @@ public class PlayerSummary implements Parcelable {
     public int index;
     public String name;
     public long secondsPlayed;
-    public long base;
+    public String tag;
     public int ftm;
     public int fta;
     public int fgm;
@@ -37,7 +37,7 @@ public class PlayerSummary implements Parcelable {
         dest.writeInt(this.index);
         dest.writeString(this.name);
         dest.writeLong(this.secondsPlayed);
-        dest.writeLong(this.base);
+        dest.writeString(this.tag);
         dest.writeInt(this.ftm);
         dest.writeInt(this.fgm);
         dest.writeInt(this.tpm);
@@ -54,7 +54,7 @@ public class PlayerSummary implements Parcelable {
         this.index = in.readInt();
         this.name = in.readString();
         this.secondsPlayed = in.readLong();
-        this.base = in.readLong();
+        this.tag = in.readString();
         this.ftm = in.readInt();
         this.fgm = in.readInt();
         this.tpm = in.readInt();
@@ -75,4 +75,9 @@ public class PlayerSummary implements Parcelable {
             return new PlayerSummary[size];
         }
     };
+
+    @Override
+    public boolean equals(Object obj) {
+        return obj instanceof PlayerSummary && this.index == ((PlayerSummary) obj).index;
+    }
 }

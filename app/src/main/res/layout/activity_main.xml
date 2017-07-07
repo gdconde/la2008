@@ -25,6 +25,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:name="Eze"
+                app:index="0"
                 />
 
             <app.la2008.com.ar.la2008.Views.PlayerViewCompact
@@ -32,6 +33,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:name="Palmer"
+                app:index="1"
                 />
 
             <app.la2008.com.ar.la2008.Views.PlayerViewCompact
@@ -39,6 +41,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:name="Nico"
+                app:index="2"
                 />
 
             <app.la2008.com.ar.la2008.Views.PlayerViewCompact
@@ -46,6 +49,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:name="Tuti"
+                app:index="3"
                 />
 
             <app.la2008.com.ar.la2008.Views.PlayerViewCompact
@@ -53,6 +57,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:name="Jonas"
+                app:index="4"
                 />
 
             <app.la2008.com.ar.la2008.Views.PlayerViewCompact
@@ -60,6 +65,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:name="Lucho"
+                app:index="5"
                 />
 
             <app.la2008.com.ar.la2008.Views.PlayerViewCompact
@@ -67,6 +73,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:name="Mercado"
+                app:index="6"
                 />
 
             <app.la2008.com.ar.la2008.Views.PlayerViewCompact
@@ -74,6 +81,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:name="Franco"
+                app:index="7"
                 />
 
             <app.la2008.com.ar.la2008.Views.PlayerViewCompact
@@ -81,6 +89,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:name="Ivan"
+                app:index="8"
                 />
 
             <app.la2008.com.ar.la2008.Views.PlayerViewCompact
@@ -88,6 +97,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:name="Matias"
+                app:index="9"
                 />
 
             <app.la2008.com.ar.la2008.Views.PlayerViewCompact
@@ -95,6 +105,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:name="Mgt"
+                app:index="10"
                 />
 
             <app.la2008.com.ar.la2008.Views.PlayerViewCompact
@@ -102,6 +113,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:name="Balda"
+                app:index="11"
                 />
             
         </LinearLayout>

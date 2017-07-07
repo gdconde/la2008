@@ -1,13 +1,10 @@
 package app.la2008.com.ar.la2008.Activities;
 
-import android.content.Context;
 import android.content.Intent;
-import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +12,6 @@ import java.util.List;
 import app.la2008.com.ar.la2008.Models.PlayerSummary;
 import app.la2008.com.ar.la2008.R;
 import app.la2008.com.ar.la2008.Views.PlayerViewFull;
-import butterknife.BindView;
 import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;

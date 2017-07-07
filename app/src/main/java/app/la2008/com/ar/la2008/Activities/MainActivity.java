@@ -1,6 +1,5 @@
 package app.la2008.com.ar.la2008.Activities;
 
-import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -94,12 +93,13 @@ public class MainActivity extends AppCompatActivity {
 
         if (requestCode == IN_GAME_ACTIVITY_REQUEST && resultCode == RESULT_OK) {
             playersOnCourt = data.getParcelableArrayListExtra("players");
+            updatePlayersData();
         }
     }
 
     @OnClick(R.id.startButton)
     public void chronometer() {
-        if (this.playersOnCourt.size() > 5 || this.playersOnCourt.size() < 4) {
+        if (this.playersOnCourt.size() != 5) {
             Toast.makeText(this, "Debes seleccionar 5 jugadores", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -126,6 +126,12 @@ public class MainActivity extends AppCompatActivity {
 //        summary.add(player12.getPlayerSummary());
 //        SummaryActivity.playersSummaries = summary;
 //        startActivity(intent);
+    }
+
+    private void updatePlayersData() {
+        for (PlayerSummary playerToUpdate: this.playersOnCourt) {
+            this.players.get(playerToUpdate.index).setData(playerToUpdate);
+        }
     }
 
 }

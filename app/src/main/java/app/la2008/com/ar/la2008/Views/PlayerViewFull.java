@@ -78,8 +78,11 @@ public class PlayerViewFull extends LinearLayout {
     }
 
     public PlayerViewFull stopChrono() {
-        timeChronometer.setTag(String.valueOf(timeChronometer.getBase() - SystemClock.elapsedRealtime()));
+        timeChronometer.
+                setTag(String.valueOf(timeChronometer.getBase() - SystemClock.elapsedRealtime()));
         timeChronometer.stop();
+        this.playerSummary.tag =
+                String.valueOf(timeChronometer.getBase() - SystemClock.elapsedRealtime());
         this.playerSummary.secondsPlayed =
                 (SystemClock.elapsedRealtime() - timeChronometer.getBase()) / 1000;
         return this;
@@ -88,6 +91,7 @@ public class PlayerViewFull extends LinearLayout {
     public PlayerViewFull setData(PlayerSummary data) {
         this.playerSummary = data;
         this.nameTV.setText(this.playerSummary.name);
+        this.timeChronometer.setTag(data.tag);
         return this;
     }
 

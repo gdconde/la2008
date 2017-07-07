@@ -99,12 +99,19 @@ public class PlayerViewCompact extends LinearLayout {
 
         this.setButtonsClickable(false);
 
+        this.player.tag = "0";
+
         TypedArray a = context.obtainStyledAttributes(attributes, R.styleable.PlayerViewCompact);
 
         String playerName = a.getString(R.styleable.PlayerViewCompact_name);
         if(playerName != null) {
             name.setText(playerName);
             this.player.name = playerName;
+        }
+
+        Integer playerIndex = a.getInteger(R.styleable.PlayerViewCompact_index, -1);
+        if(playerIndex != -1) {
+            this.player.index = playerIndex;
         }
     }
 
@@ -133,8 +140,9 @@ public class PlayerViewCompact extends LinearLayout {
 
     public PlayerViewCompact setData(PlayerSummary data) {
         this.name.setText(data.name);
-        this.chrono.setBase(data.base);
-//        this.chrono.setText(data.timePlayed);
+        this.chrono.setText(secondsToString(data.secondsPlayed));
+        this.chrono.setTag(data.tag);
+        this.player.tag = data.tag;
         this.player.ftm = data.ftm;
         this.player.fgm = data.fgm;
         this.player.tpm = data.tpm;
@@ -142,5 +150,17 @@ public class PlayerViewCompact extends LinearLayout {
         this.player.reb = data.reb;
         this.player.pf = data.pf;
         return this;
+    }
+
+    private String secondsToString(long secondsPlayed) {
+        StringBuilder builder = new StringBuilder();
+        int minutes = (int) secondsPlayed / 60;
+        int seconds = (int) secondsPlayed % 60;
+        if (minutes < 10) builder.append("0");
+        builder.append(minutes);
+        builder.append(":");
+        if (seconds < 10) builder.append("0");
+        builder.append(seconds);
+        return builder.toString();
     }
 }

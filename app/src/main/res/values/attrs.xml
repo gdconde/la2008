@@ -4,6 +4,7 @@
     <declare-styleable name="PlayerViewCompact">
 
         <attr name="name" format="string"/>
+        <attr name="index" format="integer"/>
 
     </declare-styleable>
 
