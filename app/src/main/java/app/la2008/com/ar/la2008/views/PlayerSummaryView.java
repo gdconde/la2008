@@ -1,4 +1,4 @@
-package app.la2008.com.ar.la2008.Views;
+package app.la2008.com.ar.la2008.views;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import app.la2008.com.ar.la2008.Models.PlayerSummary;
+import app.la2008.com.ar.la2008.models.PlayerSummary;
 import app.la2008.com.ar.la2008.R;
 
 /**

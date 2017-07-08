@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".Activities.MainActivity"
+            android:name=".activities.MainActivity"
             android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,11 +21,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
-            android:name=".Activities.SummaryActivity"
-            android:parentActivityName=".Activities.MainActivity"
-            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
-        <activity android:name=".Activities.InGameActivity"></activity>
+            android:name=".activities.SummaryActivity"
+            android:parentActivityName=".activities.MainActivity"/>
+
+        <activity
+            android:name=".activities.InGameActivity"/>
+
     </application>
 
 </manifest>

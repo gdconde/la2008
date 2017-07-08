@@ -1,8 +1,7 @@
-package app.la2008.com.ar.la2008.Views;
+package app.la2008.com.ar.la2008.views;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.os.SystemClock;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,9 +10,11 @@ import android.widget.CheckBox;
 import android.widget.Chronometer;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import app.la2008.com.ar.la2008.Models.PlayerSummary;
+import app.la2008.com.ar.la2008.activities.MainActivity;
+import app.la2008.com.ar.la2008.models.PlayerSummary;
 import app.la2008.com.ar.la2008.R;
 
 /**
@@ -25,12 +26,9 @@ public class PlayerViewCompact extends LinearLayout {
     private CheckBox checkBox;
     private EditText name;
     private Chronometer chrono;
-    private Button onePoint;
-    private Button twoPoints;
-    private Button threePoints;
-    private Button rebound;
-    private Button assist;
-    private Button foul;
+    private TextView points;
+    private TextView rebounds;
+    private TextView assists;
 
     private PlayerSummary player = new PlayerSummary();
 
@@ -42,42 +40,24 @@ public class PlayerViewCompact extends LinearLayout {
         checkBox = (CheckBox) findViewById(R.id.checkbox);
         name = (EditText) findViewById(R.id.name);
         chrono = (Chronometer) findViewById(R.id.chrono);
-        onePoint = (Button) findViewById(R.id.simpleButton);
-        twoPoints = (Button) findViewById(R.id.twoPointsButton);
-        threePoints = (Button) findViewById(R.id.threePointsButton);
-        rebound = (Button) findViewById(R.id.reboundButton);
-        assist = (Button) findViewById(R.id.assistButton);
-        foul = (Button) findViewById(R.id.foulButton);
-
-        onePoint.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                player.ftm++;
-                Toast.makeText(context, "Libre", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        twoPoints.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                player.fgm++;
-                Toast.makeText(context, "2 puntos", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        threePoints.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                player.tpm++;
-                Toast.makeText(context, "3 puntos", Toast.LENGTH_SHORT).show();
-            }
-        });
+        points = (TextView) findViewById(R.id.pointsTextView);
+        rebounds = (TextView) findViewById(R.id.reboundsTextView);
+        assists = (TextView) findViewById(R.id.assistsTextView);
+        Button rebound = (Button) findViewById(R.id.reboundButton);
+        Button assist = (Button) findViewById(R.id.assistButton);
+        Button foul = (Button) findViewById(R.id.foulButton);
 
         rebound.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 player.reb++;
                 Toast.makeText(context, "Rebote", Toast.LENGTH_SHORT).show();
+                if (context instanceof MainActivity) {
+                    int index = ((MainActivity) context).playersOnCourt.indexOf(player);
+                    if (index > -1) {
+                        ((MainActivity) context).playersOnCourt.get(index).reb++;
+                    }
+                }
             }
         });
 
@@ -86,6 +66,10 @@ public class PlayerViewCompact extends LinearLayout {
             public void onClick(View view) {
                 player.ast++;
                 Toast.makeText(context, "Asistencia", Toast.LENGTH_SHORT).show();
+                int index = ((MainActivity) context).playersOnCourt.indexOf(player);
+                if (index > -1) {
+                    ((MainActivity) context).playersOnCourt.get(index).ast++;
+                }
             }
         });
 
@@ -94,10 +78,12 @@ public class PlayerViewCompact extends LinearLayout {
             public void onClick(View view) {
                 player.pf++;
                 Toast.makeText(context, "Falta", Toast.LENGTH_SHORT).show();
+                int index = ((MainActivity) context).playersOnCourt.indexOf(player);
+                if (index > -1) {
+                    ((MainActivity) context).playersOnCourt.get(index).pf++;
+                }
             }
         });
-
-        this.setButtonsClickable(false);
 
         this.player.tag = "0";
 
@@ -113,6 +99,7 @@ public class PlayerViewCompact extends LinearLayout {
         if(playerIndex != -1) {
             this.player.index = playerIndex;
         }
+        a.recycle();
     }
 
     public Boolean isChecked() {
@@ -124,16 +111,6 @@ public class PlayerViewCompact extends LinearLayout {
         return this;
     }
 
-    public PlayerViewCompact setButtonsClickable(boolean clickable) {
-        this.onePoint.setClickable(clickable);
-        this.twoPoints.setClickable(clickable);
-        this.threePoints.setClickable(clickable);
-        this.rebound.setClickable(clickable);
-        this.assist.setClickable(clickable);
-        this.foul.setClickable(clickable);
-        return this;
-    }
-
     public PlayerSummary getPlayerSummary() {
         return player;
     }
@@ -142,13 +119,24 @@ public class PlayerViewCompact extends LinearLayout {
         this.name.setText(data.name);
         this.chrono.setText(secondsToString(data.secondsPlayed));
         this.chrono.setTag(data.tag);
+        this.player.name = data.name;
         this.player.tag = data.tag;
         this.player.ftm = data.ftm;
+        this.player.fta = data.fta;
         this.player.fgm = data.fgm;
+        this.player.fga = data.fga;
         this.player.tpm = data.tpm;
+        this.player.tpa = data.tpa;
         this.player.ast = data.ast;
         this.player.reb = data.reb;
         this.player.pf = data.pf;
+        this.player.tap = data.tap;
+        this.player.rob = data.rob;
+        this.player.per = data.per;
+        this.points.setText(String.valueOf(
+                this.player.ftm + 2 * this.player.fgm + 3 * this.player.tpm));
+        this.rebounds.setText(String.valueOf(this.player.reb));
+        this.assists.setText(String.valueOf(this.player.ast));
         return this;
     }
 

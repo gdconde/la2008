@@ -1,4 +1,4 @@
-package app.la2008.com.ar.la2008.Activities;
+package app.la2008.com.ar.la2008.activities;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,8 +8,8 @@ import android.view.WindowManager;
 
 import java.util.ArrayList;
 
-import app.la2008.com.ar.la2008.Models.PlayerSummary;
-import app.la2008.com.ar.la2008.Views.PlayerSummaryView;
+import app.la2008.com.ar.la2008.models.PlayerSummary;
+import app.la2008.com.ar.la2008.views.PlayerSummaryView;
 import app.la2008.com.ar.la2008.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;

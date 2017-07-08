@@ -1,28 +1,31 @@
-package app.la2008.com.ar.la2008.Activities;
+package app.la2008.com.ar.la2008.activities;
 
+import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Pair;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import app.la2008.com.ar.la2008.Models.PlayerSummary;
-import app.la2008.com.ar.la2008.Views.PlayerViewCompact;
+import app.la2008.com.ar.la2008.models.PlayerSummary;
+import app.la2008.com.ar.la2008.views.PlayerViewCompact;
 import app.la2008.com.ar.la2008.R;
 import butterknife.BindView;
 import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     private static final int IN_GAME_ACTIVITY_REQUEST = 2;
 
@@ -43,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.startButton) Button mStartButton;
 
-    private ArrayList<PlayerSummary> playersOnCourt = new ArrayList<>();
+    public ArrayList<PlayerSummary> playersOnCourt = new ArrayList<>();
 
     View.OnClickListener playerListener = new View.OnClickListener() {
         @Override
@@ -98,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @OnClick(R.id.startButton)
-    public void chronometer() {
+    public void startOrContinueGame() {
         if (this.playersOnCourt.size() != 5) {
             Toast.makeText(this, "Debes seleccionar 5 jugadores", Toast.LENGTH_SHORT).show();
             return;

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:weightSum="100"
+    style="?android:attr/buttonBarStyle"
     >
 
     <CheckBox
@@ -32,37 +33,31 @@
         android:tag="0"
         />
 
-    <Button
-        android:id="@+id/simpleButton"
+    <TextView
+        android:id="@+id/pointsTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="10"
         android:layout_gravity="center_vertical"
-        android:text="1"
-        android:textSize="10dp"
-        android:clickable="false"
+        tools:text="10pts"
         />
 
-    <Button
-        android:id="@+id/twoPointsButton"
+    <TextView
+        android:id="@+id/reboundsTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="10"
         android:layout_gravity="center_vertical"
-        android:text="2"
-        android:textSize="10dp"
-        android:clickable="false"
+        tools:text="10reb"
         />
 
-    <Button
-        android:id="@+id/threePointsButton"
+    <TextView
+        android:id="@+id/assistsTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="10"
         android:layout_gravity="center_vertical"
-        android:text="3"
-        android:textSize="10dp"
-        android:clickable="false"
+        tools:text="10ast"
         />
 
     <Button
@@ -71,9 +66,11 @@
         android:layout_height="wrap_content"
         android:layout_weight="10"
         android:layout_gravity="center_vertical"
+        android:background="?android:attr/selectableItemBackground"
         android:text="R"
-        android:textSize="10dp"
+        android:textSize="12sp"
         android:clickable="false"
+        style="?android:attr/buttonBarStyle"
         />
 
     <Button
@@ -82,9 +79,11 @@
         android:layout_height="wrap_content"
         android:layout_weight="10"
         android:layout_gravity="center_vertical"
+        android:background="?android:attr/selectableItemBackground"
         android:text="A"
-        android:textSize="10dp"
+        android:textSize="12sp"
         android:clickable="false"
+        style="?android:attr/buttonBarStyle"
         />
 
     <Button
@@ -93,9 +92,11 @@
         android:layout_height="wrap_content"
         android:layout_weight="10"
         android:layout_gravity="center_vertical"
+        android:background="?android:attr/selectableItemBackground"
         android:text="F"
-        android:textSize="10dp"
+        android:textSize="12sp"
         android:clickable="false"
+        style="?android:attr/buttonBarStyle"
         />
 
 </LinearLayout>

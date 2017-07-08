@@ -6,38 +6,38 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="100"
-    tools:context="app.la2008.com.ar.la2008.Activities.InGameActivity"
+    tools:context="app.la2008.com.ar.la2008.activities.InGameActivity"
     >
 
-    <app.la2008.com.ar.la2008.Views.PlayerViewFull
+    <app.la2008.com.ar.la2008.views.PlayerViewFull
         android:id="@+id/player1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="20"
         />
 
-    <app.la2008.com.ar.la2008.Views.PlayerViewFull
+    <app.la2008.com.ar.la2008.views.PlayerViewFull
         android:id="@+id/player2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="20"
         />
 
-    <app.la2008.com.ar.la2008.Views.PlayerViewFull
+    <app.la2008.com.ar.la2008.views.PlayerViewFull
         android:id="@+id/player3"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="20"
         />
 
-    <app.la2008.com.ar.la2008.Views.PlayerViewFull
+    <app.la2008.com.ar.la2008.views.PlayerViewFull
         android:id="@+id/player4"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="20"
         />
 
-    <app.la2008.com.ar.la2008.Views.PlayerViewFull
+    <app.la2008.com.ar.la2008.views.PlayerViewFull
         android:id="@+id/player5"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -45,6 +45,7 @@
         />
 
     <LinearLayout
+        android:id="@+id/buttonsLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="8"

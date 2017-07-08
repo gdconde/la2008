@@ -78,77 +78,77 @@
 
     </LinearLayout>
 
-    <app.la2008.com.ar.la2008.Views.PlayerSummaryView
+    <app.la2008.com.ar.la2008.views.PlayerSummaryView
         android:id="@+id/player1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />
 
-    <app.la2008.com.ar.la2008.Views.PlayerSummaryView
+    <app.la2008.com.ar.la2008.views.PlayerSummaryView
         android:id="@+id/player2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/darker_gray"
         />
 
-    <app.la2008.com.ar.la2008.Views.PlayerSummaryView
+    <app.la2008.com.ar.la2008.views.PlayerSummaryView
         android:id="@+id/player3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />
 
-    <app.la2008.com.ar.la2008.Views.PlayerSummaryView
+    <app.la2008.com.ar.la2008.views.PlayerSummaryView
         android:id="@+id/player4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/darker_gray"
         />
 
-    <app.la2008.com.ar.la2008.Views.PlayerSummaryView
+    <app.la2008.com.ar.la2008.views.PlayerSummaryView
         android:id="@+id/player5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />
 
-    <app.la2008.com.ar.la2008.Views.PlayerSummaryView
+    <app.la2008.com.ar.la2008.views.PlayerSummaryView
         android:id="@+id/player6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/darker_gray"
         />
 
-    <app.la2008.com.ar.la2008.Views.PlayerSummaryView
+    <app.la2008.com.ar.la2008.views.PlayerSummaryView
         android:id="@+id/player7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />
 
-    <app.la2008.com.ar.la2008.Views.PlayerSummaryView
+    <app.la2008.com.ar.la2008.views.PlayerSummaryView
         android:id="@+id/player8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/darker_gray"
         />
 
-    <app.la2008.com.ar.la2008.Views.PlayerSummaryView
+    <app.la2008.com.ar.la2008.views.PlayerSummaryView
         android:id="@+id/player9"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />
 
-    <app.la2008.com.ar.la2008.Views.PlayerSummaryView
+    <app.la2008.com.ar.la2008.views.PlayerSummaryView
         android:id="@+id/player10"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/darker_gray"
         />
 
-    <app.la2008.com.ar.la2008.Views.PlayerSummaryView
+    <app.la2008.com.ar.la2008.views.PlayerSummaryView
         android:id="@+id/player11"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <app.la2008.com.ar.la2008.Views.PlayerSummaryView
+    <app.la2008.com.ar.la2008.views.PlayerSummaryView
         android:id="@+id/player12"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

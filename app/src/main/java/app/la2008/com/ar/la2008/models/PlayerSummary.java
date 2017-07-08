@@ -1,4 +1,4 @@
-package app.la2008.com.ar.la2008.Models;
+package app.la2008.com.ar.la2008.models;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -28,6 +28,11 @@ public class PlayerSummary implements Parcelable {
     public int tap;
 
     @Override
+    public boolean equals(Object obj) {
+        return obj instanceof PlayerSummary && this.index == ((PlayerSummary) obj).index;
+    }
+
+    @Override
     public int describeContents() {
         return 0;
     }
@@ -39,32 +44,44 @@ public class PlayerSummary implements Parcelable {
         dest.writeLong(this.secondsPlayed);
         dest.writeString(this.tag);
         dest.writeInt(this.ftm);
+        dest.writeInt(this.fta);
         dest.writeInt(this.fgm);
+        dest.writeInt(this.fga);
         dest.writeInt(this.tpm);
+        dest.writeInt(this.tpa);
         dest.writeInt(this.pts);
         dest.writeInt(this.reb);
         dest.writeInt(this.ast);
         dest.writeInt(this.pf);
+        dest.writeInt(this.rob);
+        dest.writeInt(this.per);
+        dest.writeInt(this.tap);
     }
 
     public PlayerSummary() {
     }
 
-    protected PlayerSummary(Parcel in) {
+    private PlayerSummary(Parcel in) {
         this.index = in.readInt();
         this.name = in.readString();
         this.secondsPlayed = in.readLong();
         this.tag = in.readString();
         this.ftm = in.readInt();
+        this.fta = in.readInt();
         this.fgm = in.readInt();
+        this.fga = in.readInt();
         this.tpm = in.readInt();
+        this.tpa = in.readInt();
         this.pts = in.readInt();
         this.reb = in.readInt();
         this.ast = in.readInt();
         this.pf = in.readInt();
+        this.rob = in.readInt();
+        this.per = in.readInt();
+        this.tap = in.readInt();
     }
 
-    public static final Parcelable.Creator<PlayerSummary> CREATOR = new Parcelable.Creator<PlayerSummary>() {
+    public static final Creator<PlayerSummary> CREATOR = new Creator<PlayerSummary>() {
         @Override
         public PlayerSummary createFromParcel(Parcel source) {
             return new PlayerSummary(source);
@@ -75,9 +92,4 @@ public class PlayerSummary implements Parcelable {
             return new PlayerSummary[size];
         }
     };
-
-    @Override
-    public boolean equals(Object obj) {
-        return obj instanceof PlayerSummary && this.index == ((PlayerSummary) obj).index;
-    }
 }
