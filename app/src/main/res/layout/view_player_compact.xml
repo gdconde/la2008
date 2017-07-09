@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -21,8 +21,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="25"
+        android:layout_gravity="center_vertical"
         android:cursorVisible="false"
         android:backgroundTint="@android:color/transparent"
+        android:inputType="textPersonName"
+        android:padding="0dp"
         />
 
     <Chronometer
@@ -30,6 +33,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="15"
+        android:layout_gravity="center_vertical"
         android:tag="0"
         />
 
@@ -37,35 +41,43 @@
         android:id="@+id/pointsTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="10"
+        android:layout_weight="8"
         android:layout_gravity="center_vertical"
-        tools:text="10pts"
+        android:text="0"
         />
 
     <TextView
         android:id="@+id/reboundsTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="10"
+        android:layout_weight="8"
         android:layout_gravity="center_vertical"
-        tools:text="10reb"
+        android:text="0"
         />
 
     <TextView
         android:id="@+id/assistsTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="10"
+        android:layout_weight="8"
         android:layout_gravity="center_vertical"
-        tools:text="10ast"
+        android:text="0"
+        />
+
+    <TextView
+        android:id="@+id/foulsTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="6"
+        android:layout_gravity="center_vertical"
+        android:text="0"
         />
 
     <Button
         android:id="@+id/reboundButton"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_weight="10"
-        android:layout_gravity="center_vertical"
         android:background="?android:attr/selectableItemBackground"
         android:text="R"
         android:textSize="12sp"
@@ -76,9 +88,8 @@
     <Button
         android:id="@+id/assistButton"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_weight="10"
-        android:layout_gravity="center_vertical"
         android:background="?android:attr/selectableItemBackground"
         android:text="A"
         android:textSize="12sp"
@@ -89,9 +100,8 @@
     <Button
         android:id="@+id/foulButton"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_weight="10"
-        android:layout_gravity="center_vertical"
         android:background="?android:attr/selectableItemBackground"
         android:text="F"
         android:textSize="12sp"

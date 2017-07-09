@@ -1,129 +1,200 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:weightSum="100"
-    tools:context="app.la2008.com.ar.la2008.activities.MainActivity">
+    tools:context="app.la2008.com.ar.la2008.activities.MainActivity"
+    >
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="92"
+        android:layout_weight="100"
+        android:orientation="vertical"
+        android:weightSum="96"
         >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:orientation="horizontal"
+            android:weightSum="100"
             >
 
-            <app.la2008.com.ar.la2008.views.PlayerViewCompact
-                android:id="@+id/player1"
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:name="Eze"
-                app:index="0"
+                android:layout_weight="23"
+                android:text="Nombre"
+                android:paddingStart="4dp"
                 />
 
-            <app.la2008.com.ar.la2008.views.PlayerViewCompact
-                android:id="@+id/player2"
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:name="Palmer"
-                app:index="1"
+                android:layout_weight="15"
+                android:text="Tiempo"
                 />
 
-            <app.la2008.com.ar.la2008.views.PlayerViewCompact
-                android:id="@+id/player3"
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:name="Nico"
-                app:index="2"
+                android:layout_weight="8"
+                android:text="Pts"
                 />
 
-            <app.la2008.com.ar.la2008.views.PlayerViewCompact
-                android:id="@+id/player4"
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:name="Tuti"
-                app:index="3"
+                android:layout_weight="8"
+                android:text="Reb"
                 />
 
-            <app.la2008.com.ar.la2008.views.PlayerViewCompact
-                android:id="@+id/player5"
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:name="Jonas"
-                app:index="4"
+                android:layout_weight="8"
+                android:text="Ast"
                 />
 
-            <app.la2008.com.ar.la2008.views.PlayerViewCompact
-                android:id="@+id/player6"
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:name="Lucho"
-                app:index="5"
+                android:layout_weight="6"
+                android:text="Fal"
                 />
 
-            <app.la2008.com.ar.la2008.views.PlayerViewCompact
-                android:id="@+id/player7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:name="Mercado"
-                app:index="6"
-                />
-
-            <app.la2008.com.ar.la2008.views.PlayerViewCompact
-                android:id="@+id/player8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:name="Franco"
-                app:index="7"
-                />
-
-            <app.la2008.com.ar.la2008.views.PlayerViewCompact
-                android:id="@+id/player9"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:name="Ivan"
-                app:index="8"
-                />
-
-            <app.la2008.com.ar.la2008.views.PlayerViewCompact
-                android:id="@+id/player10"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:name="Matias"
-                app:index="9"
-                />
-
-            <app.la2008.com.ar.la2008.views.PlayerViewCompact
-                android:id="@+id/player11"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:name="Mgt"
-                app:index="10"
-                />
-
-            <app.la2008.com.ar.la2008.views.PlayerViewCompact
-                android:id="@+id/player12"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:name="Balda"
-                app:index="11"
-                />
-            
         </LinearLayout>
 
-    </ScrollView>
+        <app.la2008.com.ar.la2008.views.PlayerViewCompact
+            android:id="@+id/player1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="8"
+            android:gravity="center_vertical"
+            app:name="Eze"
+            app:index="0"
+            />
+
+        <app.la2008.com.ar.la2008.views.PlayerViewCompact
+            android:id="@+id/player2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="8"
+            android:gravity="center_vertical"
+            app:name="Palmer"
+            app:index="1"
+            />
+
+        <app.la2008.com.ar.la2008.views.PlayerViewCompact
+            android:id="@+id/player3"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="8"
+            android:gravity="center_vertical"
+            app:name="Nico"
+            app:index="2"
+            />
+
+        <app.la2008.com.ar.la2008.views.PlayerViewCompact
+            android:id="@+id/player4"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="8"
+            android:gravity="center_vertical"
+            app:name="Tuti"
+            app:index="3"
+            />
+
+        <app.la2008.com.ar.la2008.views.PlayerViewCompact
+            android:id="@+id/player5"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="8"
+            android:gravity="center_vertical"
+            app:name="Jonas"
+            app:index="4"
+            />
+
+        <app.la2008.com.ar.la2008.views.PlayerViewCompact
+            android:id="@+id/player6"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="8"
+            android:gravity="center_vertical"
+            app:name="Lucho"
+            app:index="5"
+            />
+
+        <app.la2008.com.ar.la2008.views.PlayerViewCompact
+            android:id="@+id/player7"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="8"
+            android:gravity="center_vertical"
+            app:name="Mercado"
+            app:index="6"
+            />
+
+        <app.la2008.com.ar.la2008.views.PlayerViewCompact
+            android:id="@+id/player8"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="8"
+            android:gravity="center_vertical"
+            app:name="Franco"
+            app:index="7"
+            />
+
+        <app.la2008.com.ar.la2008.views.PlayerViewCompact
+            android:id="@+id/player9"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="8"
+            android:gravity="center_vertical"
+            app:name="Ivan"
+            app:index="8"
+            />
+
+        <app.la2008.com.ar.la2008.views.PlayerViewCompact
+            android:id="@+id/player10"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="8"
+            android:gravity="center_vertical"
+            app:name="Matias"
+            app:index="9"
+            />
+
+        <app.la2008.com.ar.la2008.views.PlayerViewCompact
+            android:id="@+id/player11"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="8"
+            android:gravity="center_vertical"
+            app:name="Mgt"
+            app:index="10"
+            />
+
+        <app.la2008.com.ar.la2008.views.PlayerViewCompact
+            android:id="@+id/player12"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="8"
+            android:gravity="center_vertical"
+            app:name="Balda"
+            app:index="11"
+            />
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="8"
+        android:layout_height="35dp"
         android:orientation="horizontal"
         android:weightSum="10"
         >
@@ -143,7 +214,7 @@
             android:layout_height="match_parent"
             android:layout_weight="2"
             android:text="Resumen"
-            android:textSize="10dp"
+            android:textSize="12sp"
             android:background="@color/colorPrimaryDark"
             />
 

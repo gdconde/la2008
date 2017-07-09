@@ -50,42 +50,36 @@ public class PlayerViewFull extends LinearLayout {
             @Override
             public void onClick(View view) {
                 playerSummary.reb++;
-                showToast();
             }
         });
         astButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 playerSummary.ast++;
-                showToast();
             }
         });
         tapButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 playerSummary.tap++;
-                showToast();
             }
         });
         robButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 playerSummary.rob++;
-                showToast();
             }
         });
         perButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 playerSummary.per++;
-                showToast();
             }
         });
         falButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 playerSummary.pf++;
-                showToast();
             }
         });
         ftmButton.setOnClickListener(new OnClickListener() {

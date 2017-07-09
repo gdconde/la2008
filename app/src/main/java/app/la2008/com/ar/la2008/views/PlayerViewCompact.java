@@ -2,6 +2,7 @@ package app.la2008.com.ar.la2008.views;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.os.Handler;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,10 +30,11 @@ public class PlayerViewCompact extends LinearLayout {
     private TextView points;
     private TextView rebounds;
     private TextView assists;
+    private TextView fouls;
 
     private PlayerSummary player = new PlayerSummary();
 
-    public PlayerViewCompact(final Context context, AttributeSet attributes) {
+    public PlayerViewCompact(Context context, AttributeSet attributes) {
         super(context, attributes);
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -43,6 +45,7 @@ public class PlayerViewCompact extends LinearLayout {
         points = (TextView) findViewById(R.id.pointsTextView);
         rebounds = (TextView) findViewById(R.id.reboundsTextView);
         assists = (TextView) findViewById(R.id.assistsTextView);
+        fouls = (TextView) findViewById(R.id.foulsTextView);
         Button rebound = (Button) findViewById(R.id.reboundButton);
         Button assist = (Button) findViewById(R.id.assistButton);
         Button foul = (Button) findViewById(R.id.foulButton);
@@ -50,38 +53,24 @@ public class PlayerViewCompact extends LinearLayout {
         rebound.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                player.reb++;
-                Toast.makeText(context, "Rebote", Toast.LENGTH_SHORT).show();
-                if (context instanceof MainActivity) {
-                    int index = ((MainActivity) context).playersOnCourt.indexOf(player);
-                    if (index > -1) {
-                        ((MainActivity) context).playersOnCourt.get(index).reb++;
-                    }
-                }
+                rebounds.setText(String.valueOf(++player.reb));
+                showToast();
             }
         });
 
         assist.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                player.ast++;
-                Toast.makeText(context, "Asistencia", Toast.LENGTH_SHORT).show();
-                int index = ((MainActivity) context).playersOnCourt.indexOf(player);
-                if (index > -1) {
-                    ((MainActivity) context).playersOnCourt.get(index).ast++;
-                }
+                assists.setText(String.valueOf(++player.ast));
+                showToast();
             }
         });
 
         foul.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                player.pf++;
-                Toast.makeText(context, "Falta", Toast.LENGTH_SHORT).show();
-                int index = ((MainActivity) context).playersOnCourt.indexOf(player);
-                if (index > -1) {
-                    ((MainActivity) context).playersOnCourt.get(index).pf++;
-                }
+                fouls.setText(String.valueOf(++player.pf));
+                showToast();
             }
         });
 
@@ -137,6 +126,7 @@ public class PlayerViewCompact extends LinearLayout {
                 this.player.ftm + 2 * this.player.fgm + 3 * this.player.tpm));
         this.rebounds.setText(String.valueOf(this.player.reb));
         this.assists.setText(String.valueOf(this.player.ast));
+        this.fouls.setText(String.valueOf(this.player.pf));
         return this;
     }
 
@@ -150,5 +140,17 @@ public class PlayerViewCompact extends LinearLayout {
         if (seconds < 10) builder.append("0");
         builder.append(seconds);
         return builder.toString();
+    }
+
+    private void showToast() {
+        final Toast toast = Toast.makeText(getContext(), "+1", Toast.LENGTH_SHORT);
+        toast.show();
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                toast.cancel();
+            }
+        }, 500);
     }
 }

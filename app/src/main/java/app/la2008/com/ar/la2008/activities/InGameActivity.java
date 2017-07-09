@@ -44,7 +44,6 @@ public class InGameActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        postponeEnterTransition();
         setContentView(R.layout.activity_in_game);
         players = getIntent().getParcelableArrayListExtra("players");
     }
