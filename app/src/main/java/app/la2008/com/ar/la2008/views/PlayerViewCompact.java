@@ -14,7 +14,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import app.la2008.com.ar.la2008.activities.MainActivity;
 import app.la2008.com.ar.la2008.models.PlayerSummary;
 import app.la2008.com.ar.la2008.R;
 
@@ -97,6 +96,12 @@ public class PlayerViewCompact extends LinearLayout {
 
     public PlayerViewCompact setChecked(boolean check) {
         checkBox.setChecked(check);
+        return this;
+    }
+
+    public PlayerViewCompact setName(String name) {
+        this.name.setText(name);
+        this.player.name = name;
         return this;
     }
 

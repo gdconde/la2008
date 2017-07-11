@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,56 +10,191 @@
     tools:context="app.la2008.com.ar.la2008.activities.InGameActivity"
     >
 
-    <app.la2008.com.ar.la2008.views.PlayerViewFull
-        android:id="@+id/player1"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="18"
-        />
+        android:layout_weight="100"
+        android:orientation="vertical"
+        android:weightSum="96"
+        android:paddingLeft="4dp"
+        >
 
-    <app.la2008.com.ar.la2008.views.PlayerViewFull
-        android:id="@+id/player2"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="18"
-        />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="100"
+            >
 
-    <app.la2008.com.ar.la2008.views.PlayerViewFull
-        android:id="@+id/player3"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="18"
-        />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="23"
+                android:text="Nombre"
+                android:paddingStart="4dp"
+                />
 
-    <app.la2008.com.ar.la2008.views.PlayerViewFull
-        android:id="@+id/player4"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="18"
-        />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="15"
+                android:text="Tiempo"
+                />
 
-    <app.la2008.com.ar.la2008.views.PlayerViewFull
-        android:id="@+id/player5"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="18"
-        />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="8"
+                android:text="Pts"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="8"
+                android:text="Reb"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="8"
+                android:text="Ast"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                android:text="Fal"
+                />
+
+        </LinearLayout>
+
+        <app.la2008.com.ar.la2008.views.PlayerViewCompact
+            android:id="@+id/player1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="8"
+            android:gravity="center_vertical"
+            app:index="0"
+            />
+
+        <app.la2008.com.ar.la2008.views.PlayerViewCompact
+            android:id="@+id/player2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="8"
+            android:gravity="center_vertical"
+            app:index="1"
+            />
+
+        <app.la2008.com.ar.la2008.views.PlayerViewCompact
+            android:id="@+id/player3"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="8"
+            android:gravity="center_vertical"
+            app:index="2"
+            />
+
+        <app.la2008.com.ar.la2008.views.PlayerViewCompact
+            android:id="@+id/player4"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="8"
+            android:gravity="center_vertical"
+            app:index="3"
+            />
+
+        <app.la2008.com.ar.la2008.views.PlayerViewCompact
+            android:id="@+id/player5"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="8"
+            android:gravity="center_vertical"
+            app:index="4"
+            />
+
+        <app.la2008.com.ar.la2008.views.PlayerViewCompact
+            android:id="@+id/player6"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="8"
+            android:gravity="center_vertical"
+            app:index="5"
+            />
+
+        <app.la2008.com.ar.la2008.views.PlayerViewCompact
+            android:id="@+id/player7"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="8"
+            android:gravity="center_vertical"
+            app:index="6"
+            />
+
+        <app.la2008.com.ar.la2008.views.PlayerViewCompact
+            android:id="@+id/player8"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="8"
+            android:gravity="center_vertical"
+            app:index="7"
+            />
+
+        <app.la2008.com.ar.la2008.views.PlayerViewCompact
+            android:id="@+id/player9"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="8"
+            android:gravity="center_vertical"
+            app:index="8"
+            />
+
+        <app.la2008.com.ar.la2008.views.PlayerViewCompact
+            android:id="@+id/player10"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="8"
+            android:gravity="center_vertical"
+            app:index="9"
+            />
+
+        <app.la2008.com.ar.la2008.views.PlayerViewCompact
+            android:id="@+id/player11"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="8"
+            android:gravity="center_vertical"
+            app:index="10"
+            />
+
+        <app.la2008.com.ar.la2008.views.PlayerViewCompact
+            android:id="@+id/player12"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="8"
+            android:gravity="center_vertical"
+            app:index="11"
+            />
+
+    </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/buttonsLayout"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="10"
+        android:layout_height="35dp"
         android:orientation="horizontal"
+        android:weightSum="10"
         >
 
         <Button
-            android:id="@+id/stopButton"
+            android:id="@+id/startButton"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="8"
-            android:text="STOP"
-            android:background="@color/colorAccent"
+            android:text="Start"
+            android:background="@android:color/holo_green_dark"
             />
 
         <Button
@@ -74,3 +210,4 @@
     </LinearLayout>
 
 </LinearLayout>
+
