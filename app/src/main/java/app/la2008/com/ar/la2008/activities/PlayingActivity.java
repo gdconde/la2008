@@ -1,15 +1,10 @@
 package app.la2008.com.ar.la2008.activities;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.os.Bundle;
-import android.util.AttributeSet;
-import android.view.View;
-import android.view.ViewTreeObserver;
-import android.widget.LinearLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,12 +12,11 @@ import java.util.List;
 import app.la2008.com.ar.la2008.models.PlayerSummary;
 import app.la2008.com.ar.la2008.R;
 import app.la2008.com.ar.la2008.views.PlayerViewFull;
-import butterknife.BindView;
 import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class InGameActivity extends Activity {
+public class PlayingActivity extends Activity {
 
     @BindViews({R.id.player1, R.id.player2, R.id.player3, R.id.player4, R.id.player5})
     List<PlayerViewFull> playersOnCourt;
@@ -44,7 +38,7 @@ public class InGameActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_in_game);
+        setContentView(R.layout.activity_playing);
         players = getIntent().getParcelableArrayListExtra("players");
     }
 

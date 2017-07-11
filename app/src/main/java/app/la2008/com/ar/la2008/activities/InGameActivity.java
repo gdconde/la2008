@@ -1,17 +1,15 @@
 package app.la2008.com.ar.la2008.activities;
 
 import android.app.Activity;
-import android.app.ActivityOptions;
+import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.os.Bundle;
-import android.util.Pair;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.crashlytics.android.Crashlytics;
@@ -28,7 +26,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.fabric.sdk.android.Fabric;
 
-public class MainActivity extends Activity {
+public class InGameActivity extends Activity {
 
     private static final int IN_GAME_ACTIVITY_REQUEST = 2;
 
@@ -68,15 +66,17 @@ public class MainActivity extends Activity {
         }
     };
 
+    public static void start(Context context, ArrayList<String> playersNames) {
+        Intent starter = new Intent(context, InGameActivity.class);
+        starter.putStringArrayListExtra("players_names", playersNames);
+        context.startActivity(starter);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Fabric.with(this, new Crashlytics());
-        Window window = getWindow();
-        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        window.setStatusBarColor(getResources().getColor(R.color.colorPrimary));
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_in_game);
     }
 
     @Override
@@ -92,6 +92,15 @@ public class MainActivity extends Activity {
         };
 
         ButterKnife.apply(this.players, SET_LISTENER);
+
+        ArrayList<String> playersNames = getIntent().getStringArrayListExtra("players_names");
+        final ButterKnife.Setter<PlayerViewCompact, ArrayList<String>> SET_NAMES = new ButterKnife.Setter<PlayerViewCompact, ArrayList<String>>() {
+            @Override
+            public void set(@NonNull PlayerViewCompact view, ArrayList<String> names, int index) {
+                view.setName(names.get(index));
+            }
+        };
+        ButterKnife.apply(this.players, SET_NAMES, playersNames);
     }
 
     @Override
@@ -110,7 +119,7 @@ public class MainActivity extends Activity {
             Toast.makeText(this, "Debes seleccionar 5 jugadores", Toast.LENGTH_SHORT).show();
             return;
         }
-        Intent inGameActivityIntent = new Intent(this, InGameActivity.class);
+        Intent inGameActivityIntent = new Intent(this, PlayingActivity.class);
         inGameActivityIntent.putParcelableArrayListExtra("players", this.playersOnCourt);
         startActivityForResult(inGameActivityIntent, IN_GAME_ACTIVITY_REQUEST);
     }
