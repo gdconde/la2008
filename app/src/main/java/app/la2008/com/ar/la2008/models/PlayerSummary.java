@@ -3,12 +3,15 @@ package app.la2008.com.ar.la2008.models;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.google.firebase.database.IgnoreExtraProperties;
+
 /**
  * Created by gdconde on 31/3/17.
  */
 
 public class PlayerSummary implements Parcelable {
 
+    public String key;
     public int index;
     public String name;
     public long secondsPlayed;
@@ -39,6 +42,7 @@ public class PlayerSummary implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.key);
         dest.writeInt(this.index);
         dest.writeString(this.name);
         dest.writeLong(this.secondsPlayed);
@@ -62,6 +66,7 @@ public class PlayerSummary implements Parcelable {
     }
 
     private PlayerSummary(Parcel in) {
+        this.key = in.readString();
         this.index = in.readInt();
         this.name = in.readString();
         this.secondsPlayed = in.readLong();

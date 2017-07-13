@@ -105,6 +105,11 @@ public class PlayerViewCompact extends LinearLayout {
         return this;
     }
 
+    public PlayerViewCompact setKey(String key) {
+        this.player.key = key;
+        return this;
+    }
+
     public PlayerSummary getPlayerSummary() {
         return player;
     }
@@ -127,6 +132,7 @@ public class PlayerViewCompact extends LinearLayout {
         this.player.tap = data.tap;
         this.player.rob = data.rob;
         this.player.per = data.per;
+        this.player.key = data.key;
         this.points.setText(String.valueOf(
                 this.player.ftm + 2 * this.player.fgm + 3 * this.player.tpm));
         this.rebounds.setText(String.valueOf(this.player.reb));

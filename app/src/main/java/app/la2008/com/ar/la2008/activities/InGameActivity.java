@@ -13,11 +13,14 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.crashlytics.android.Crashlytics;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import app.la2008.com.ar.la2008.models.PlayerSummary;
+import app.la2008.com.ar.la2008.util.Utils;
 import app.la2008.com.ar.la2008.views.PlayerViewCompact;
 import app.la2008.com.ar.la2008.R;
 import butterknife.BindView;
@@ -44,9 +47,10 @@ public class InGameActivity extends Activity {
             R.id.player11,
             R.id.player12})
     List<PlayerViewCompact> players;
-
     @BindView(R.id.startButton) Button mStartButton;
 
+    String gameKey;
+    FirebaseDatabase mDatabase;
     public ArrayList<PlayerSummary> playersOnCourt = new ArrayList<>();
 
     View.OnClickListener playerListener = new View.OnClickListener() {
@@ -101,6 +105,16 @@ public class InGameActivity extends Activity {
             }
         };
         ButterKnife.apply(this.players, SET_NAMES, playersNames);
+
+        this.mDatabase = Utils.getDatabase();
+        this.gameKey = this.mDatabase.getReference("games").push().getKey();
+        DatabaseReference reference = this.mDatabase.getReference("games/" + this.gameKey);
+        for (PlayerViewCompact playerView: this.players) {
+            PlayerSummary playerSummary = playerView.getPlayerSummary();
+            String playerKey = reference.push().getKey();
+            playerView.setKey(playerKey);
+            reference.child(playerKey).setValue(playerSummary);
+        }
     }
 
     @Override
@@ -132,6 +146,9 @@ public class InGameActivity extends Activity {
     private void updatePlayersData() {
         for (PlayerSummary playerToUpdate: this.playersOnCourt) {
             this.players.get(playerToUpdate.index).setData(playerToUpdate);
+            mDatabase
+                    .getReference("games/" + this.gameKey + "/" + playerToUpdate.key)
+                    .setValue(playerToUpdate);
         }
     }
 
