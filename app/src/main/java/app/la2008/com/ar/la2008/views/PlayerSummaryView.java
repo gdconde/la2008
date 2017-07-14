@@ -15,13 +15,13 @@ import app.la2008.com.ar.la2008.R;
 
 public class PlayerSummaryView extends LinearLayout {
 
-    private TextView nameTextView;
-    private TextView timeTextView;
-    private TextView pointsTextView;
-    private TextView reboundsTextView;
-    private TextView assistsTextView;
-    private TextView foulsTextView;
-    private TextView triplesTextView;
+    private final TextView nameTextView;
+    private final TextView timeTextView;
+    private final TextView pointsTextView;
+    private final TextView reboundsTextView;
+    private final TextView assistsTextView;
+    private final TextView foulsTextView;
+    private final TextView triplesTextView;
 
     public PlayerSummaryView(final Context context, AttributeSet attributes) {
         super(context, attributes);

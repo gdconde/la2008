@@ -7,8 +7,6 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -49,11 +47,11 @@ public class InGameActivity extends Activity {
     List<PlayerViewCompact> players;
     @BindView(R.id.startButton) Button mStartButton;
 
-    String gameKey;
-    FirebaseDatabase mDatabase;
-    public ArrayList<PlayerSummary> playersOnCourt = new ArrayList<>();
+    private String gameKey;
+    private FirebaseDatabase mDatabase;
+    private ArrayList<PlayerSummary> playersOnCourt = new ArrayList<>();
 
-    View.OnClickListener playerListener = new View.OnClickListener() {
+    private final View.OnClickListener playerListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             PlayerViewCompact playerView = (PlayerViewCompact) view;

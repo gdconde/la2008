@@ -23,15 +23,15 @@ import app.la2008.com.ar.la2008.R;
 
 public class PlayerViewCompact extends LinearLayout {
 
-    private CheckBox checkBox;
-    private EditText name;
-    private Chronometer chrono;
-    private TextView points;
-    private TextView rebounds;
-    private TextView assists;
-    private TextView fouls;
+    private final CheckBox checkBox;
+    private final EditText name;
+    private final Chronometer chrono;
+    private final TextView points;
+    private final TextView rebounds;
+    private final TextView assists;
+    private final TextView fouls;
 
-    private PlayerSummary player = new PlayerSummary();
+    private final PlayerSummary player = new PlayerSummary();
 
     public PlayerViewCompact(Context context, AttributeSet attributes) {
         super(context, attributes);

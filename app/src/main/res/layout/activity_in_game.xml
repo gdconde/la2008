@@ -30,7 +30,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="23"
-                android:text="Nombre"
+                android:text="@string/name"
                 android:paddingStart="4dp"
                 />
 
@@ -38,35 +38,35 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="15"
-                android:text="Tiempo"
+                android:text="@string/time"
                 />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="8"
-                android:text="Pts"
+                android:text="@string/points"
                 />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="8"
-                android:text="Reb"
+                android:text="@string/rebounds"
                 />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="8"
-                android:text="Ast"
+                android:text="@string/assists"
                 />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="6"
-                android:text="Fal"
+                android:text="@string/fouls"
                 />
 
         </LinearLayout>
@@ -193,8 +193,9 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="8"
-            android:text="Start"
+            android:text="@string/start"
             android:background="@android:color/holo_green_dark"
+            style="?android:attr/buttonBarButtonStyle"
             />
 
         <Button
@@ -202,9 +203,10 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="2"
-            android:text="Resumen"
+            android:text="@string/summary"
             android:textSize="12sp"
             android:background="@color/colorPrimaryDark"
+            style="?android:attr/buttonBarButtonStyle"
             />
 
     </LinearLayout>

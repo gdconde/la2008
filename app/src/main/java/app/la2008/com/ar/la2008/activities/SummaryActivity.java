@@ -32,7 +32,7 @@ public class SummaryActivity extends AppCompatActivity {
     @BindView(R.id.player10) PlayerSummaryView player10;
     @BindView(R.id.player11) PlayerSummaryView player11;
     @BindView(R.id.player12) PlayerSummaryView player12;
-    public static ArrayList<PlayerSummary> playersSummaries;
+    private ArrayList<PlayerSummary> playersSummaries;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

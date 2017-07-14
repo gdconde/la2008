@@ -21,9 +21,9 @@ public class PlayingActivity extends Activity {
     @BindViews({R.id.player1, R.id.player2, R.id.player3, R.id.player4, R.id.player5})
     List<PlayerViewFull> playersOnCourt;
 
-    ArrayList<PlayerSummary> players = new ArrayList<>();
+    private ArrayList<PlayerSummary> players = new ArrayList<>();
 
-    final ButterKnife.Setter<PlayerViewFull, Boolean> SET_CHRONO = new ButterKnife.Setter<PlayerViewFull, Boolean>() {
+    private final ButterKnife.Setter<PlayerViewFull, Boolean> SET_CHRONO = new ButterKnife.Setter<PlayerViewFull, Boolean>() {
         @Override
         public void set(@NonNull PlayerViewFull view, Boolean value, int index) {
             if (value) {

@@ -21,8 +21,8 @@ import app.la2008.com.ar.la2008.R;
 
 public class PlayerViewFull extends LinearLayout {
 
-    private TextView nameTV;
-    private Chronometer timeChronometer;
+    private final TextView nameTV;
+    private final Chronometer timeChronometer;
     private PlayerSummary playerSummary;
 
     public PlayerViewFull(Context context, AttributeSet attributes) {

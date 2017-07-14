@@ -3,8 +3,6 @@ package app.la2008.com.ar.la2008.models;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import com.google.firebase.database.IgnoreExtraProperties;
-
 /**
  * Created by gdconde on 31/3/17.
  */
