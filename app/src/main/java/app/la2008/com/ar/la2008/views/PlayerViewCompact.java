@@ -24,7 +24,7 @@ import app.la2008.com.ar.la2008.R;
 public class PlayerViewCompact extends LinearLayout {
 
     private final CheckBox checkBox;
-    private final EditText name;
+    private final TextView name;
     private final Chronometer chrono;
     private final TextView points;
     private final TextView rebounds;
@@ -39,7 +39,7 @@ public class PlayerViewCompact extends LinearLayout {
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.view_player_compact, this, true);
         checkBox = (CheckBox) findViewById(R.id.checkbox);
-        name = (EditText) findViewById(R.id.name);
+        name = (TextView) findViewById(R.id.name);
         chrono = (Chronometer) findViewById(R.id.chrono);
         points = (TextView) findViewById(R.id.pointsTextView);
         rebounds = (TextView) findViewById(R.id.reboundsTextView);

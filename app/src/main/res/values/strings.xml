@@ -33,4 +33,7 @@
     <string name="steals">ROB</string>
     <string name="blocks">TAP</string>
     <string name="turnovers">PER</string>
+    <string name="live_games">Live Games</string>
+    <string name="finished_games">Finished Games</string>
+    <string name="must_select_5_players">Must select 5 players</string>
 </resources>

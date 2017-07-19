@@ -128,7 +128,7 @@ public class InGameActivity extends Activity {
     @OnClick(R.id.startButton)
     public void startOrContinueGame() {
         if (this.playersOnCourt.size() != 5) {
-            Toast.makeText(this, "Debes seleccionar 5 jugadores", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.must_select_5_players, Toast.LENGTH_SHORT).show();
             return;
         }
         Intent inGameActivityIntent = new Intent(this, PlayingActivity.class);
