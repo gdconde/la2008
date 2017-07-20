@@ -32,7 +32,7 @@ public class MainActivity extends Activity {
 
     private DatabaseReference mDatabase;
     private ArrayList<String> mLiveGames = new ArrayList<>();
-    private GameSelected gameSelected;
+    private GameSelected gameSelected = new GameSelected();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,7 +92,7 @@ public class MainActivity extends Activity {
     private class GameSelected implements ObjectSelected {
         @Override
         public void select(Object object) {
-
+            WatchGameActivity.start(MainActivity.this, (String)object);
         }
     }
 }

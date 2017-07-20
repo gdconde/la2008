@@ -18,4 +18,16 @@ public class Utils {
         return mDatabase;
     }
 
+    public static String secondsToString(long secondsPlayed) {
+        StringBuilder builder = new StringBuilder();
+        int minutes = (int) secondsPlayed / 60;
+        int seconds = (int) secondsPlayed % 60;
+        if (minutes < 10) builder.append("0");
+        builder.append(minutes);
+        builder.append(":");
+        if (seconds < 10) builder.append("0");
+        builder.append(seconds);
+        return builder.toString();
+    }
+
 }

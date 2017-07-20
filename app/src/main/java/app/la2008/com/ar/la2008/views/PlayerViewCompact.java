@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import app.la2008.com.ar.la2008.models.PlayerSummary;
 import app.la2008.com.ar.la2008.R;
+import app.la2008.com.ar.la2008.util.Utils;
 
 /**
  * Created by gdconde on 31/3/17.
@@ -116,7 +117,7 @@ public class PlayerViewCompact extends LinearLayout {
 
     public PlayerViewCompact setData(PlayerSummary data) {
         this.name.setText(data.name);
-        this.chrono.setText(secondsToString(data.secondsPlayed));
+        this.chrono.setText(Utils.secondsToString(data.secondsPlayed));
         this.chrono.setTag(data.tag);
         this.player.name = data.name;
         this.player.tag = data.tag;
@@ -139,18 +140,6 @@ public class PlayerViewCompact extends LinearLayout {
         this.assists.setText(String.valueOf(this.player.ast));
         this.fouls.setText(String.valueOf(this.player.pf));
         return this;
-    }
-
-    private String secondsToString(long secondsPlayed) {
-        StringBuilder builder = new StringBuilder();
-        int minutes = (int) secondsPlayed / 60;
-        int seconds = (int) secondsPlayed % 60;
-        if (minutes < 10) builder.append("0");
-        builder.append(minutes);
-        builder.append(":");
-        if (seconds < 10) builder.append("0");
-        builder.append(seconds);
-        return builder.toString();
     }
 
     private void showToast() {
