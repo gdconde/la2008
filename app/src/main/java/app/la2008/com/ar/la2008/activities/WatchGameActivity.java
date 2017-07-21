@@ -57,13 +57,15 @@ public class WatchGameActivity extends Activity {
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
         ButterKnife.bind(this);
-        DatabaseReference dbReference = mDatabase.getReference("games").child(this.gameKey);
+        DatabaseReference dbReference = mDatabase.getReference(this.gameKey);
 
         ChildEventListener playersListener = new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 PlayerSummary player = dataSnapshot.getValue(PlayerSummary.class);
-                playerStatsViews.get(player.index).setPlayerStats(player);
+                if (player != null) {
+                    playerStatsViews.get(player.index).setPlayerStats(player);
+                }
             }
 
             @Override

@@ -36,4 +36,7 @@
     <string name="live_games">Live Games</string>
     <string name="finished_games">Finished Games</string>
     <string name="must_select_5_players">Must select 5 players</string>
+    <string name="prompt_exit_game">Are you sure you want to exit?</string>
+    <string name="prompt_exit_message">You can discard this game or finish it to avoid losing the data.</string>
+    <string name="finish_game">Finish</string>
 </resources>

@@ -199,11 +199,11 @@
             />
 
         <Button
-            android:id="@+id/summaryButton"
+            android:id="@+id/finishGameButton"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="2"
-            android:text="@string/summary"
+            android:text="@string/finish_game"
             android:textSize="12sp"
             android:background="@color/colorPrimaryDark"
             style="?android:attr/buttonBarButtonStyle"

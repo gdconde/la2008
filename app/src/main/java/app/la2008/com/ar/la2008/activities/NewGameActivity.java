@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import app.la2008.com.ar.la2008.R;
+import butterknife.BindView;
 import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -30,6 +31,7 @@ public class NewGameActivity extends Activity {
             R.id.player11EditText,
             R.id.player12EditText})
     List<EditText> playerNamesEditTexts;
+    @BindView(R.id.gameName) EditText gameNameEditText;
 
     public static void start(Context context) {
         Intent starter = new Intent(context, NewGameActivity.class);
@@ -54,7 +56,8 @@ public class NewGameActivity extends Activity {
         for (EditText editText : this.playerNamesEditTexts) {
             playerNames.add(editText.getText().toString());
         }
-        InGameActivity.start(this, playerNames);
+        String gameName = this.gameNameEditText.getText().toString();
+        InGameActivity.start(this, playerNames, gameName);
         finish();
     }
 }

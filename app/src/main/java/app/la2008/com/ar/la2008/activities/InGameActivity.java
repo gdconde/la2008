@@ -1,21 +1,31 @@
 package app.la2008.com.ar.la2008.activities;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
 import com.crashlytics.android.Crashlytics;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import app.la2008.com.ar.la2008.models.PlayerSummary;
 import app.la2008.com.ar.la2008.util.Utils;
@@ -68,9 +78,10 @@ public class InGameActivity extends Activity {
         }
     };
 
-    public static void start(Context context, ArrayList<String> playersNames) {
+    public static void start(Context context, ArrayList<String> playersNames, String gameName) {
         Intent starter = new Intent(context, InGameActivity.class);
         starter.putStringArrayListExtra("players_names", playersNames);
+        starter.putExtra("game_name", gameName);
         context.startActivity(starter);
     }
 
@@ -95,7 +106,11 @@ public class InGameActivity extends Activity {
 
         ButterKnife.apply(this.players, SET_LISTENER);
 
-        ArrayList<String> playersNames = getIntent().getStringArrayListExtra("players_names");
+        Intent intent = getIntent();
+        String gameName = intent.getStringExtra("game_name");
+        getActionBar().setTitle(gameName);
+
+        ArrayList<String> playersNames = intent.getStringArrayListExtra("players_names");
         final ButterKnife.Setter<PlayerViewCompact, ArrayList<String>> SET_NAMES = new ButterKnife.Setter<PlayerViewCompact, ArrayList<String>>() {
             @Override
             public void set(@NonNull PlayerViewCompact view, ArrayList<String> names, int index) {
@@ -105,8 +120,11 @@ public class InGameActivity extends Activity {
         ButterKnife.apply(this.players, SET_NAMES, playersNames);
 
         this.mDatabase = Utils.getDatabase();
-        this.gameKey = this.mDatabase.getReference("games").push().getKey();
-        DatabaseReference reference = this.mDatabase.getReference("games/" + this.gameKey);
+        this.gameKey = this.mDatabase.getReference().push().getKey();
+        Map<String, Object> liveGamesUpdate = new HashMap<>();
+        liveGamesUpdate.put("games_live/" + this.gameKey, gameName);
+        this.mDatabase.getReference().updateChildren(liveGamesUpdate);
+        DatabaseReference reference = this.mDatabase.getReference(this.gameKey);
         for (PlayerViewCompact playerView: this.players) {
             PlayerSummary playerSummary = playerView.getPlayerSummary();
             String playerKey = reference.push().getKey();
@@ -125,6 +143,24 @@ public class InGameActivity extends Activity {
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+        alertDialogBuilder
+                .setTitle(R.string.prompt_exit_game)
+                .setMessage(R.string.prompt_exit_message)
+                .setNegativeButton("Discard", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) { discardGame(); }
+                })
+                .setPositiveButton("Finish", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) { finishGame(); }
+                })
+                .create()
+                .show();
+    }
+
     @OnClick(R.id.startButton)
     public void startOrContinueGame() {
         if (this.playersOnCourt.size() != 5) {
@@ -136,18 +172,36 @@ public class InGameActivity extends Activity {
         startActivityForResult(inGameActivityIntent, IN_GAME_ACTIVITY_REQUEST);
     }
 
-    @OnClick(R.id.summaryButton)
-    public void summary() {
-
+    @OnClick(R.id.finishGameButton)
+    public void finishGameClicked() {
+        finishGame();
     }
 
     private void updatePlayersData() {
         for (PlayerSummary playerToUpdate: this.playersOnCourt) {
             this.players.get(playerToUpdate.index).setData(playerToUpdate);
             mDatabase
-                    .getReference("games/" + this.gameKey + "/" + playerToUpdate.key)
+                    .getReference(this.gameKey + "/" + playerToUpdate.key)
                     .setValue(playerToUpdate);
         }
+    }
+
+    private void discardGame() {
+        //Discard Game
+        Log.v("GAME: ", "DISCARDED");
+        mDatabase.getReference(gameKey).removeValue();
+        mDatabase.getReference("games_live/" + gameKey).removeValue();
+        finish();
+    }
+
+    private void finishGame() {
+        //Finish Game
+        Log.v("GAME: ", "FINISHED");
+        mDatabase.getReference("games_live/" + gameKey).removeValue();
+        Map<String, Object> finishedGamesUpdate = new HashMap<>();
+        finishedGamesUpdate.put("games_finished/" + gameKey, true);
+        mDatabase.getReference().updateChildren(finishedGamesUpdate);
+        finish();
     }
 
 }

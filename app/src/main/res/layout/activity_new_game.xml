@@ -15,6 +15,15 @@
         tools:context="app.la2008.com.ar.la2008.activities.NewGameActivity"
         >
 
+        <EditText
+            android:id="@+id/gameName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textAlignment="center"
+            android:hint="Legends 1 vs Legends 2"
+            />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -23,55 +32,24 @@
             android:baselineAligned="false"
             >
 
-            <LinearLayout
+            <EditText
+                android:id="@+id/player1EditText"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="vertical"
-                android:padding="8dp"
-                >
+                android:textAlignment="center"
+                android:hint="LeBron James"
+                />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/player_1"
-                    android:textAlignment="center"
-                    />
 
-                <EditText
-                    android:id="@+id/player1EditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:hint="@string/name_hint"
-                    />
-
-            </LinearLayout>
-
-            <LinearLayout
+            <EditText
+                android:id="@+id/player2EditText"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="vertical"
-                android:padding="8dp"
-                >
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/player_2"
-                    android:textAlignment="center"
-                    />
-
-                <EditText
-                    android:id="@+id/player2EditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:hint="@string/name_hint"
-                    />
-
-            </LinearLayout>
+                android:textAlignment="center"
+                android:hint="Michael Jordan"
+                />
 
         </LinearLayout>
 
@@ -83,55 +61,23 @@
             android:baselineAligned="false"
             >
 
-            <LinearLayout
+            <EditText
+                android:id="@+id/player3EditText"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="vertical"
-                android:padding="8dp"
-                >
+                android:textAlignment="center"
+                android:hint="David Robinson"
+                />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/player_3"
-                    android:textAlignment="center"
-                    />
-
-                <EditText
-                    android:id="@+id/player3EditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:hint="@string/name_hint"
-                    />
-
-            </LinearLayout>
-
-            <LinearLayout
+            <EditText
+                android:id="@+id/player4EditText"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="vertical"
-                android:padding="8dp"
-                >
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/player_4"
-                    android:textAlignment="center"
-                    />
-
-                <EditText
-                    android:id="@+id/player4EditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:hint="@string/name_hint"
-                    />
-
-            </LinearLayout>
+                android:textAlignment="center"
+                android:hint="Shaquille O'Neal"
+                />
 
         </LinearLayout>
 
@@ -143,55 +89,23 @@
             android:baselineAligned="false"
             >
 
-            <LinearLayout
+            <EditText
+                android:id="@+id/player5EditText"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="vertical"
-                android:padding="8dp"
-                >
+                android:textAlignment="center"
+                android:hint="John Stockton"
+                />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/player_5"
-                    android:textAlignment="center"
-                    />
-
-                <EditText
-                    android:id="@+id/player5EditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:hint="@string/name_hint"
-                    />
-
-            </LinearLayout>
-
-            <LinearLayout
+            <EditText
+                android:id="@+id/player6EditText"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="vertical"
-                android:padding="8dp"
-                >
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/player_6"
-                    android:textAlignment="center"
-                    />
-
-                <EditText
-                    android:id="@+id/player6EditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:hint="@string/name_hint"
-                    />
-
-            </LinearLayout>
+                android:textAlignment="center"
+                android:hint="Karl Malone"
+                />
 
         </LinearLayout>
 
@@ -203,55 +117,23 @@
             android:baselineAligned="false"
             >
 
-            <LinearLayout
+            <EditText
+                android:id="@+id/player7EditText"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="vertical"
-                android:padding="8dp"
-                >
+                android:textAlignment="center"
+                android:hint="Magic Johnson"
+                />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/player_7"
-                    android:textAlignment="center"
-                    />
-
-                <EditText
-                    android:id="@+id/player7EditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:hint="@string/name_hint"
-                    />
-
-            </LinearLayout>
-
-            <LinearLayout
+            <EditText
+                android:id="@+id/player8EditText"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="vertical"
-                android:padding="8dp"
-                >
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/player_8"
-                    android:textAlignment="center"
-                    />
-
-                <EditText
-                    android:id="@+id/player8EditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:hint="@string/name_hint"
-                    />
-
-            </LinearLayout>
+                android:textAlignment="center"
+                android:hint="Reggie Miller"
+                />
 
         </LinearLayout>
 
@@ -263,55 +145,23 @@
             android:baselineAligned="false"
             >
 
-            <LinearLayout
+            <EditText
+                android:id="@+id/player9EditText"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="vertical"
-                android:padding="8dp"
-                >
+                android:textAlignment="center"
+                android:hint="Jason Kidd"
+                />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/player_9"
-                    android:textAlignment="center"
-                    />
-
-                <EditText
-                    android:id="@+id/player9EditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:hint="@string/name_hint"
-                    />
-
-            </LinearLayout>
-
-            <LinearLayout
+            <EditText
+                android:id="@+id/player10EditText"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="vertical"
-                android:padding="8dp"
-                >
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/player_10"
-                    android:textAlignment="center"
-                    />
-
-                <EditText
-                    android:id="@+id/player10EditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:hint="@string/name_hint"
-                    />
-
-            </LinearLayout>
+                android:textAlignment="center"
+                android:hint="Kevin Durant"
+                />
 
         </LinearLayout>
 
@@ -323,55 +173,23 @@
             android:baselineAligned="false"
             >
 
-            <LinearLayout
+            <EditText
+                android:id="@+id/player11EditText"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="vertical"
-                android:padding="8dp"
-                >
+                android:textAlignment="center"
+                android:hint="Tim Duncan"
+                />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/player_11"
-                    android:textAlignment="center"
-                    />
-
-                <EditText
-                    android:id="@+id/player11EditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:hint="@string/name_hint"
-                    />
-
-            </LinearLayout>
-
-            <LinearLayout
+            <EditText
+                android:id="@+id/player12EditText"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="vertical"
-                android:padding="8dp"
-                >
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/player_12"
-                    android:textAlignment="center"
-                    />
-
-                <EditText
-                    android:id="@+id/player12EditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:hint="@string/name_hint"
-                    />
-
-            </LinearLayout>
+                android:textAlignment="center"
+                android:hint="Manu Ginobili"
+                />
 
         </LinearLayout>
 
