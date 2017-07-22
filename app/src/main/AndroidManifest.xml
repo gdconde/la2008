@@ -21,6 +21,7 @@
         <activity android:name=".activities.NewGameActivity" />
         <activity android:name=".activities.PlayingActivity" />
         <activity android:name=".activities.InGameActivity" />
+        <activity android:name=".activities.WatchGameActivity"/>
         <activity
             android:name=".activities.SummaryActivity"
             android:parentActivityName=".activities.InGameActivity" />
@@ -29,7 +30,6 @@
             android:name="io.fabric.ApiKey"
             android:value="43fdae88918b3ec5bbcc923ac8ac342db20c59c6" />
 
-        <activity android:name=".activities.WatchGameActivity"></activity>
     </application>
 
 </manifest>

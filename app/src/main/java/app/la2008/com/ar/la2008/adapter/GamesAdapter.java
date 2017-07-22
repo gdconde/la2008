@@ -11,6 +11,7 @@ import java.util.ArrayList;
 
 import app.la2008.com.ar.la2008.R;
 import app.la2008.com.ar.la2008.interfaces.ObjectSelected;
+import app.la2008.com.ar.la2008.models.GameSignature;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -21,10 +22,10 @@ import butterknife.ButterKnife;
 public class GamesAdapter extends RecyclerView.Adapter<GamesAdapter.ViewHolder> {
 
     private Context context;
-    private ArrayList<String> games;
+    private ArrayList<GameSignature> games;
     private ObjectSelected listener;
 
-    public GamesAdapter(Context context, ArrayList<String> games, ObjectSelected listener) {
+    public GamesAdapter(Context context, ArrayList<GameSignature> games, ObjectSelected listener) {
         this.context = context;
         this.games = games;
         this.listener = listener;
@@ -43,7 +44,7 @@ public class GamesAdapter extends RecyclerView.Adapter<GamesAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
-        holder.gameTextView.setText(this.games.get(position));
+        holder.gameTextView.setText(this.games.get(position).name);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

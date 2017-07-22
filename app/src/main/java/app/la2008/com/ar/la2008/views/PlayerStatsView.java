@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import app.la2008.com.ar.la2008.R;
@@ -17,7 +18,7 @@ import butterknife.ButterKnife;
  * Created by gdconde on 7/19/17.
  */
 
-public class PlayerStatsView extends LinearLayout {
+public class PlayerStatsView extends ScrollView {
 
     @BindView(R.id.playerNameTextView) TextView playerNameTextView;
     @BindView(R.id.playerTimePlayedTextView) TextView playerTimePlayedTextView;

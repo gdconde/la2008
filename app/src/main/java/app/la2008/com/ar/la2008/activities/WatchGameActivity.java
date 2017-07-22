@@ -15,6 +15,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.List;
 
 import app.la2008.com.ar.la2008.R;
+import app.la2008.com.ar.la2008.models.Game;
+import app.la2008.com.ar.la2008.models.GameSignature;
 import app.la2008.com.ar.la2008.models.PlayerSummary;
 import app.la2008.com.ar.la2008.util.Utils;
 import app.la2008.com.ar.la2008.views.PlayerStatsView;
@@ -36,12 +38,12 @@ public class WatchGameActivity extends Activity {
             R.id.playerStatsView11,
             R.id.playerStatsView12})
     List<PlayerStatsView> playerStatsViews;
-    private String gameKey;
+    private GameSignature game;
     private FirebaseDatabase mDatabase;
 
-    public static void start(Context context, String gameKey) {
+    public static void start(Context context, GameSignature game) {
         Intent starter = new Intent(context, WatchGameActivity.class);
-        starter.putExtra("game_key", gameKey);
+        starter.putExtra("game", game);
         context.startActivity(starter);
     }
 
@@ -49,7 +51,9 @@ public class WatchGameActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_watch_game);
-        this.gameKey = getIntent().getStringExtra("game_key");
+        Intent intent = getIntent();
+        this.game = intent.getParcelableExtra("game");
+        getActionBar().setTitle(this.game.name);
         this.mDatabase = Utils.getDatabase();
     }
 
@@ -57,7 +61,7 @@ public class WatchGameActivity extends Activity {
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
         ButterKnife.bind(this);
-        DatabaseReference dbReference = mDatabase.getReference(this.gameKey);
+        DatabaseReference dbReference = mDatabase.getReference(this.game.key);
 
         ChildEventListener playersListener = new ChildEventListener() {
             @Override
@@ -70,7 +74,10 @@ public class WatchGameActivity extends Activity {
 
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
+                PlayerSummary player = dataSnapshot.getValue(PlayerSummary.class);
+                if (player != null) {
+                    playerStatsViews.get(player.index).setPlayerStats(player);
+                }
             }
 
             @Override

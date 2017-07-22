@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -22,6 +23,7 @@ import app.la2008.com.ar.la2008.R;
 import app.la2008.com.ar.la2008.adapter.GamesAdapter;
 import app.la2008.com.ar.la2008.interfaces.ObjectSelected;
 import app.la2008.com.ar.la2008.models.Game;
+import app.la2008.com.ar.la2008.models.GameSignature;
 import app.la2008.com.ar.la2008.util.Utils;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -33,8 +35,8 @@ public class MainActivity extends Activity {
     @BindView(R.id.finishedGamesRecyclerView) RecyclerView finishedGamesRecyclerView;
 
     private DatabaseReference mDatabase;
-    private ArrayList<String> mLiveGames = new ArrayList<>();
-    private ArrayList<String> mFinishedGames = new ArrayList<>();
+    private ArrayList<GameSignature> mLiveGames = new ArrayList<>();
+    private ArrayList<GameSignature> mFinishedGames = new ArrayList<>();
     private GameSelected gameSelected = new GameSelected();
 
     @Override
@@ -65,11 +67,13 @@ public class MainActivity extends Activity {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 try {
-                    mLiveGames.add(dataSnapshot.getValue(String.class));
+                    String key = dataSnapshot.getKey();
+                    String name = dataSnapshot.getValue(String.class);
+                    mLiveGames.add(new GameSignature(key, name));
                     liveGamesAdapter.notifyDataSetChanged();
                 }
                 catch (DatabaseException e) {
-
+                    Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -81,7 +85,9 @@ public class MainActivity extends Activity {
 
             @Override
             public void onChildRemoved(DataSnapshot dataSnapshot) {
-                mLiveGames.remove(dataSnapshot.getKey());
+                String key = dataSnapshot.getKey();
+                String name = dataSnapshot.getValue(String.class);
+                mLiveGames.remove(new GameSignature(key, name));
                 liveGamesAdapter.notifyDataSetChanged();
             }
 
@@ -100,11 +106,13 @@ public class MainActivity extends Activity {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 try {
-                    mFinishedGames.add(dataSnapshot.getValue(String.class));
+                    String key = dataSnapshot.getKey();
+                    String name = dataSnapshot.getValue(String.class);
+                    mFinishedGames.add(new GameSignature(key, name));
                     finishedGamesAdapter.notifyDataSetChanged();
                 }
                 catch (DatabaseException e) {
-
+                    Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -115,7 +123,9 @@ public class MainActivity extends Activity {
 
             @Override
             public void onChildRemoved(DataSnapshot dataSnapshot) {
-                mFinishedGames.remove(dataSnapshot.getKey());
+                String key = dataSnapshot.getKey();
+                String name = dataSnapshot.getValue(String.class);
+                mFinishedGames.remove(new GameSignature(key, name));
                 finishedGamesAdapter.notifyDataSetChanged();
             }
 
@@ -148,7 +158,7 @@ public class MainActivity extends Activity {
     private class GameSelected implements ObjectSelected {
         @Override
         public void select(Object object) {
-            WatchGameActivity.start(MainActivity.this, (String)object);
+            WatchGameActivity.start(MainActivity.this, (GameSignature)object);
         }
     }
 }

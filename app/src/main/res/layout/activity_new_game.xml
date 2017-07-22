@@ -21,6 +21,9 @@
             android:layout_height="wrap_content"
             android:textSize="18sp"
             android:textAlignment="center"
+            android:inputType="textCapWords"
+            android:lines="1"
+            android:imeOptions="actionNext"
             android:hint="Legends 1 vs Legends 2"
             />
 
@@ -38,6 +41,10 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textAlignment="center"
+                android:inputType="textPersonName"
+                android:lines="1"
+                android:nextFocusUp="@id/gameName"
+                android:imeOptions="actionNext"
                 android:hint="LeBron James"
                 />
 
@@ -48,6 +55,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textAlignment="center"
+                android:inputType="textPersonName"
+                android:lines="1"
+                android:imeOptions="actionNext"
                 android:hint="Michael Jordan"
                 />
 
@@ -67,6 +77,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textAlignment="center"
+                android:inputType="textPersonName"
+                android:lines="1"
+                android:imeOptions="actionNext"
                 android:hint="David Robinson"
                 />
 
@@ -76,6 +89,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textAlignment="center"
+                android:inputType="textPersonName"
+                android:lines="1"
+                android:imeOptions="actionNext"
                 android:hint="Shaquille O'Neal"
                 />
 
@@ -95,6 +111,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textAlignment="center"
+                android:inputType="textPersonName"
+                android:lines="1"
+                android:imeOptions="actionNext"
                 android:hint="John Stockton"
                 />
 
@@ -104,6 +123,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textAlignment="center"
+                android:inputType="textPersonName"
+                android:lines="1"
+                android:imeOptions="actionNext"
                 android:hint="Karl Malone"
                 />
 
@@ -123,6 +145,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textAlignment="center"
+                android:inputType="textPersonName"
+                android:lines="1"
+                android:imeOptions="actionNext"
                 android:hint="Magic Johnson"
                 />
 
@@ -132,6 +157,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textAlignment="center"
+                android:inputType="textPersonName"
+                android:lines="1"
+                android:imeOptions="actionNext"
                 android:hint="Reggie Miller"
                 />
 
@@ -151,6 +179,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textAlignment="center"
+                android:inputType="textPersonName"
+                android:lines="1"
+                android:imeOptions="actionNext"
                 android:hint="Jason Kidd"
                 />
 
@@ -160,6 +191,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textAlignment="center"
+                android:inputType="textPersonName"
+                android:lines="1"
+                android:imeOptions="actionNext"
                 android:hint="Kevin Durant"
                 />
 
@@ -179,6 +213,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textAlignment="center"
+                android:inputType="textPersonName"
+                android:lines="1"
+                android:imeOptions="actionNext"
                 android:hint="Tim Duncan"
                 />
 
@@ -188,6 +225,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textAlignment="center"
+                android:inputType="textPersonName"
+                android:lines="1"
+                android:imeOptions="actionDone"
                 android:hint="Manu Ginobili"
                 />
 

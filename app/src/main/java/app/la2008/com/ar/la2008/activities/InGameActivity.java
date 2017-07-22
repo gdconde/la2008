@@ -58,6 +58,7 @@ public class InGameActivity extends Activity {
     @BindView(R.id.startButton) Button mStartButton;
 
     private String gameKey;
+    private String gameName;
     private FirebaseDatabase mDatabase;
     private ArrayList<PlayerSummary> playersOnCourt = new ArrayList<>();
 
@@ -107,8 +108,8 @@ public class InGameActivity extends Activity {
         ButterKnife.apply(this.players, SET_LISTENER);
 
         Intent intent = getIntent();
-        String gameName = intent.getStringExtra("game_name");
-        getActionBar().setTitle(gameName);
+        this.gameName = intent.getStringExtra("game_name");
+        getActionBar().setTitle(this.gameName);
 
         ArrayList<String> playersNames = intent.getStringArrayListExtra("players_names");
         final ButterKnife.Setter<PlayerViewCompact, ArrayList<String>> SET_NAMES = new ButterKnife.Setter<PlayerViewCompact, ArrayList<String>>() {
@@ -199,7 +200,7 @@ public class InGameActivity extends Activity {
         Log.v("GAME: ", "FINISHED");
         mDatabase.getReference("games_live/" + gameKey).removeValue();
         Map<String, Object> finishedGamesUpdate = new HashMap<>();
-        finishedGamesUpdate.put("games_finished/" + gameKey, true);
+        finishedGamesUpdate.put("games_finished/" + gameKey, this.gameName);
         mDatabase.getReference().updateChildren(finishedGamesUpdate);
         finish();
     }

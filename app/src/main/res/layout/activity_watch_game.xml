@@ -10,7 +10,7 @@
 
     <app.la2008.com.ar.la2008.views.PlayerStatsView
         android:id="@+id/playerStatsView1"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_weight="1"/>
 

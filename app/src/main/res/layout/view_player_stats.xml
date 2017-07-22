@@ -1,129 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<HorizontalScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:scrollbars="none"
     >
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         >
 
         <TextView
             android:id="@+id/playerNameTextView"
-            android:layout_width="0dp"
+            android:layout_width="100dp"
             android:layout_height="match_parent"
-            android:layout_weight="2"
+            android:layout_margin="4dp"
             />
 
         <TextView
             android:id="@+id/playerTimePlayedTextView"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_margin="4dp"
             />
 
         <TextView
             android:id="@+id/playerPointsTextView"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_margin="4dp"
             />
 
         <TextView
             android:id="@+id/playerFreeThrowsMadeTextView"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_margin="4dp"
             />
 
         <TextView
             android:id="@+id/playerFreeThrowsAttempedTextView"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_margin="4dp"
             />
 
         <TextView
             android:id="@+id/playerFieldGoalsMadeTextView"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_margin="4dp"
             />
 
         <TextView
             android:id="@+id/playerFieldGoalsAttempedTextView"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_margin="4dp"
             />
 
         <TextView
             android:id="@+id/playerThreePointsMadeTextView"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_margin="4dp"
             />
+
         <TextView
             android:id="@+id/playerThreePointsAttempedTextView"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_margin="4dp"
             />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
 
         <TextView
             android:id="@+id/playerReboundsTextView"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_margin="4dp"
             />
 
         <TextView
             android:id="@+id/playerAssistsTextView"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_margin="4dp"
             />
 
         <TextView
             android:id="@+id/playerStealsTextView"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_margin="4dp"
             />
 
         <TextView
             android:id="@+id/playerBlocksTextView"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_margin="4dp"
             />
 
         <TextView
             android:id="@+id/playerTurnoversTextView"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_margin="4dp"
             />
 
         <TextView
             android:id="@+id/playerFoulsTextView"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_margin="4dp"
             />
 
     </LinearLayout>
 
-</LinearLayout>
+</HorizontalScrollView>
