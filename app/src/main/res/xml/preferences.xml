@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <CheckBoxPreference
+        android:key="pref_use_default_players"
+        android:title="@string/pref_use_default_player_names"
+        android:summary="@string/pref_default_player_names_summary"
+        android:defaultValue="false"
+        />
+
+    <PreferenceScreen
+        android:key="pref_default_names"
+        android:title="@string/pref_set_default_player_names"
+        android:summary="@string/pref_set_player_names_summary"
+        android:persistent="true"
+        >
+
+        <EditTextPreference
+            android:key="pref_player1_default_name"
+            android:title="Player 1 Name"
+            android:hint="Michael Jordan"
+            android:inputType="textPersonName"
+
+            />
+
+        <EditTextPreference
+            android:key="pref_player1_default_name"
+            android:title="Player 1 Name"
+            android:hint="Michael Jordan"
+            android:inputType="textPersonName"
+            />
+
+        <EditTextPreference
+            android:key="pref_player2_default_name"
+            android:title="Player 2 Name"
+            android:hint="Michael Jordan"
+            android:inputType="textPersonName"
+            />
+
+        <EditTextPreference
+            android:key="pref_player3_default_name"
+            android:title="Player 3 Name"
+            android:hint="Michael Jordan"
+            android:inputType="textPersonName"
+            />
+
+        <EditTextPreference
+            android:key="pref_player4_default_name"
+            android:title="Player 4 Name"
+            android:hint="Michael Jordan"
+            android:inputType="textPersonName"
+            />
+
+        <EditTextPreference
+            android:key="pref_player5_default_name"
+            android:title="Player 5 Name"
+            android:hint="Michael Jordan"
+            android:inputType="textPersonName"
+            />
+
+        <EditTextPreference
+            android:key="pref_player6_default_name"
+            android:title="Player 6 Name"
+            android:hint="Michael Jordan"
+            android:inputType="textPersonName"
+            />
+
+        <EditTextPreference
+            android:key="pref_player7_default_name"
+            android:title="Player 7 Name"
+            android:hint="Michael Jordan"
+            android:inputType="textPersonName"
+            />
+
+        <EditTextPreference
+            android:key="pref_player8_default_name"
+            android:title="Player 8 Name"
+            android:hint="Michael Jordan"
+            android:inputType="textPersonName"
+            />
+
+        <EditTextPreference
+            android:key="pref_player9_default_name"
+            android:title="Player 9 Name"
+            android:hint="Michael Jordan"
+            android:inputType="textPersonName"
+            />
+
+        <EditTextPreference
+            android:key="pref_player10_default_name"
+            android:title="Player 10 Name"
+            android:hint="Michael Jordan"
+            android:inputType="textPersonName"
+            />
+
+        <EditTextPreference
+            android:key="pref_player11_default_name"
+            android:title="Player 11 Name"
+            android:hint="Michael Jordan"
+            android:inputType="textPersonName"
+            />
+
+        <EditTextPreference
+            android:key="pref_player12_default_name"
+            android:title="Player 12 Name"
+            android:hint="Michael Jordan"
+            android:inputType="textPersonName"
+            />
+
+    </PreferenceScreen>
+
+</PreferenceScreen>

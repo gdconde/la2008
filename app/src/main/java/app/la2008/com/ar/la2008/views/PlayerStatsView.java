@@ -1,6 +1,7 @@
 package app.la2008.com.ar.la2008.views;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -18,7 +19,7 @@ import butterknife.ButterKnife;
  * Created by gdconde on 7/19/17.
  */
 
-public class PlayerStatsView extends ScrollView {
+public class PlayerStatsView extends LinearLayout {
 
     @BindView(R.id.playerNameTextView) TextView playerNameTextView;
     @BindView(R.id.playerTimePlayedTextView) TextView playerTimePlayedTextView;
@@ -36,17 +37,41 @@ public class PlayerStatsView extends ScrollView {
     @BindView(R.id.playerTurnoversTextView) TextView playerTurnoversTextView;
     @BindView(R.id.playerFoulsTextView) TextView playerFoulsTextView;
 
+    private Boolean header = false;
+
     public PlayerStatsView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.view_player_stats, this, true);
+
+        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.PlayerStatsView);
+        this.header = a.getBoolean(R.styleable.PlayerStatsView_headerStats, false);
+        a.recycle();
     }
 
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
         ButterKnife.bind(this);
+
+        if (header) {
+            this.playerNameTextView.setText("Name");
+            this.playerTimePlayedTextView.setText("Time");
+            this.playerPointsTextView.setText("PTS");
+            this.playerFreeThrowsMadeTextView.setText("FTM");
+            this.playerFreeThrowsAttempedTextView.setText("FTA");
+            this.playerFieldGoalsMadeTextView.setText("FGM");
+            this.playerFieldGoalsAttempedTextView.setText("FGA");
+            this.playerThreePointsMadeTextView.setText("3PM");
+            this.playerThreePointsAttempedTextView.setText("3PA");
+            this.playerReboundsTextView.setText("REB");
+            this.playerAssistsTextView.setText("AST");
+            this.playerStealsTextView.setText("STL");
+            this.playerBlocksTextView.setText("BLK");
+            this.playerTurnoversTextView.setText("TOV");
+            this.playerFoulsTextView.setText("PF");
+        }
     }
 
     public void setPlayerStats(PlayerSummary playerSummary) {

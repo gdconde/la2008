@@ -1,10 +1,10 @@
 package app.la2008.com.ar.la2008.activities;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.Nullable;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.EditText;
 
 import java.util.ArrayList;
@@ -16,7 +16,7 @@ import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class NewGameActivity extends Activity {
+public class NewGameActivity extends AppCompatActivity {
 
     @BindViews({R.id.player1EditText,
             R.id.player2EditText,

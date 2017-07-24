@@ -17,6 +17,9 @@ import android.widget.Toast;
 import app.la2008.com.ar.la2008.models.PlayerSummary;
 import app.la2008.com.ar.la2008.R;
 import app.la2008.com.ar.la2008.util.Utils;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * Created by gdconde on 31/3/17.
@@ -24,55 +27,30 @@ import app.la2008.com.ar.la2008.util.Utils;
 
 public class PlayerViewCompact extends LinearLayout {
 
-    private final CheckBox checkBox;
-    private final TextView name;
-    private final Chronometer chrono;
-    private final TextView points;
-    private final TextView rebounds;
-    private final TextView assists;
-    private final TextView fouls;
+    @BindView(R.id.checkbox) CheckBox checkBox;
+    @BindView(R.id.name) TextView name;
+    @BindView(R.id.chrono) Chronometer chrono;
+    @BindView(R.id.pointsTextView) TextView points;
+    @BindView(R.id.reboundsTextView) TextView rebounds;
+    @BindView(R.id.assistsTextView) TextView assists;
+    @BindView(R.id.foulsTextView) TextView fouls;
+    @BindView(R.id.reboundButton) Button rebButton;
+    @BindView(R.id.assistButton) Button astButton;
+    @BindView(R.id.foulButton) Button foulButton;
+    @BindView(R.id.chronoHeader) TextView chronoHeader;
+    @BindView(R.id.reboundHeader) TextView reboundsHeader;
+    @BindView(R.id.assistHeader) TextView assistsHeader;
+    @BindView(R.id.foulHeader) TextView foulsHeader;
 
     private final PlayerSummary player = new PlayerSummary();
+    private Boolean header = false;
 
     public PlayerViewCompact(Context context, AttributeSet attributes) {
         super(context, attributes);
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.view_player_compact, this, true);
-        checkBox = (CheckBox) findViewById(R.id.checkbox);
-        name = (TextView) findViewById(R.id.name);
-        chrono = (Chronometer) findViewById(R.id.chrono);
-        points = (TextView) findViewById(R.id.pointsTextView);
-        rebounds = (TextView) findViewById(R.id.reboundsTextView);
-        assists = (TextView) findViewById(R.id.assistsTextView);
-        fouls = (TextView) findViewById(R.id.foulsTextView);
-        Button rebound = (Button) findViewById(R.id.reboundButton);
-        Button assist = (Button) findViewById(R.id.assistButton);
-        Button foul = (Button) findViewById(R.id.foulButton);
-
-        rebound.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                rebounds.setText(String.valueOf(++player.reb));
-                showToast();
-            }
-        });
-
-        assist.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                assists.setText(String.valueOf(++player.ast));
-                showToast();
-            }
-        });
-
-        foul.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                fouls.setText(String.valueOf(++player.pf));
-                showToast();
-            }
-        });
+        ButterKnife.bind(this);
 
         this.player.tag = "0";
 
@@ -88,7 +66,31 @@ public class PlayerViewCompact extends LinearLayout {
         if(playerIndex != -1) {
             this.player.index = playerIndex;
         }
+
+        this.header = a.getBoolean(R.styleable.PlayerViewCompact_headerCompact, false);
+
         a.recycle();
+
+        if (header) {
+            this.name.setText("Name");
+            this.chronoHeader.setText("Time");
+            this.points.setText("PTS");
+            this.rebounds.setText("REB");
+            this.assists.setText("AST");
+            this.fouls.setText("PF");
+            this.reboundsHeader.setText("+REB");
+            this.assistsHeader.setText("+AST");
+            this.foulsHeader.setText("+PF");
+
+            this.chrono.setVisibility(GONE);
+            this.rebButton.setVisibility(GONE);
+            this.astButton.setVisibility(GONE);
+            this.foulButton.setVisibility(GONE);
+            this.chronoHeader.setVisibility(VISIBLE);
+            this.reboundsHeader.setVisibility(VISIBLE);
+            this.assistsHeader.setVisibility(VISIBLE);
+            this.foulsHeader.setVisibility(VISIBLE);
+        }
     }
 
     public Boolean isChecked() {
@@ -152,5 +154,23 @@ public class PlayerViewCompact extends LinearLayout {
                 toast.cancel();
             }
         }, 500);
+    }
+
+    @OnClick(R.id.reboundButton)
+    public void reboundsButtonClicked() {
+        rebounds.setText(String.valueOf(++player.reb));
+        showToast();
+    }
+
+    @OnClick(R.id.assistButton)
+    public void assistsButtonClicked() {
+        assists.setText(String.valueOf(++player.ast));
+        showToast();
+    }
+
+    @OnClick(R.id.foulButton)
+    public void foulButtonClicked() {
+        fouls.setText(String.valueOf(++player.pf));
+        showToast();
     }
 }

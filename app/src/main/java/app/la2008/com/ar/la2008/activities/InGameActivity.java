@@ -10,6 +10,8 @@ import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -37,7 +39,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.fabric.sdk.android.Fabric;
 
-public class InGameActivity extends Activity {
+public class InGameActivity extends AppCompatActivity {
 
     private static final int IN_GAME_ACTIVITY_REQUEST = 2;
 
@@ -109,7 +111,12 @@ public class InGameActivity extends Activity {
 
         Intent intent = getIntent();
         this.gameName = intent.getStringExtra("game_name");
-        getActionBar().setTitle(this.gameName);
+        if (this.gameName != null && !this.gameName.isEmpty()) {
+            ActionBar actionBar = getSupportActionBar();
+            if (actionBar != null) {
+                actionBar.setTitle(this.gameName);
+            }
+        }
 
         ArrayList<String> playersNames = intent.getStringArrayListExtra("players_names");
         final ButterKnife.Setter<PlayerViewCompact, ArrayList<String>> SET_NAMES = new ButterKnife.Setter<PlayerViewCompact, ArrayList<String>>() {

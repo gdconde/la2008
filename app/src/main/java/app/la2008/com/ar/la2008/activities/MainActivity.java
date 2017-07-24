@@ -1,12 +1,15 @@
 package app.la2008.com.ar.la2008.activities;
 
-import android.app.Activity;
-import android.provider.ContactsContract;
-import android.support.annotation.Nullable;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.ChildEventListener;
@@ -14,24 +17,24 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseException;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Map;
 
 import app.la2008.com.ar.la2008.R;
 import app.la2008.com.ar.la2008.adapter.GamesAdapter;
+import app.la2008.com.ar.la2008.fragments.SettingsFragment;
 import app.la2008.com.ar.la2008.interfaces.ObjectSelected;
-import app.la2008.com.ar.la2008.models.Game;
 import app.la2008.com.ar.la2008.models.GameSignature;
 import app.la2008.com.ar.la2008.util.Utils;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 
+    @BindView(R.id.noGamesLiveTextview) TextView noGamesLiveTextView;
     @BindView(R.id.liveGamesRecyclerview) RecyclerView liveGamesRecyclerView;
+    @BindView(R.id.noGamesFinishedTextview) TextView noGamesFinishedTextview;
     @BindView(R.id.finishedGamesRecyclerView) RecyclerView finishedGamesRecyclerView;
 
     private DatabaseReference mDatabase;
@@ -70,6 +73,8 @@ public class MainActivity extends Activity {
                     String key = dataSnapshot.getKey();
                     String name = dataSnapshot.getValue(String.class);
                     mLiveGames.add(new GameSignature(key, name));
+                    noGamesLiveTextView.setVisibility(View.GONE);
+                    liveGamesRecyclerView.setVisibility(View.VISIBLE);
                     liveGamesAdapter.notifyDataSetChanged();
                 }
                 catch (DatabaseException e) {
@@ -88,6 +93,10 @@ public class MainActivity extends Activity {
                 String key = dataSnapshot.getKey();
                 String name = dataSnapshot.getValue(String.class);
                 mLiveGames.remove(new GameSignature(key, name));
+                if (mLiveGames.size() == 0) {
+                    noGamesLiveTextView.setVisibility(View.VISIBLE);
+                    liveGamesRecyclerView.setVisibility(View.GONE);
+                }
                 liveGamesAdapter.notifyDataSetChanged();
             }
 
@@ -109,6 +118,8 @@ public class MainActivity extends Activity {
                     String key = dataSnapshot.getKey();
                     String name = dataSnapshot.getValue(String.class);
                     mFinishedGames.add(new GameSignature(key, name));
+                    noGamesFinishedTextview.setVisibility(View.GONE);
+                    finishedGamesRecyclerView.setVisibility(View.VISIBLE);
                     finishedGamesAdapter.notifyDataSetChanged();
                 }
                 catch (DatabaseException e) {
@@ -126,6 +137,10 @@ public class MainActivity extends Activity {
                 String key = dataSnapshot.getKey();
                 String name = dataSnapshot.getValue(String.class);
                 mFinishedGames.remove(new GameSignature(key, name));
+                if (mFinishedGames.size() == 0) {
+                    noGamesFinishedTextview.setVisibility(View.VISIBLE);
+                    finishedGamesRecyclerView.setVisibility(View.GONE);
+                }
                 finishedGamesAdapter.notifyDataSetChanged();
             }
 
@@ -148,6 +163,24 @@ public class MainActivity extends Activity {
                 .getRoot()
                 .child("games_finished")
                 .addChildEventListener(finishedGamesListener);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.setting_item:
+                SettingsActivity.start(this);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     @OnClick(R.id.newGameButton)

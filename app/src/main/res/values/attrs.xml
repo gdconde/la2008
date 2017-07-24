@@ -5,6 +5,13 @@
 
         <attr name="name" format="string"/>
         <attr name="index" format="integer"/>
+        <attr name="headerCompact" format="boolean"/>
+
+    </declare-styleable>
+
+    <declare-styleable name="PlayerStatsView">
+
+        <attr name="headerStats" format="boolean"/>
 
     </declare-styleable>
 

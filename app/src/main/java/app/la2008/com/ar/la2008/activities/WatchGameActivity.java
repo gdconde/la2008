@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -23,7 +25,7 @@ import app.la2008.com.ar.la2008.views.PlayerStatsView;
 import butterknife.BindViews;
 import butterknife.ButterKnife;
 
-public class WatchGameActivity extends Activity {
+public class WatchGameActivity extends AppCompatActivity {
 
     @BindViews({R.id.playerStatsView1,
             R.id.playerStatsView2,
@@ -53,7 +55,12 @@ public class WatchGameActivity extends Activity {
         setContentView(R.layout.activity_watch_game);
         Intent intent = getIntent();
         this.game = intent.getParcelableExtra("game");
-        getActionBar().setTitle(this.game.name);
+        if (this.game != null && !this.game.name.isEmpty()) {
+            ActionBar actionBar = getSupportActionBar();
+            if (actionBar != null) {
+                actionBar.setTitle(this.game.name);
+            }
+        }
         this.mDatabase = Utils.getDatabase();
     }
 

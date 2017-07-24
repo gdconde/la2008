@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:weightSum="100"
     tools:context="app.la2008.com.ar.la2008.activities.InGameActivity"
     >
 
@@ -15,67 +14,22 @@
         android:layout_height="0dp"
         android:layout_weight="100"
         android:orientation="vertical"
-        android:weightSum="96"
         android:paddingLeft="4dp"
         >
 
-        <LinearLayout
+        <app.la2008.com.ar.la2008.views.PlayerViewCompact
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="100"
-            >
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="23"
-                android:text="@string/name"
-                android:paddingStart="4dp"
-                />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="15"
-                android:text="@string/time"
-                />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="8"
-                android:text="@string/points"
-                />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="8"
-                android:text="@string/rebounds"
-                />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="8"
-                android:text="@string/assists"
-                />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="6"
-                android:text="@string/fouls"
-                />
-
-        </LinearLayout>
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            app:headerCompact="true"
+            />
 
         <app.la2008.com.ar.la2008.views.PlayerViewCompact
             android:id="@+id/player1"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="8"
+            android:layout_weight="1"
             android:gravity="center_vertical"
             app:index="0"
             />
@@ -84,7 +38,7 @@
             android:id="@+id/player2"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="8"
+            android:layout_weight="1"
             android:gravity="center_vertical"
             app:index="1"
             />
@@ -93,7 +47,7 @@
             android:id="@+id/player3"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="8"
+            android:layout_weight="1"
             android:gravity="center_vertical"
             app:index="2"
             />
@@ -102,7 +56,7 @@
             android:id="@+id/player4"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="8"
+            android:layout_weight="1"
             android:gravity="center_vertical"
             app:index="3"
             />
@@ -111,7 +65,7 @@
             android:id="@+id/player5"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="8"
+            android:layout_weight="1"
             android:gravity="center_vertical"
             app:index="4"
             />
@@ -120,7 +74,7 @@
             android:id="@+id/player6"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="8"
+            android:layout_weight="1"
             android:gravity="center_vertical"
             app:index="5"
             />
@@ -129,7 +83,7 @@
             android:id="@+id/player7"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="8"
+            android:layout_weight="1"
             android:gravity="center_vertical"
             app:index="6"
             />
@@ -138,7 +92,7 @@
             android:id="@+id/player8"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="8"
+            android:layout_weight="1"
             android:gravity="center_vertical"
             app:index="7"
             />
@@ -147,7 +101,7 @@
             android:id="@+id/player9"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="8"
+            android:layout_weight="1"
             android:gravity="center_vertical"
             app:index="8"
             />
@@ -156,7 +110,7 @@
             android:id="@+id/player10"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="8"
+            android:layout_weight="1"
             android:gravity="center_vertical"
             app:index="9"
             />
@@ -165,7 +119,7 @@
             android:id="@+id/player11"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="8"
+            android:layout_weight="1"
             android:gravity="center_vertical"
             app:index="10"
             />
@@ -174,7 +128,7 @@
             android:id="@+id/player12"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="8"
+            android:layout_weight="1"
             android:gravity="center_vertical"
             app:index="11"
             />
