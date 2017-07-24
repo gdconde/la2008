@@ -6,14 +6,16 @@ import android.os.SystemClock;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import app.la2008.com.ar.la2008.models.PlayerSummary;
 import app.la2008.com.ar.la2008.R;
+import app.la2008.com.ar.la2008.models.PlayerSummary;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * Created by gdconde on 7/3/17.
@@ -21,8 +23,8 @@ import app.la2008.com.ar.la2008.R;
 
 public class PlayerViewFull extends LinearLayout {
 
-    private final TextView nameTV;
-    private final Chronometer timeChronometer;
+    @BindView(R.id.name) TextView nameTV;
+    @BindView(R.id.chrono) Chronometer timeChronometer;
     private PlayerSummary playerSummary;
 
     public PlayerViewFull(Context context, AttributeSet attributes) {
@@ -31,106 +33,12 @@ public class PlayerViewFull extends LinearLayout {
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.view_player_full, this, true);
 
-        this.nameTV = (TextView) findViewById(R.id.name);
-        this.timeChronometer = (Chronometer) findViewById(R.id.chrono);
-        Button rebButton = (Button) findViewById(R.id.reb);
-        Button astButton = (Button) findViewById(R.id.ast);
-        Button tapButton = (Button) findViewById(R.id.tap);
-        Button robButton = (Button) findViewById(R.id.rob);
-        Button perButton = (Button) findViewById(R.id.per);
-        Button falButton = (Button) findViewById(R.id.fal);
-        Button ftmButton = (Button) findViewById(R.id.ftm);
-        Button ftaButton = (Button) findViewById(R.id.fta);
-        Button fgmButton = (Button) findViewById(R.id.fgm);
-        Button fgaButton = (Button) findViewById(R.id.fga);
-        Button tpmButton = (Button) findViewById(R.id.tpm);
-        Button tpaButton = (Button) findViewById(R.id.tpa);
-
-        rebButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                playerSummary.reb++;
-            }
-        });
-        astButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                playerSummary.ast++;
-            }
-        });
-        tapButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                playerSummary.tap++;
-            }
-        });
-        robButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                playerSummary.rob++;
-            }
-        });
-        perButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                playerSummary.per++;
-            }
-        });
-        falButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                playerSummary.pf++;
-            }
-        });
-        ftmButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                playerSummary.ftm++;
-                playerSummary.fta++;
-                showToast();
-            }
-        });
-        ftaButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                playerSummary.fta++;
-                showToast();
-            }
-        });
-        fgmButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                playerSummary.fgm++;
-                playerSummary.fga++;
-                showToast();
-            }
-        });
-        fgaButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                playerSummary.fga++;
-                showToast();
-            }
-        });
-        tpmButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                playerSummary.tpm++;
-                playerSummary.tpa++;
-                showToast();
-            }
-        });
-        tpaButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                playerSummary.tpa++;
-                showToast();
-            }
-        });
+        ButterKnife.bind(this);
     }
 
     public PlayerViewFull startChrono() {
-        timeChronometer.setBase(SystemClock.elapsedRealtime() + Integer.valueOf((String)timeChronometer.getTag()));
+        timeChronometer.setBase(SystemClock.elapsedRealtime() +
+                Integer.valueOf((String) timeChronometer.getTag()));
         timeChronometer.start();
         return this;
     }
@@ -167,5 +75,57 @@ public class PlayerViewFull extends LinearLayout {
                 toast.cancel();
             }
         }, 500);
+    }
+
+    @OnClick({R.id.reb, R.id.ast, R.id.rob, R.id.tap, R.id.per, R.id.fal, R.id.fgm, R.id.fga,
+            R.id.tpm, R.id.tpa, R.id.ftm, R.id.fta})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.reb:
+                playerSummary.reb++;
+                break;
+            case R.id.ast:
+                playerSummary.ast++;
+                break;
+            case R.id.rob:
+                playerSummary.stl++;
+                break;
+            case R.id.tap:
+                playerSummary.blk++;
+                break;
+            case R.id.per:
+                playerSummary.tov++;
+                break;
+            case R.id.fal:
+                playerSummary.pf++;
+                break;
+            case R.id.fgm:
+                playerSummary.fgm++;
+                playerSummary.fga++;
+                showToast();
+                break;
+            case R.id.fga:
+                playerSummary.fga++;
+                showToast();
+                break;
+            case R.id.tpm:
+                playerSummary.tpm++;
+                playerSummary.tpa++;
+                showToast();
+                break;
+            case R.id.tpa:
+                playerSummary.tpa++;
+                showToast();
+                break;
+            case R.id.ftm:
+                playerSummary.ftm++;
+                playerSummary.fta++;
+                showToast();
+                break;
+            case R.id.fta:
+                playerSummary.fta++;
+                showToast();
+                break;
+        }
     }
 }

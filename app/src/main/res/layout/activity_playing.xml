@@ -58,7 +58,7 @@
             android:layout_height="match_parent"
             android:layout_weight="8"
             android:text="@string/stop"
-            android:background="@color/colorAccent"
+            android:background="@color/colorPrimary"
             />
 
         <Button

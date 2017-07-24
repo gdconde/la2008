@@ -148,6 +148,7 @@
             android:layout_height="match_parent"
             android:layout_weight="8"
             android:text="@string/start"
+            android:textColor="@android:color/white"
             android:background="@android:color/holo_green_dark"
             style="?android:attr/buttonBarButtonStyle"
             />
@@ -158,6 +159,7 @@
             android:layout_height="match_parent"
             android:layout_weight="2"
             android:text="@string/finish_game"
+            android:textColor="@android:color/white"
             android:textSize="12sp"
             android:background="@color/colorPrimaryDark"
             style="?android:attr/buttonBarButtonStyle"

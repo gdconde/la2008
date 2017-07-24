@@ -24,9 +24,9 @@ public class PlayerSummary implements Parcelable {
     public int reb;
     public int ast;
     public int pf;
-    public int rob;
-    public int per;
-    public int tap;
+    public int stl;
+    public int tov;
+    public int blk;
 
     @Override
     public boolean equals(Object obj) {
@@ -55,9 +55,9 @@ public class PlayerSummary implements Parcelable {
         dest.writeInt(this.reb);
         dest.writeInt(this.ast);
         dest.writeInt(this.pf);
-        dest.writeInt(this.rob);
-        dest.writeInt(this.per);
-        dest.writeInt(this.tap);
+        dest.writeInt(this.stl);
+        dest.writeInt(this.tov);
+        dest.writeInt(this.blk);
     }
 
     public PlayerSummary() {
@@ -79,9 +79,9 @@ public class PlayerSummary implements Parcelable {
         this.reb = in.readInt();
         this.ast = in.readInt();
         this.pf = in.readInt();
-        this.rob = in.readInt();
-        this.per = in.readInt();
-        this.tap = in.readInt();
+        this.stl = in.readInt();
+        this.tov = in.readInt();
+        this.blk = in.readInt();
     }
 
     public static final Creator<PlayerSummary> CREATOR = new Creator<PlayerSummary>() {

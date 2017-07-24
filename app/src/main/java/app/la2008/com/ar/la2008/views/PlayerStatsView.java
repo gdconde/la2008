@@ -6,7 +6,6 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 import app.la2008.com.ar.la2008.R;
@@ -86,9 +85,9 @@ public class PlayerStatsView extends LinearLayout {
         this.playerThreePointsAttempedTextView.setText(String.valueOf(playerSummary.tpa));
         this.playerReboundsTextView.setText(String.valueOf(playerSummary.reb));
         this.playerAssistsTextView.setText(String.valueOf(playerSummary.ast));
-        this.playerStealsTextView.setText(String.valueOf(playerSummary.rob));
-        this.playerBlocksTextView.setText(String.valueOf(playerSummary.tap));
-        this.playerTurnoversTextView.setText(String.valueOf(playerSummary.per));
+        this.playerStealsTextView.setText(String.valueOf(playerSummary.stl));
+        this.playerBlocksTextView.setText(String.valueOf(playerSummary.blk));
+        this.playerTurnoversTextView.setText(String.valueOf(playerSummary.tov));
         this.playerFoulsTextView.setText(String.valueOf(playerSummary.pf));
     }
 }

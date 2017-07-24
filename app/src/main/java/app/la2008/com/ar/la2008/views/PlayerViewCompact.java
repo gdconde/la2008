@@ -5,11 +5,9 @@ import android.content.res.TypedArray;
 import android.os.Handler;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Chronometer;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -132,9 +130,9 @@ public class PlayerViewCompact extends LinearLayout {
         this.player.ast = data.ast;
         this.player.reb = data.reb;
         this.player.pf = data.pf;
-        this.player.tap = data.tap;
-        this.player.rob = data.rob;
-        this.player.per = data.per;
+        this.player.blk = data.blk;
+        this.player.stl = data.stl;
+        this.player.tov = data.tov;
         this.player.key = data.key;
         this.points.setText(String.valueOf(
                 this.player.ftm + 2 * this.player.fgm + 3 * this.player.tpm));
