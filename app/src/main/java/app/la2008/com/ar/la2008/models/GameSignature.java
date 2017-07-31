@@ -3,17 +3,10 @@ package app.la2008.com.ar.la2008.models;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/**
- * Created by gdconde on 7/21/17.
- */
-
 public class GameSignature implements Parcelable {
 
     public String key;
     public String name;
-
-    public GameSignature() {
-    }
 
     public GameSignature(String key, String name) {
         this.key = key;
@@ -38,7 +31,7 @@ public class GameSignature implements Parcelable {
                 && ((GameSignature) obj).key.equalsIgnoreCase(this.key);
     }
 
-    protected GameSignature(Parcel in) {
+    private GameSignature(Parcel in) {
         this.key = in.readString();
         this.name = in.readString();
     }

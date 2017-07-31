@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:background="@color/colorPrimary"
-        android:text="@string/start_new_game"
+        android:text="@string/main_start_new_game"
         />
 
     <TextView
@@ -22,8 +22,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:textSize="18sp"
-        android:text="@string/live_games"
-        android:layout_marginLeft="16dp"
+        android:text="@string/main_live_games"
+        android:layout_marginStart="16dp"
         />
 
     <TextView
@@ -32,8 +32,8 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:layout_marginBottom="16dp"
-        android:text="No games found"
-        android:layout_marginLeft="16dp"
+        android:text="@string/main_no_games_found"
+        android:layout_marginStart="16dp"
         />
 
     <android.support.v7.widget.RecyclerView
@@ -51,8 +51,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:textSize="18sp"
-        android:text="@string/finished_games"
-        android:layout_marginLeft="16dp"
+        android:text="@string/main_finished_games"
+        android:layout_marginStart="16dp"
         />
 
     <TextView
@@ -60,8 +60,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:text="No games found"
-        android:layout_marginLeft="16dp"
+        android:text="@string/main_no_games_found"
+        android:layout_marginStart="16dp"
         />
 
     <android.support.v7.widget.RecyclerView

@@ -1,6 +1,5 @@
 package app.la2008.com.ar.la2008.activities;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,7 +16,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.List;
 
 import app.la2008.com.ar.la2008.R;
-import app.la2008.com.ar.la2008.models.Game;
 import app.la2008.com.ar.la2008.models.GameSignature;
 import app.la2008.com.ar.la2008.models.PlayerSummary;
 import app.la2008.com.ar.la2008.util.Utils;

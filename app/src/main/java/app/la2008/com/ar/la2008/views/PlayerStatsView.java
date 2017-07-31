@@ -14,10 +14,6 @@ import app.la2008.com.ar.la2008.util.Utils;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * Created by gdconde on 7/19/17.
- */
-
 public class PlayerStatsView extends LinearLayout {
 
     @BindView(R.id.playerNameTextView) TextView playerNameTextView;
@@ -55,21 +51,36 @@ public class PlayerStatsView extends LinearLayout {
         ButterKnife.bind(this);
 
         if (header) {
-            this.playerNameTextView.setText("Name");
-            this.playerTimePlayedTextView.setText("Time");
-            this.playerPointsTextView.setText("PTS");
-            this.playerFreeThrowsMadeTextView.setText("FTM");
-            this.playerFreeThrowsAttempedTextView.setText("FTA");
-            this.playerFieldGoalsMadeTextView.setText("FGM");
-            this.playerFieldGoalsAttempedTextView.setText("FGA");
-            this.playerThreePointsMadeTextView.setText("3PM");
-            this.playerThreePointsAttempedTextView.setText("3PA");
-            this.playerReboundsTextView.setText("REB");
-            this.playerAssistsTextView.setText("AST");
-            this.playerStealsTextView.setText("STL");
-            this.playerBlocksTextView.setText("BLK");
-            this.playerTurnoversTextView.setText("TOV");
-            this.playerFoulsTextView.setText("PF");
+            this.playerNameTextView
+                    .setText(getResources().getString(R.string.stats_name).toUpperCase());
+            this.playerTimePlayedTextView
+                    .setText(getResources().getString(R.string.stats_time).toUpperCase());
+            this.playerPointsTextView
+                    .setText(getResources().getString(R.string.stats_points).toUpperCase());
+            this.playerFreeThrowsMadeTextView
+                    .setText(getResources().getString(R.string.stats_ftm).toUpperCase());
+            this.playerFreeThrowsAttempedTextView
+                    .setText(getResources().getString(R.string.stats_fta).toUpperCase());
+            this.playerFieldGoalsMadeTextView
+                    .setText(getResources().getString(R.string.stats_fgm).toUpperCase());
+            this.playerFieldGoalsAttempedTextView
+                    .setText(getResources().getString(R.string.stats_fga).toUpperCase());
+            this.playerThreePointsMadeTextView
+                    .setText(getResources().getString(R.string.stats_3pm).toUpperCase());
+            this.playerThreePointsAttempedTextView
+                    .setText(getResources().getString(R.string.stats_3pa).toUpperCase());
+            this.playerReboundsTextView
+                    .setText(getResources().getString(R.string.stats_reb).toUpperCase());
+            this.playerAssistsTextView
+                    .setText(getResources().getString(R.string.stats_ast).toUpperCase());
+            this.playerStealsTextView
+                    .setText(getResources().getString(R.string.stats_stl).toUpperCase());
+            this.playerBlocksTextView
+                    .setText(getResources().getString(R.string.stats_blk).toUpperCase());
+            this.playerTurnoversTextView
+                    .setText(getResources().getString(R.string.stats_tov).toUpperCase());
+            this.playerFoulsTextView
+                    .setText(getResources().getString(R.string.stats_pf).toUpperCase());
         }
     }
 

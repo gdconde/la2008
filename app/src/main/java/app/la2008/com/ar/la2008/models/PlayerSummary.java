@@ -3,10 +3,6 @@ package app.la2008.com.ar.la2008.models;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/**
- * Created by gdconde on 31/3/17.
- */
-
 public class PlayerSummary implements Parcelable {
 
     public String key;

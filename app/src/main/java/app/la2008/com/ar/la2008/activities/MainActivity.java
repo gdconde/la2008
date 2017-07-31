@@ -22,7 +22,6 @@ import java.util.ArrayList;
 
 import app.la2008.com.ar.la2008.R;
 import app.la2008.com.ar.la2008.adapter.GamesAdapter;
-import app.la2008.com.ar.la2008.fragments.SettingsFragment;
 import app.la2008.com.ar.la2008.interfaces.ObjectSelected;
 import app.la2008.com.ar.la2008.models.GameSignature;
 import app.la2008.com.ar.la2008.util.Utils;
@@ -46,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Get FirebaseDatabase Reference
         this.mDatabase = Utils.getDatabase().getReference();
     }
 
@@ -54,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         super.onPostCreate(savedInstanceState);
         ButterKnife.bind(this);
 
+        // Setting adapters
         LinearLayoutManager layoutManagerLive =
                 new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         final GamesAdapter liveGamesAdapter = new GamesAdapter(this, this.mLiveGames, gameSelected);
@@ -66,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
         finishedGamesRecyclerView.setLayoutManager(layoutManagerFinished);
         finishedGamesRecyclerView.setAdapter(finishedGamesAdapter);
 
+        // Database Listener for Live Games
         ChildEventListener liveGamesListener = new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
@@ -111,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
+        // Database Listener for Finished Games
         ChildEventListener finishedGamesListener = new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
@@ -155,6 +159,7 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
+        // Add Database listeners to database
         this.mDatabase
                 .getRoot()
                 .child("games_live")

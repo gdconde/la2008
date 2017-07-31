@@ -19,19 +19,17 @@
             android:id="@+id/gameName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:imeOptions="actionNext"
+            android:lines="1"
+            android:inputType="textCapWords"
             android:textSize="18sp"
             android:textAlignment="center"
-            android:inputType="textCapWords"
-            android:lines="1"
-            android:imeOptions="actionNext"
-            android:hint="Legends 1 vs Legends 2"
+            android:hint="@string/new_game_game_name_hint"
             />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2"
             android:baselineAligned="false"
             >
 
@@ -40,12 +38,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textAlignment="center"
-                android:inputType="textPersonName"
-                android:lines="1"
+                android:hint="@string/new_game_player1_hint"
                 android:nextFocusUp="@id/gameName"
-                android:imeOptions="actionNext"
-                android:hint="LeBron James"
+                style="@style/NewGameEditText"
                 />
 
 
@@ -54,11 +49,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textAlignment="center"
-                android:inputType="textPersonName"
-                android:lines="1"
-                android:imeOptions="actionNext"
-                android:hint="Michael Jordan"
+                android:hint="@string/new_game_player2_hint"
+                style="@style/NewGameEditText"
                 />
 
         </LinearLayout>
@@ -66,8 +58,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2"
             android:baselineAligned="false"
             >
 
@@ -76,11 +66,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textAlignment="center"
-                android:inputType="textPersonName"
-                android:lines="1"
-                android:imeOptions="actionNext"
-                android:hint="David Robinson"
+                android:hint="@string/new_game_player3_hint"
+                style="@style/NewGameEditText"
                 />
 
             <EditText
@@ -88,11 +75,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textAlignment="center"
-                android:inputType="textPersonName"
-                android:lines="1"
-                android:imeOptions="actionNext"
-                android:hint="Shaquille O'Neal"
+                android:hint="@string/new_game_player4_hint"
+                style="@style/NewGameEditText"
                 />
 
         </LinearLayout>
@@ -100,8 +84,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2"
             android:baselineAligned="false"
             >
 
@@ -110,11 +92,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textAlignment="center"
-                android:inputType="textPersonName"
-                android:lines="1"
-                android:imeOptions="actionNext"
-                android:hint="John Stockton"
+                android:hint="@string/new_game_player5_hint"
+                style="@style/NewGameEditText"
                 />
 
             <EditText
@@ -122,11 +101,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textAlignment="center"
-                android:inputType="textPersonName"
-                android:lines="1"
-                android:imeOptions="actionNext"
-                android:hint="Karl Malone"
+                android:hint="@string/new_game_player6_hint"
+                style="@style/NewGameEditText"
                 />
 
         </LinearLayout>
@@ -134,8 +110,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2"
             android:baselineAligned="false"
             >
 
@@ -144,11 +118,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textAlignment="center"
-                android:inputType="textPersonName"
-                android:lines="1"
-                android:imeOptions="actionNext"
-                android:hint="Magic Johnson"
+                android:hint="@string/new_game_player7_hint"
+                style="@style/NewGameEditText"
                 />
 
             <EditText
@@ -156,11 +127,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textAlignment="center"
-                android:inputType="textPersonName"
-                android:lines="1"
-                android:imeOptions="actionNext"
-                android:hint="Reggie Miller"
+                android:hint="@string/new_game_player8_hint"
+                style="@style/NewGameEditText"
                 />
 
         </LinearLayout>
@@ -168,8 +136,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2"
             android:baselineAligned="false"
             >
 
@@ -178,11 +144,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textAlignment="center"
-                android:inputType="textPersonName"
-                android:lines="1"
-                android:imeOptions="actionNext"
-                android:hint="Jason Kidd"
+                android:hint="@string/new_game_player9_hint"
+                style="@style/NewGameEditText"
                 />
 
             <EditText
@@ -190,11 +153,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textAlignment="center"
-                android:inputType="textPersonName"
-                android:lines="1"
-                android:imeOptions="actionNext"
-                android:hint="Kevin Durant"
+                android:hint="@string/new_game_player10_hint"
+                style="@style/NewGameEditText"
                 />
 
         </LinearLayout>
@@ -202,8 +162,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2"
             android:baselineAligned="false"
             >
 
@@ -212,11 +170,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textAlignment="center"
-                android:inputType="textPersonName"
-                android:lines="1"
-                android:imeOptions="actionNext"
-                android:hint="Tim Duncan"
+                android:hint="@string/new_game_player11_hint"
+                style="@style/NewGameEditText"
                 />
 
             <EditText
@@ -224,11 +179,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textAlignment="center"
-                android:inputType="textPersonName"
-                android:lines="1"
+                android:hint="@string/new_game_player12_hint"
                 android:imeOptions="actionDone"
-                android:hint="Manu Ginobili"
+                style="@style/NewGameEditText"
                 />
 
         </LinearLayout>
@@ -237,8 +190,8 @@
             android:id="@+id/startGameButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/start_game"
             android:background="@color/colorPrimary"
+            android:text="@string/new_game_start_game"
             />
 
     </LinearLayout>

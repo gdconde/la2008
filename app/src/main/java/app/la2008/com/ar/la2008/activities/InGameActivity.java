@@ -1,15 +1,13 @@
 package app.la2008.com.ar.la2008.activities;
 
-import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.provider.ContactsContract;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -18,9 +16,6 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.crashlytics.android.Crashlytics;
-import com.google.firebase.database.ChildEventListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -29,10 +24,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import app.la2008.com.ar.la2008.R;
 import app.la2008.com.ar.la2008.models.PlayerSummary;
 import app.la2008.com.ar.la2008.util.Utils;
 import app.la2008.com.ar.la2008.views.PlayerViewCompact;
-import app.la2008.com.ar.la2008.R;
 import butterknife.BindView;
 import butterknife.BindViews;
 import butterknife.ButterKnife;
@@ -70,12 +65,14 @@ public class InGameActivity extends AppCompatActivity {
             PlayerViewCompact playerView = (PlayerViewCompact) view;
             if(!playerView.isChecked()) {
                 playerView.setChecked(true);
-                playerView.setBackgroundColor(getResources().getColor(android.R.color.holo_red_light));
+                playerView.setBackgroundColor(ContextCompat.getColor(getBaseContext(),
+                        R.color.colorPrimary));
                 playersOnCourt.add(playerView.getPlayerSummary());
             }
             else {
                 playerView.setChecked(false);
-                playerView.setBackgroundColor(getResources().getColor(android.R.color.white));
+                playerView.setBackgroundColor(ContextCompat.getColor(getBaseContext(),
+                        android.R.color.white));
                 playersOnCourt.remove(playerView.getPlayerSummary());
             }
         }
@@ -155,8 +152,8 @@ public class InGameActivity extends AppCompatActivity {
     public void onBackPressed() {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
         alertDialogBuilder
-                .setTitle(R.string.prompt_exit_game)
-                .setMessage(R.string.prompt_exit_message)
+                .setTitle(R.string.in_game_prompt_exit_game)
+                .setMessage(R.string.in_game_prompt_exit_message)
                 .setNegativeButton("Discard", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) { discardGame(); }
@@ -172,7 +169,7 @@ public class InGameActivity extends AppCompatActivity {
     @OnClick(R.id.startButton)
     public void startOrContinueGame() {
         if (this.playersOnCourt.size() != 5) {
-            Toast.makeText(this, R.string.must_select_5_players, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.in_game_must_select_5_players, Toast.LENGTH_SHORT).show();
             return;
         }
         Intent inGameActivityIntent = new Intent(this, PlayingActivity.class);

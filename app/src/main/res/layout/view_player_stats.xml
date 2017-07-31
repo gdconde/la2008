@@ -111,7 +111,6 @@
         android:textAlignment="center"
         />
 
-
     <TextView
         android:id="@+id/playerTurnoversTextView"
         android:layout_width="27dp"

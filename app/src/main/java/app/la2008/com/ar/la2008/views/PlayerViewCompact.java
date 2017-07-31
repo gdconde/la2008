@@ -19,10 +19,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-/**
- * Created by gdconde on 31/3/17.
- */
-
 public class PlayerViewCompact extends LinearLayout {
 
     @BindView(R.id.checkbox) CheckBox checkBox;
@@ -41,7 +37,6 @@ public class PlayerViewCompact extends LinearLayout {
     @BindView(R.id.foulHeader) TextView foulsHeader;
 
     private final PlayerSummary player = new PlayerSummary();
-    private Boolean header = false;
 
     public PlayerViewCompact(Context context, AttributeSet attributes) {
         super(context, attributes);
@@ -65,20 +60,27 @@ public class PlayerViewCompact extends LinearLayout {
             this.player.index = playerIndex;
         }
 
-        this.header = a.getBoolean(R.styleable.PlayerViewCompact_headerCompact, false);
+        Boolean header = a.getBoolean(R.styleable.PlayerViewCompact_headerCompact, false);
 
         a.recycle();
 
         if (header) {
-            this.name.setText("Name");
-            this.chronoHeader.setText("Time");
-            this.points.setText("PTS");
-            this.rebounds.setText("REB");
-            this.assists.setText("AST");
-            this.fouls.setText("PF");
-            this.reboundsHeader.setText("+REB");
-            this.assistsHeader.setText("+AST");
-            this.foulsHeader.setText("+PF");
+            this.name.setText(R.string.compact_view_name);
+            this.chronoHeader.setText(R.string.compact_view_time);
+            this.points
+                    .setText(getResources().getString(R.string.compact_view_pts).toUpperCase());
+            this.rebounds
+                    .setText(getResources().getString(R.string.compact_view_reb).toUpperCase());
+            this.assists
+                    .setText(getResources().getString(R.string.compact_view_ast).toUpperCase());
+            this.fouls
+                    .setText(getResources().getString(R.string.compact_view_pf).toUpperCase());
+            this.reboundsHeader
+                    .setText(getResources().getString(R.string.compact_view_plus_reb).toUpperCase());
+            this.assistsHeader
+                    .setText(getResources().getString(R.string.compact_view_plus_ast).toUpperCase());
+            this.foulsHeader
+                    .setText(getResources().getString(R.string.compact_view_plus_pf).toUpperCase());
 
             this.chrono.setVisibility(GONE);
             this.rebButton.setVisibility(GONE);

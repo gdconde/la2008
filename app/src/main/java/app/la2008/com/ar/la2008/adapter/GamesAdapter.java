@@ -15,10 +15,6 @@ import app.la2008.com.ar.la2008.models.GameSignature;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * Created by gdconde on 7/18/17.
- */
-
 public class GamesAdapter extends RecyclerView.Adapter<GamesAdapter.ViewHolder> {
 
     private Context context;
@@ -55,11 +51,11 @@ public class GamesAdapter extends RecyclerView.Adapter<GamesAdapter.ViewHolder> 
         });
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    static class ViewHolder extends RecyclerView.ViewHolder {
 
         @BindView(R.id.gameTextView) TextView gameTextView;
 
-        public ViewHolder(View itemView) {
+        ViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
         }

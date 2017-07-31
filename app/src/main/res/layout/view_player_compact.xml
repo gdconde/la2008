@@ -32,8 +32,8 @@
         android:layout_height="wrap_content"
         android:layout_weight="15"
         android:layout_gravity="center_vertical"
-        android:tag="0"
         android:textAlignment="center"
+        android:tag="0"
         />
 
     <TextView
@@ -42,8 +42,8 @@
         android:layout_height="wrap_content"
         android:layout_weight="15"
         android:layout_gravity="center_vertical"
-        android:visibility="gone"
         android:textAlignment="center"
+        android:visibility="gone"
         />
 
     <TextView
@@ -52,8 +52,8 @@
         android:layout_height="wrap_content"
         android:layout_weight="8"
         android:layout_gravity="center_vertical"
-        android:text="0"
         android:textAlignment="center"
+        android:text="@string/compact_view_zero"
         />
 
     <TextView
@@ -62,7 +62,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="8"
         android:layout_gravity="center_vertical"
-        android:text="0"
+        android:text="@string/compact_view_zero"
         android:textAlignment="center"
         />
 
@@ -72,7 +72,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="8"
         android:layout_gravity="center_vertical"
-        android:text="0"
+        android:text="@string/compact_view_zero"
         android:textAlignment="center"
         />
 
@@ -82,7 +82,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="6"
         android:layout_gravity="center_vertical"
-        android:text="0"
+        android:text="@string/compact_view_zero"
         android:textAlignment="center"
         />
 
@@ -91,11 +91,8 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="10"
-        android:background="?android:attr/selectableItemBackground"
-        android:text="R"
-        android:textSize="12sp"
-        android:clickable="false"
-        style="?android:attr/buttonBarStyle"
+        android:text="@string/compact_view_r"
+        style="@style/PlayerViewCompactButton"
         />
 
     <TextView
@@ -103,8 +100,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="10"
-        android:visibility="gone"
         android:textAlignment="center"
+        android:visibility="gone"
         />
 
     <Button
@@ -112,11 +109,8 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="10"
-        android:background="?android:attr/selectableItemBackground"
-        android:text="A"
-        android:textSize="12sp"
-        android:clickable="false"
-        style="?android:attr/buttonBarStyle"
+        android:text="@string/compact_view_a"
+        style="@style/PlayerViewCompactButton"
         />
 
     <TextView
@@ -133,11 +127,8 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="10"
-        android:background="?android:attr/selectableItemBackground"
-        android:text="F"
-        android:textSize="12sp"
-        android:clickable="false"
-        style="?android:attr/buttonBarStyle"
+        android:text="@string/compact_view_f"
+        style="@style/PlayerViewCompactButton"
         />
 
     <TextView

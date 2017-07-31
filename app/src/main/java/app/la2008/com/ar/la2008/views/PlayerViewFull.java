@@ -17,10 +17,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-/**
- * Created by gdconde on 7/3/17.
- */
-
 public class PlayerViewFull extends LinearLayout {
 
     @BindView(R.id.name) TextView nameTV;
@@ -100,6 +96,7 @@ public class PlayerViewFull extends LinearLayout {
                 playerSummary.pf++;
                 break;
             case R.id.fgm:
+                playerSummary.pts += 2;
                 playerSummary.fgm++;
                 playerSummary.fga++;
                 showToast();
@@ -109,15 +106,20 @@ public class PlayerViewFull extends LinearLayout {
                 showToast();
                 break;
             case R.id.tpm:
+                playerSummary.pts += 3;
+                playerSummary.fgm++;
+                playerSummary.fga++;
                 playerSummary.tpm++;
                 playerSummary.tpa++;
                 showToast();
                 break;
             case R.id.tpa:
+                playerSummary.fga++;
                 playerSummary.tpa++;
                 showToast();
                 break;
             case R.id.ftm:
+                playerSummary.pts += 1;
                 playerSummary.ftm++;
                 playerSummary.fta++;
                 showToast();

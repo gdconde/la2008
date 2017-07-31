@@ -1,47 +1,102 @@
 <resources>
     <string name="app_name">La2008</string>
-    <!--InGameActivity-->
-    <string name="name">Name</string>
-    <string name="time">Time</string>
-    <string name="points">PTS</string>
-    <string name="rebounds">REB</string>
-    <string name="assists">AST</string>
-    <string name="fouls">PF</string>
-    <string name="start">Start</string>
-    <string name="summary">Finish</string>
+
     <!--MainActivity-->
-    <string name="start_new_game">Start new game</string>
+    <string name="main_start_new_game">Start new game</string>
+    <string name="main_no_games_found">No games found</string>
+    <string name="main_live_games">Live Games</string>
+    <string name="main_finished_games">Finished Games</string>
+    <!--Finish MainActivity-->
+
+    <!--InGameActivity-->
+    <string name="in_game_prompt_exit_game">Are you sure you want to exit?</string>
+    <string name="in_game_prompt_exit_message">You can discard this game or finish it to avoid losing the data.</string>
+    <string name="in_game_finish_game">Finish</string>
+    <string name="in_game_must_select_5_players">Must select 5 players</string>
+    <string name="in_game_start">Start</string>
+    <!--Finish InGameActivity-->
+
     <!--NewGameActivity-->
-    <string name="player_1">Player 1</string>
-    <string name="player_2">Player 2</string>
-    <string name="player_3">Player 3</string>
-    <string name="player_4">Player 4</string>
-    <string name="player_5">Player 5</string>
-    <string name="player_6">Player 6</string>
-    <string name="player_7">Player 7</string>
-    <string name="player_8">Player 8</string>
-    <string name="player_9">Player 9</string>
-    <string name="player_10">Player 10</string>
-    <string name="player_11">Player 11</string>
-    <string name="player_12">Player 12</string>
-    <string name="name_hint">Name</string>
-    <string name="start_game">Start Game</string>
+    <string name="new_game_game_name_hint">Legends 1 vs Legends 2</string>
+    <string name="new_game_player1_hint">LeBron James</string>
+    <string name="new_game_player2_hint">Michael Jordan</string>
+    <string name="new_game_player3_hint">David Robinson</string>
+    <string name="new_game_player4_hint">Shaquille O\'Neal</string>
+    <string name="new_game_player5_hint">John Stockton</string>
+    <string name="new_game_player6_hint">Karl Malone</string>
+    <string name="new_game_player7_hint">Magic Johnson</string>
+    <string name="new_game_player8_hint">Reggie Miller</string>
+    <string name="new_game_player9_hint">Jason Kidd</string>
+    <string name="new_game_player10_hint">Kevin Durant</string>
+    <string name="new_game_player11_hint">Tim Duncan</string>
+    <string name="new_game_player12_hint">Manu Ginobili</string>
+    <string name="new_game_start_game">Start Game</string>
+    <!--Finish NewGameActivity-->
+
     <!--PlayingActivity-->
-    <string name="stop">Stop</string>
-    <!--SummaryActivity-->
-    <string name="three_points">3PT</string>
-    <string name="steals">STL</string>
-    <string name="blocks">BLK</string>
-    <string name="turnovers">TOV</string>
-    <string name="live_games">Live Games</string>
-    <string name="finished_games">Finished Games</string>
-    <string name="must_select_5_players">Must select 5 players</string>
-    <string name="prompt_exit_game">Are you sure you want to exit?</string>
-    <string name="prompt_exit_message">You can discard this game or finish it to avoid losing the data.</string>
-    <string name="finish_game">Finish</string>
-    <string name="settings">Settings</string>
+    <string name="playing_stop">Stop</string>
+    <string name="playing_summary">Finish</string>
+    <!--Finish PlayingActivity-->
+
+    <!--StatsView-->
+    <string name="stats_name">Name</string>
+    <string name="stats_time">Time</string>
+    <string name="stats_points">pts</string>
+    <string name="stats_ftm">ftm</string>
+    <string name="stats_fta">fta</string>
+    <string name="stats_fgm">fgm</string>
+    <string name="stats_fga">fga</string>
+    <string name="stats_3pm">3pm</string>
+    <string name="stats_3pa">3pa</string>
+    <string name="stats_reb">reb</string>
+    <string name="stats_ast">ast</string>
+    <string name="stats_stl">stl</string>
+    <string name="stats_blk">blk</string>
+    <string name="stats_tov">tov</string>
+    <string name="stats_pf">pf</string>
+    <!--Finish StatsView-->
+
+    <!--CompactView-->
+    <string name="compact_view_name">Name</string>
+    <string name="compact_view_time">Time</string>
+    <string name="compact_view_pts">pts</string>
+    <string name="compact_view_reb">reb</string>
+    <string name="compact_view_ast">ast</string>
+    <string name="compact_view_pf">pf</string>
+    <string name="compact_view_plus_reb">+reb</string>
+    <string name="compact_view_plus_ast">+ast</string>
+    <string name="compact_view_plus_pf">+pf</string>
+    <string name="compact_view_zero">0</string>
+    <string name="compact_view_r">r</string>
+    <string name="compact_view_a">a</string>
+    <string name="compact_view_f">f</string>
+    <!--Finish CompactView-->
+
+    <!--FullView-->
+    <string name="full_view_name">Name</string>
+    <string name="full_view_time">Time</string>
+    <string name="full_view_reb">reb</string>
+    <string name="full_view_assists">ast</string>
+    <string name="full_view_points">pts</string>
+    <string name="full_view_turnovers">tov</string>
+    <string name="full_view_blocks">blk</string>
+    <string name="full_view_steals">stl</string>
+    <string name="full_view_fouls">pf</string>
+    <string name="full_view_fgm">fgm</string>
+    <string name="full_view_fga">fga</string>
+    <string name="full_view_3pm">3pm</string>
+    <string name="full_view_3pa">3pa</string>
+    <string name="full_view_ftm">ftm</string>
+    <string name="full_view_fta">fta</string>
+    <!--Finish FullView-->
+
+    <!--Preferences-->
     <string name="pref_use_default_player_names">Use default player names</string>
     <string name="pref_default_player_names_summary">Check this if you want player names preloaded when starting a new live game</string>
     <string name="pref_set_default_player_names">Set default player names</string>
     <string name="pref_set_player_names_summary">Set player default names to be shown when starting a new game</string>
+    <!--Finish Preferences-->
+
+    <string name="settings">Settings</string>
+
 </resources>

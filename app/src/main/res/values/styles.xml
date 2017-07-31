@@ -9,5 +9,30 @@
         <item name="dividerHorizontal">@color/dividerColor</item>
     </style>
 
+    <style name="NewGameEditText" parent="Base.Widget.AppCompat.EditText">
+        <item name="android:lines">1</item>
+        <item name="android:inputType">textPersonName</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:imeOptions">actionNext</item>
+    </style>
+
+    <style name="PlayerViewCompactButton" parent="Base.Widget.AppCompat.ButtonBar">
+        <item name="background">?android:attr/selectableItemBackground</item>
+        <item name="android:clickable">false</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="PlayerViewFullButtons" parent="Base.Widget.AppCompat.ButtonBar">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@android:color/darker_gray</item>
+    </style>
+
+    <style name="PlayerViewFullButtons.Small">
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+    </style>
+
 
 </resources>

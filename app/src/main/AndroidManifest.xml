@@ -22,9 +22,6 @@
         <activity android:name=".activities.PlayingActivity" />
         <activity android:name=".activities.InGameActivity" />
         <activity android:name=".activities.WatchGameActivity" />
-        <activity
-            android:name=".activities.SummaryActivity"
-            android:parentActivityName=".activities.InGameActivity" />
 
         <meta-data
             android:name="io.fabric.ApiKey"

@@ -17,8 +17,8 @@
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight="1"
-            app:headerStats="true"
             android:background="@color/colorPrimaryDark"
+            app:headerStats="true"
             />
 
         <app.la2008.com.ar.la2008.views.PlayerStatsView
