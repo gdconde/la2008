@@ -7,10 +7,12 @@ public class GameSignature implements Parcelable {
 
     public String key;
     public String name;
+    public long time;
 
-    public GameSignature(String key, String name) {
+    public GameSignature(String key, String name, long time) {
         this.key = key;
         this.name = name;
+        this.time = time;
     }
 
     @Override
@@ -22,6 +24,7 @@ public class GameSignature implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(this.key);
         dest.writeString(this.name);
+        dest.writeLong(this.time);
     }
 
     @Override
@@ -34,6 +37,7 @@ public class GameSignature implements Parcelable {
     private GameSignature(Parcel in) {
         this.key = in.readString();
         this.name = in.readString();
+        this.time = in.readLong();
     }
 
     public static final Parcelable.Creator<GameSignature> CREATOR = new Parcelable.Creator<GameSignature>() {

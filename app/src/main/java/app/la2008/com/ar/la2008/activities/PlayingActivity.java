@@ -22,6 +22,9 @@ public class PlayingActivity extends AppCompatActivity {
     List<PlayerViewFull> playersOnCourt;
 
     private ArrayList<PlayerSummary> players = new ArrayList<>();
+    private long startTime;
+    private long totalTime;
+
 
     private final ButterKnife.Setter<PlayerViewFull, Boolean> SET_CHRONO = new ButterKnife.Setter<PlayerViewFull, Boolean>() {
         @Override
@@ -39,7 +42,8 @@ public class PlayingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_playing);
-        players = getIntent().getParcelableArrayListExtra("players");
+        this.players = getIntent().getParcelableArrayListExtra("players");
+        this.totalTime = getIntent().getLongExtra("time", 0);
     }
 
     @Override
@@ -62,11 +66,14 @@ public class PlayingActivity extends AppCompatActivity {
         super.onResume();
 
         ButterKnife.apply(this.playersOnCourt, SET_CHRONO, true);
+        this.startTime = System.currentTimeMillis();
     }
 
     @OnClick(R.id.stopButton)
     public void stop() {
         ButterKnife.apply(this.playersOnCourt, SET_CHRONO, false);
+        long endTime = System.currentTimeMillis();
+        this.totalTime += (endTime - this.startTime) / 1000;
 
         ArrayList<PlayerSummary> playerSummaries = new ArrayList<>();
         for (PlayerViewFull playerView: this.playersOnCourt) {
@@ -74,6 +81,7 @@ public class PlayingActivity extends AppCompatActivity {
         }
         Intent resultIntent = new Intent();
         resultIntent.putParcelableArrayListExtra("players", playerSummaries);
+        resultIntent.putExtra("time", this.totalTime);
         setResult(RESULT_OK, resultIntent);
         finish();
     }

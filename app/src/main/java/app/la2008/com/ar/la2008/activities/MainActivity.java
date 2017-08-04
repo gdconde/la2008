@@ -74,8 +74,11 @@ public class MainActivity extends AppCompatActivity {
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 try {
                     String key = dataSnapshot.getKey();
-                    String name = dataSnapshot.getValue(String.class);
-                    mLiveGames.add(new GameSignature(key, name));
+                    GameSignature game = dataSnapshot.child(key).getValue(GameSignature.class);
+                    if (game != null) {
+                        game.key = key;
+                        mLiveGames.add(game);
+                    }
                     noGamesLiveTextView.setVisibility(View.GONE);
                     liveGamesRecyclerView.setVisibility(View.VISIBLE);
                     liveGamesAdapter.notifyDataSetChanged();
@@ -94,8 +97,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onChildRemoved(DataSnapshot dataSnapshot) {
                 String key = dataSnapshot.getKey();
-                String name = dataSnapshot.getValue(String.class);
-                mLiveGames.remove(new GameSignature(key, name));
+                GameSignature game = dataSnapshot.child(key).getValue(GameSignature.class);
+                if (game != null) {
+                    game.key = key;
+                    mLiveGames.remove(game);
+                }
                 if (mLiveGames.size() == 0) {
                     noGamesLiveTextView.setVisibility(View.VISIBLE);
                     liveGamesRecyclerView.setVisibility(View.GONE);
@@ -120,8 +126,11 @@ public class MainActivity extends AppCompatActivity {
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 try {
                     String key = dataSnapshot.getKey();
-                    String name = dataSnapshot.getValue(String.class);
-                    mFinishedGames.add(new GameSignature(key, name));
+                    GameSignature game = dataSnapshot.child(key).getValue(GameSignature.class);
+                    if (game != null) {
+                        game.key = key;
+                        mFinishedGames.add(game);
+                    }
                     noGamesFinishedTextview.setVisibility(View.GONE);
                     finishedGamesRecyclerView.setVisibility(View.VISIBLE);
                     finishedGamesAdapter.notifyDataSetChanged();
@@ -139,8 +148,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onChildRemoved(DataSnapshot dataSnapshot) {
                 String key = dataSnapshot.getKey();
-                String name = dataSnapshot.getValue(String.class);
-                mFinishedGames.remove(new GameSignature(key, name));
+                GameSignature game = dataSnapshot.child(key).getValue(GameSignature.class);
+                if (game != null) {
+                    game.key = key;
+                    mFinishedGames.remove(game);
+                }
                 if (mFinishedGames.size() == 0) {
                     noGamesFinishedTextview.setVisibility(View.VISIBLE);
                     finishedGamesRecyclerView.setVisibility(View.GONE);

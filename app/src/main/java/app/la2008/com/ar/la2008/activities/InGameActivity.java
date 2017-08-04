@@ -22,6 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 import app.la2008.com.ar.la2008.R;
@@ -56,6 +57,7 @@ public class InGameActivity extends AppCompatActivity {
 
     private String gameKey;
     private String gameName;
+    private long time;
     private FirebaseDatabase mDatabase;
     private ArrayList<PlayerSummary> playersOnCourt = new ArrayList<>();
 
@@ -112,6 +114,7 @@ public class InGameActivity extends AppCompatActivity {
             ActionBar actionBar = getSupportActionBar();
             if (actionBar != null) {
                 actionBar.setTitle(this.gameName);
+                actionBar.setSubtitle(Utils.gameTimeInSecondsToHumanString(this.time));
             }
         }
 
@@ -127,7 +130,8 @@ public class InGameActivity extends AppCompatActivity {
         this.mDatabase = Utils.getDatabase();
         this.gameKey = this.mDatabase.getReference().push().getKey();
         Map<String, Object> liveGamesUpdate = new HashMap<>();
-        liveGamesUpdate.put("games_live/" + this.gameKey, gameName);
+        liveGamesUpdate.put("games_live/" + this.gameKey + "/name", gameName);
+        liveGamesUpdate.put("games_live/" + this.gameKey + "/time", 0);
         this.mDatabase.getReference().updateChildren(liveGamesUpdate);
         DatabaseReference reference = this.mDatabase.getReference(this.gameKey);
         for (PlayerViewCompact playerView: this.players) {
@@ -143,6 +147,12 @@ public class InGameActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == IN_GAME_ACTIVITY_REQUEST && resultCode == RESULT_OK) {
+            this.time = data.getLongExtra("time", 0);
+            ActionBar actionBar = getSupportActionBar();
+            if (actionBar != null) {
+                actionBar.setSubtitle(Utils.gameTimeInSecondsToHumanString(this.time));
+            }
+
             playersOnCourt = data.getParcelableArrayListExtra("players");
             updatePlayersData();
         }
@@ -174,6 +184,7 @@ public class InGameActivity extends AppCompatActivity {
         }
         Intent inGameActivityIntent = new Intent(this, PlayingActivity.class);
         inGameActivityIntent.putParcelableArrayListExtra("players", this.playersOnCourt);
+        inGameActivityIntent.putExtra("time", this.time);
         startActivityForResult(inGameActivityIntent, IN_GAME_ACTIVITY_REQUEST);
     }
 
@@ -192,7 +203,6 @@ public class InGameActivity extends AppCompatActivity {
     }
 
     private void discardGame() {
-        //Discard Game
         Log.v("GAME: ", "DISCARDED");
         mDatabase.getReference(gameKey).removeValue();
         mDatabase.getReference("games_live/" + gameKey).removeValue();
@@ -200,7 +210,6 @@ public class InGameActivity extends AppCompatActivity {
     }
 
     private void finishGame() {
-        //Finish Game
         Log.v("GAME: ", "FINISHED");
         mDatabase.getReference("games_live/" + gameKey).removeValue();
         Map<String, Object> finishedGamesUpdate = new HashMap<>();
