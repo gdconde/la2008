@@ -8,6 +8,8 @@
     tools:context="app.la2008.com.ar.la2008.activities.MainActivity"
     >
 
+    <include layout="@layout/bar_basic"/>
+
     <Button
         android:id="@+id/newGameButton"
         android:layout_width="match_parent"

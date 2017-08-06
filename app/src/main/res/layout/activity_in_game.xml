@@ -9,6 +9,8 @@
     tools:context="app.la2008.com.ar.la2008.activities.InGameActivity"
     >
 
+    <include layout="@layout/bar_basic"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"

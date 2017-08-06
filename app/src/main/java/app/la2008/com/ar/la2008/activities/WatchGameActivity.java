@@ -23,7 +23,7 @@ import app.la2008.com.ar.la2008.views.PlayerStatsView;
 import butterknife.BindViews;
 import butterknife.ButterKnife;
 
-public class WatchGameActivity extends AppCompatActivity {
+public class WatchGameActivity extends BaseActivity {
 
     @BindViews({R.id.playerStatsView1,
             R.id.playerStatsView2,

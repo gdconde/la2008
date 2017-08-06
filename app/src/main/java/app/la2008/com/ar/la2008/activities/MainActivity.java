@@ -29,7 +29,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     @BindView(R.id.noGamesLiveTextview) TextView noGamesLiveTextView;
     @BindView(R.id.liveGamesRecyclerview) RecyclerView liveGamesRecyclerView;
@@ -54,7 +54,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
         ButterKnife.bind(this);
-
+        if (barTitle != null) {
+            barTitle.setText(R.string.app_name);
+        }
         // Setting adapters
         LinearLayoutManager layoutManagerLive =
                 new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);

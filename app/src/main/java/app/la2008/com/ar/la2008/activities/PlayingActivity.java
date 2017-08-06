@@ -16,7 +16,7 @@ import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class PlayingActivity extends AppCompatActivity {
+public class PlayingActivity extends BaseActivity {
 
     @BindViews({R.id.player1, R.id.player2, R.id.player3, R.id.player4, R.id.player5})
     List<PlayerViewFull> playersOnCourt;

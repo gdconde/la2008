@@ -9,7 +9,6 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -22,7 +21,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 
 import app.la2008.com.ar.la2008.R;
@@ -35,7 +33,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.fabric.sdk.android.Fabric;
 
-public class InGameActivity extends AppCompatActivity {
+public class InGameActivity extends BaseActivity {
 
     private static final int IN_GAME_ACTIVITY_REQUEST = 2;
 
@@ -110,11 +108,12 @@ public class InGameActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         this.gameName = intent.getStringExtra("game_name");
-        if (this.gameName != null && !this.gameName.isEmpty()) {
-            ActionBar actionBar = getSupportActionBar();
-            if (actionBar != null) {
-                actionBar.setTitle(this.gameName);
-                actionBar.setSubtitle(Utils.gameTimeInSecondsToHumanString(this.time));
+        if (barTitle != null && barSubTitle != null) {
+            if (this.gameName != null && !this.gameName.isEmpty()) {
+                barTitle.setText(this.gameName);
+                barSubTitle.setText(Utils.gameTimeInSecondsToHumanString(this.time));
+            } else {
+                barTitle.setText(R.string.app_name);
             }
         }
 
@@ -148,9 +147,8 @@ public class InGameActivity extends AppCompatActivity {
 
         if (requestCode == IN_GAME_ACTIVITY_REQUEST && resultCode == RESULT_OK) {
             this.time = data.getLongExtra("time", 0);
-            ActionBar actionBar = getSupportActionBar();
-            if (actionBar != null) {
-                actionBar.setSubtitle(Utils.gameTimeInSecondsToHumanString(this.time));
+            if (barSubTitle != null) {
+                barSubTitle.setText(Utils.gameTimeInSecondsToHumanString(this.time));
             }
 
             playersOnCourt = data.getParcelableArrayListExtra("players");

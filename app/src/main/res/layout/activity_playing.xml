@@ -8,6 +8,8 @@
     tools:context="app.la2008.com.ar.la2008.activities.PlayingActivity"
     >
 
+    <include layout="@layout/bar_basic"/>
+
     <app.la2008.com.ar.la2008.views.PlayerViewFull
         android:id="@+id/player1"
         android:layout_width="match_parent"

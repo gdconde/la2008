@@ -16,7 +16,7 @@ import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class NewGameActivity extends AppCompatActivity {
+public class NewGameActivity extends BaseActivity {
 
     @BindViews({R.id.player1EditText,
             R.id.player2EditText,
@@ -48,6 +48,9 @@ public class NewGameActivity extends AppCompatActivity {
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
         ButterKnife.bind(this);
+        if (barTitle != null) {
+            barTitle.setText(R.string.app_name);
+        }
     }
 
     @OnClick(R.id.startGameButton)
