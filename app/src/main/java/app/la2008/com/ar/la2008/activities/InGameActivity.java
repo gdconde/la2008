@@ -7,8 +7,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.ActionBar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -27,6 +25,7 @@ import app.la2008.com.ar.la2008.R;
 import app.la2008.com.ar.la2008.models.PlayerSummary;
 import app.la2008.com.ar.la2008.util.Utils;
 import app.la2008.com.ar.la2008.views.PlayerViewCompact;
+import butterknife.BindColor;
 import butterknife.BindView;
 import butterknife.BindViews;
 import butterknife.ButterKnife;
@@ -52,6 +51,8 @@ public class InGameActivity extends BaseActivity {
             R.id.player12})
     List<PlayerViewCompact> players;
     @BindView(R.id.startButton) Button mStartButton;
+    @BindColor(R.color.colorPrimary) int colorPrimary;
+    @BindColor(android.R.color.white) int colorWhite;
 
     private String gameKey;
     private String gameName;
@@ -65,14 +66,12 @@ public class InGameActivity extends BaseActivity {
             PlayerViewCompact playerView = (PlayerViewCompact) view;
             if(!playerView.isChecked()) {
                 playerView.setChecked(true);
-                playerView.setBackgroundColor(ContextCompat.getColor(getBaseContext(),
-                        R.color.colorPrimary));
+                playerView.setBackgroundColor(colorPrimary);
                 playersOnCourt.add(playerView.getPlayerSummary());
             }
             else {
                 playerView.setChecked(false);
-                playerView.setBackgroundColor(ContextCompat.getColor(getBaseContext(),
-                        android.R.color.white));
+                playerView.setBackgroundColor(colorWhite);
                 playersOnCourt.remove(playerView.getPlayerSummary());
             }
         }
