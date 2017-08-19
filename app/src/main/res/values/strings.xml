@@ -99,5 +99,8 @@
 
     <string name="settings">Settings</string>
     <string name="back_bar_button">back</string>
+    <string name="new_game_player13_hint">Kobe Bryant</string>
+    <string name="new_game_player14_hint">Chris Webber</string>
+    <string name="add_more_players">Add more players</string>
 
 </resources>

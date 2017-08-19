@@ -7,7 +7,20 @@ public class GameSignature implements Parcelable {
 
     public String key;
     public String name;
-    private long time;
+    public long time;
+
+    public GameSignature() { }
+
+    public GameSignature(String key, String name) {
+        this.key = key;
+        this.name = name;
+    }
+
+    public GameSignature(String key, String name, long time) {
+        this.key = key;
+        this.name = name;
+        this.time = time;
+    }
 
     @Override
     public int describeContents() {

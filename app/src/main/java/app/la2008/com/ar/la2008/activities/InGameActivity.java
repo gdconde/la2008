@@ -34,7 +34,7 @@ import io.fabric.sdk.android.Fabric;
 
 public class InGameActivity extends BaseActivity {
 
-    private static final int IN_GAME_ACTIVITY_REQUEST = 2;
+    private static final int IN_GAME_ACTIVITY_REQUEST = 3;
 
     @BindViews({
             R.id.player1,
@@ -48,7 +48,9 @@ public class InGameActivity extends BaseActivity {
             R.id.player9,
             R.id.player10,
             R.id.player11,
-            R.id.player12})
+            R.id.player12,
+            R.id.player13,
+            R.id.player14})
     List<PlayerViewCompact> players;
     @BindView(R.id.startButton) Button mStartButton;
     @BindColor(R.color.colorPrimary) int colorPrimary;
@@ -120,7 +122,11 @@ public class InGameActivity extends BaseActivity {
         final ButterKnife.Setter<PlayerViewCompact, ArrayList<String>> SET_NAMES = new ButterKnife.Setter<PlayerViewCompact, ArrayList<String>>() {
             @Override
             public void set(@NonNull PlayerViewCompact view, ArrayList<String> names, int index) {
-                view.setName(names.get(index));
+                if (index < names.size()) {
+                    view.setName(names.get(index));
+                } else {
+                    view.setVisibility(View.GONE);
+                }
             }
         };
         ButterKnife.apply(this.players, SET_NAMES, playersNames);
@@ -149,6 +155,7 @@ public class InGameActivity extends BaseActivity {
             if (barSubTitle != null) {
                 barSubTitle.setText(Utils.gameTimeInSecondsToHumanString(this.time));
             }
+            this.mDatabase.getReference("games_live/" + this.gameKey + "/time").setValue(this.time);
 
             playersOnCourt = data.getParcelableArrayListExtra("players");
             updatePlayersData();
@@ -182,6 +189,7 @@ public class InGameActivity extends BaseActivity {
         Intent inGameActivityIntent = new Intent(this, PlayingActivity.class);
         inGameActivityIntent.putParcelableArrayListExtra("players", this.playersOnCourt);
         inGameActivityIntent.putExtra("time", this.time);
+        inGameActivityIntent.putExtra("game_name", this.gameName);
         startActivityForResult(inGameActivityIntent, IN_GAME_ACTIVITY_REQUEST);
     }
 

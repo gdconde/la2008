@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import app.la2008.com.ar.la2008.R;
 import app.la2008.com.ar.la2008.interfaces.ObjectSelected;
 import app.la2008.com.ar.la2008.models.GameSignature;
+import app.la2008.com.ar.la2008.util.Utils;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -40,7 +41,13 @@ public class GamesAdapter extends RecyclerView.Adapter<GamesAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
-        holder.gameTextView.setText(this.games.get(position).name);
+        GameSignature game = games.get(position);
+        holder.gameTextView.setText(game.name);
+        if (game.time > 0) {
+            holder.gameTimeTextView.setText(Utils.gameTimeInSecondsToHumanString(game.time));
+        } else {
+            holder.gameTimeTextView.setVisibility(View.GONE);
+        }
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -54,6 +61,7 @@ public class GamesAdapter extends RecyclerView.Adapter<GamesAdapter.ViewHolder> 
     static class ViewHolder extends RecyclerView.ViewHolder {
 
         @BindView(R.id.gameTextView) TextView gameTextView;
+        @BindView(R.id.gameTimeTextView) TextView gameTimeTextView;
 
         ViewHolder(View itemView) {
             super(itemView);

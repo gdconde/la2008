@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.ActionBar;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -35,7 +34,9 @@ public class WatchGameActivity extends BaseActivity {
             R.id.playerStatsView9,
             R.id.playerStatsView10,
             R.id.playerStatsView11,
-            R.id.playerStatsView12})
+            R.id.playerStatsView12,
+            R.id.playerStatsView13,
+            R.id.playerStatsView14})
     List<PlayerStatsView> playerStatsViews;
     private GameSignature game;
     private FirebaseDatabase mDatabase;
@@ -52,12 +53,6 @@ public class WatchGameActivity extends BaseActivity {
         setContentView(R.layout.activity_watch_game);
         Intent intent = getIntent();
         this.game = intent.getParcelableExtra("game");
-        if (this.game != null && !this.game.name.isEmpty()) {
-            ActionBar actionBar = getSupportActionBar();
-            if (actionBar != null) {
-                actionBar.setTitle(this.game.name);
-            }
-        }
         this.mDatabase = Utils.getDatabase();
     }
 
@@ -65,6 +60,11 @@ public class WatchGameActivity extends BaseActivity {
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
         ButterKnife.bind(this);
+        if (barTitle != null && barSubTitle != null) {
+            barTitle.setText(this.game.name);
+            barSubTitle.setText(Utils.gameTimeInSecondsToHumanString(this.game.time));
+        }
+
         DatabaseReference dbReference = mDatabase.getReference(this.game.key);
 
         ChildEventListener playersListener = new ChildEventListener() {

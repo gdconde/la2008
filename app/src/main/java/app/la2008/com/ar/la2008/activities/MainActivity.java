@@ -75,7 +75,7 @@ public class MainActivity extends BaseActivity {
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 try {
                     String key = dataSnapshot.getKey();
-                    GameSignature game = dataSnapshot.child(key).getValue(GameSignature.class);
+                    GameSignature game = dataSnapshot.getValue(GameSignature.class);
                     if (game != null) {
                         game.key = key;
                         mLiveGames.add(game);
@@ -127,11 +127,8 @@ public class MainActivity extends BaseActivity {
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 try {
                     String key = dataSnapshot.getKey();
-                    GameSignature game = dataSnapshot.child(key).getValue(GameSignature.class);
-                    if (game != null) {
-                        game.key = key;
-                        mFinishedGames.add(game);
-                    }
+                    String gameName = dataSnapshot.getValue(String.class);
+                    mFinishedGames.add(new GameSignature(key, gameName, 0));
                     noGamesFinishedTextview.setVisibility(View.GONE);
                     finishedGamesRecyclerView.setVisibility(View.VISIBLE);
                     finishedGamesAdapter.notifyDataSetChanged();

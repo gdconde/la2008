@@ -23,7 +23,7 @@ public class PlayingActivity extends BaseActivity {
     private ArrayList<PlayerSummary> players = new ArrayList<>();
     private long startTime;
     private long totalTime;
-
+    private String gameName;
 
     private final ButterKnife.Setter<PlayerViewFull, Boolean> SET_CHRONO = new ButterKnife.Setter<PlayerViewFull, Boolean>() {
         @Override
@@ -43,6 +43,7 @@ public class PlayingActivity extends BaseActivity {
         setContentView(R.layout.activity_playing);
         this.players = getIntent().getParcelableArrayListExtra("players");
         this.totalTime = getIntent().getLongExtra("time", 0);
+        this.gameName = getIntent().getStringExtra("game_name");
     }
 
     @Override
@@ -58,6 +59,14 @@ public class PlayingActivity extends BaseActivity {
         };
 
         ButterKnife.apply(this.playersOnCourt, SET_DATA);
+
+        if (barTitle != null) {
+            if (gameName != null && !gameName.isEmpty()) {
+                barTitle.setText(gameName);
+            } else {
+                barTitle.setText(R.string.app_name);
+            }
+        }
     }
 
     @Override

@@ -137,7 +137,7 @@ public class PlayerViewCompact extends LinearLayout {
         this.player.tov = data.tov;
         this.player.key = data.key;
         this.points.setText(String.valueOf(
-                this.player.ftm + 2 * this.player.fgm + 3 * this.player.tpm));
+                this.player.ftm + 2 * this.player.fgm + this.player.tpm));
         this.rebounds.setText(String.valueOf(this.player.reb));
         this.assists.setText(String.valueOf(this.player.ast));
         this.fouls.setText(String.valueOf(this.player.pf));

@@ -136,6 +136,24 @@
             app:index="11"
             />
 
+        <app.la2008.com.ar.la2008.views.PlayerViewCompact
+            android:id="@+id/player13"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            app:index="12"
+            />
+
+        <app.la2008.com.ar.la2008.views.PlayerViewCompact
+            android:id="@+id/player14"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            app:index="13"
+            />
+
     </LinearLayout>
 
     <LinearLayout

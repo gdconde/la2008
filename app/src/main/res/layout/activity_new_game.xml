@@ -1,208 +1,246 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
 
-    <include layout="@layout/bar_basic"/>
+    <include
+        layout="@layout/bar_basic"
+        />
 
     <ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
-
-    <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp"
-        tools:context="app.la2008.com.ar.la2008.activities.NewGameActivity"
+        android:layout_height="match_parent"
         >
 
-        <EditText
-            android:id="@+id/gameName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:imeOptions="actionNext"
-            android:lines="1"
-            android:inputType="textCapWords"
-            android:textSize="18sp"
-            android:textAlignment="center"
-            android:hint="@string/new_game_game_name_hint"
-            />
-
         <LinearLayout
+            android:id="@+id/linearLayoutContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:baselineAligned="false"
+            android:orientation="vertical"
+            android:padding="16dp"
+            tools:context="app.la2008.com.ar.la2008.activities.NewGameActivity"
             >
 
             <EditText
-                android:id="@+id/player1EditText"
-                android:layout_width="0dp"
+                android:id="@+id/gameName"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="@string/new_game_player1_hint"
-                android:nextFocusUp="@id/gameName"
-                style="@style/NewGameEditText"
+                android:imeOptions="actionNext"
+                android:lines="1"
+                android:inputType="textCapWords"
+                android:textSize="18sp"
+                android:textAlignment="center"
+                android:hint="@string/new_game_game_name_hint"
                 />
 
-
-            <EditText
-                android:id="@+id/player2EditText"
-                android:layout_width="0dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="@string/new_game_player2_hint"
-                style="@style/NewGameEditText"
+                android:baselineAligned="false"
+                >
+
+                <EditText
+                    android:id="@+id/player1EditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/new_game_player1_hint"
+                    android:nextFocusUp="@id/gameName"
+                    style="@style/NewGameEditText"
+                    />
+
+
+                <EditText
+                    android:id="@+id/player2EditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/new_game_player2_hint"
+                    style="@style/NewGameEditText"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                >
+
+                <EditText
+                    android:id="@+id/player3EditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/new_game_player3_hint"
+                    style="@style/NewGameEditText"
+                    />
+
+                <EditText
+                    android:id="@+id/player4EditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/new_game_player4_hint"
+                    style="@style/NewGameEditText"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                >
+
+                <EditText
+                    android:id="@+id/player5EditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/new_game_player5_hint"
+                    style="@style/NewGameEditText"
+                    />
+
+                <EditText
+                    android:id="@+id/player6EditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/new_game_player6_hint"
+                    style="@style/NewGameEditText"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                >
+
+                <EditText
+                    android:id="@+id/player7EditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/new_game_player7_hint"
+                    style="@style/NewGameEditText"
+                    />
+
+                <EditText
+                    android:id="@+id/player8EditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/new_game_player8_hint"
+                    style="@style/NewGameEditText"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                >
+
+                <EditText
+                    android:id="@+id/player9EditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/new_game_player9_hint"
+                    style="@style/NewGameEditText"
+                    />
+
+                <EditText
+                    android:id="@+id/player10EditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/new_game_player10_hint"
+                    style="@style/NewGameEditText"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                >
+
+                <EditText
+                    android:id="@+id/player11EditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/new_game_player11_hint"
+                    style="@style/NewGameEditText"
+                    />
+
+                <EditText
+                    android:id="@+id/player12EditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/new_game_player12_hint"
+                    android:imeOptions="actionDone"
+                    style="@style/NewGameEditText"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/players13and14LinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:visibility="gone"
+                >
+
+                <EditText
+                    android:id="@+id/player13EditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/new_game_player13_hint"
+                    style="@style/NewGameEditText"
+                    />
+
+                <EditText
+                    android:id="@+id/player14EditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/new_game_player14_hint"
+                    android:imeOptions="actionDone"
+                    style="@style/NewGameEditText"
+                    />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/addMorePlayersButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/add_more_players"
+                />
+
+            <Button
+                android:id="@+id/startGameButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:text="@string/new_game_start_game"
                 />
 
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:baselineAligned="false"
-            >
-
-            <EditText
-                android:id="@+id/player3EditText"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="@string/new_game_player3_hint"
-                style="@style/NewGameEditText"
-                />
-
-            <EditText
-                android:id="@+id/player4EditText"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="@string/new_game_player4_hint"
-                style="@style/NewGameEditText"
-                />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:baselineAligned="false"
-            >
-
-            <EditText
-                android:id="@+id/player5EditText"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="@string/new_game_player5_hint"
-                style="@style/NewGameEditText"
-                />
-
-            <EditText
-                android:id="@+id/player6EditText"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="@string/new_game_player6_hint"
-                style="@style/NewGameEditText"
-                />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:baselineAligned="false"
-            >
-
-            <EditText
-                android:id="@+id/player7EditText"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="@string/new_game_player7_hint"
-                style="@style/NewGameEditText"
-                />
-
-            <EditText
-                android:id="@+id/player8EditText"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="@string/new_game_player8_hint"
-                style="@style/NewGameEditText"
-                />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:baselineAligned="false"
-            >
-
-            <EditText
-                android:id="@+id/player9EditText"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="@string/new_game_player9_hint"
-                style="@style/NewGameEditText"
-                />
-
-            <EditText
-                android:id="@+id/player10EditText"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="@string/new_game_player10_hint"
-                style="@style/NewGameEditText"
-                />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:baselineAligned="false"
-            >
-
-            <EditText
-                android:id="@+id/player11EditText"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="@string/new_game_player11_hint"
-                style="@style/NewGameEditText"
-                />
-
-            <EditText
-                android:id="@+id/player12EditText"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="@string/new_game_player12_hint"
-                android:imeOptions="actionDone"
-                style="@style/NewGameEditText"
-                />
-
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/startGameButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
-            android:text="@string/new_game_start_game"
-            />
-
-    </LinearLayout>
 
     </ScrollView>
 

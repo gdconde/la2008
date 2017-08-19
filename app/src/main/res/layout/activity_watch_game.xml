@@ -7,122 +7,139 @@
     android:orientation="vertical"
     >
 
-    <include layout="@layout/bar_basic"/>
+    <include
+        layout="@layout/bar_basic"
+        />
 
     <HorizontalScrollView
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent"
-    >
-
-    <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context="app.la2008.com.ar.la2008.activities.WatchGameActivity"
         >
 
-        <app.la2008.com.ar.la2008.views.PlayerStatsView
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="@color/colorPrimaryDark"
-            app:headerStats="true"
-            />
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context="app.la2008.com.ar.la2008.activities.WatchGameActivity"
+            >
 
-        <app.la2008.com.ar.la2008.views.PlayerStatsView
-            android:id="@+id/playerStatsView1"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            />
+            <app.la2008.com.ar.la2008.views.PlayerStatsView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/colorPrimaryDark"
+                app:headerStats="true"
+                />
 
-        <app.la2008.com.ar.la2008.views.PlayerStatsView
-            android:id="@+id/playerStatsView2"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="@android:color/darker_gray"
-            />
+            <app.la2008.com.ar.la2008.views.PlayerStatsView
+                android:id="@+id/playerStatsView1"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                />
 
-        <app.la2008.com.ar.la2008.views.PlayerStatsView
-            android:id="@+id/playerStatsView3"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            />
+            <app.la2008.com.ar.la2008.views.PlayerStatsView
+                android:id="@+id/playerStatsView2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@android:color/darker_gray"
+                />
 
-        <app.la2008.com.ar.la2008.views.PlayerStatsView
-            android:id="@+id/playerStatsView4"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="@android:color/darker_gray"
-            />
+            <app.la2008.com.ar.la2008.views.PlayerStatsView
+                android:id="@+id/playerStatsView3"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                />
 
-        <app.la2008.com.ar.la2008.views.PlayerStatsView
-            android:id="@+id/playerStatsView5"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            />
+            <app.la2008.com.ar.la2008.views.PlayerStatsView
+                android:id="@+id/playerStatsView4"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@android:color/darker_gray"
+                />
 
-        <app.la2008.com.ar.la2008.views.PlayerStatsView
-            android:id="@+id/playerStatsView6"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="@android:color/darker_gray"
-            />
+            <app.la2008.com.ar.la2008.views.PlayerStatsView
+                android:id="@+id/playerStatsView5"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                />
 
-        <app.la2008.com.ar.la2008.views.PlayerStatsView
-            android:id="@+id/playerStatsView7"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            />
+            <app.la2008.com.ar.la2008.views.PlayerStatsView
+                android:id="@+id/playerStatsView6"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@android:color/darker_gray"
+                />
 
-        <app.la2008.com.ar.la2008.views.PlayerStatsView
-            android:id="@+id/playerStatsView8"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="@android:color/darker_gray"
-            />
+            <app.la2008.com.ar.la2008.views.PlayerStatsView
+                android:id="@+id/playerStatsView7"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                />
 
-        <app.la2008.com.ar.la2008.views.PlayerStatsView
-            android:id="@+id/playerStatsView9"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            />
+            <app.la2008.com.ar.la2008.views.PlayerStatsView
+                android:id="@+id/playerStatsView8"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@android:color/darker_gray"
+                />
 
-        <app.la2008.com.ar.la2008.views.PlayerStatsView
-            android:id="@+id/playerStatsView10"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="@android:color/darker_gray"
-            />
+            <app.la2008.com.ar.la2008.views.PlayerStatsView
+                android:id="@+id/playerStatsView9"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                />
 
-        <app.la2008.com.ar.la2008.views.PlayerStatsView
-            android:id="@+id/playerStatsView11"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            />
+            <app.la2008.com.ar.la2008.views.PlayerStatsView
+                android:id="@+id/playerStatsView10"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@android:color/darker_gray"
+                />
 
-        <app.la2008.com.ar.la2008.views.PlayerStatsView
-            android:id="@+id/playerStatsView12"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="@android:color/darker_gray"
-            />
+            <app.la2008.com.ar.la2008.views.PlayerStatsView
+                android:id="@+id/playerStatsView11"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                />
 
-    </LinearLayout>
+            <app.la2008.com.ar.la2008.views.PlayerStatsView
+                android:id="@+id/playerStatsView12"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@android:color/darker_gray"
+                />
 
-</HorizontalScrollView>
+            <app.la2008.com.ar.la2008.views.PlayerStatsView
+                android:id="@+id/playerStatsView13"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                />
+
+            <app.la2008.com.ar.la2008.views.PlayerStatsView
+                android:id="@+id/playerStatsView14"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@android:color/darker_gray"
+                />
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
 
 </LinearLayout>
