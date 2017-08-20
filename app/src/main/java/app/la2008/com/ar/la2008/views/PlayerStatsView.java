@@ -87,7 +87,7 @@ public class PlayerStatsView extends LinearLayout {
     public void setPlayerStats(PlayerSummary playerSummary) {
         this.playerNameTextView.setText(playerSummary.name);
         this.playerTimePlayedTextView.setText(Utils.secondsToString(playerSummary.secondsPlayed));
-        this.playerPointsTextView.setText(String.valueOf(playerSummary.pts));
+        this.playerPointsTextView.setText(String.valueOf(playerSummary.ftm + playerSummary.fgm * 2 + playerSummary.tpm));
         this.playerFreeThrowsMadeTextView.setText(String.valueOf(playerSummary.ftm));
         this.playerFreeThrowsAttempedTextView.setText(String.valueOf(playerSummary.fta));
         this.playerFieldGoalsMadeTextView.setText(String.valueOf(playerSummary.fgm));
