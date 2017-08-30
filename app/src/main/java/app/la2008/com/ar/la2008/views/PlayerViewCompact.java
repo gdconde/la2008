@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import app.la2008.com.ar.la2008.activities.InGameActivity;
 import app.la2008.com.ar.la2008.models.PlayerSummary;
 import app.la2008.com.ar.la2008.R;
 import app.la2008.com.ar.la2008.util.Utils;
@@ -37,9 +38,11 @@ public class PlayerViewCompact extends LinearLayout {
     @BindView(R.id.foulHeader) TextView foulsHeader;
 
     private final PlayerSummary player = new PlayerSummary();
+    private Context context;
 
     public PlayerViewCompact(Context context, AttributeSet attributes) {
         super(context, attributes);
+        this.context = context;
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.view_player_compact, this, true);
@@ -131,16 +134,16 @@ public class PlayerViewCompact extends LinearLayout {
         this.player.tpa = data.tpa;
         this.player.ast = data.ast;
         this.player.reb = data.reb;
+        this.player.pts = data.pts;
         this.player.pf = data.pf;
         this.player.blk = data.blk;
         this.player.stl = data.stl;
         this.player.tov = data.tov;
         this.player.key = data.key;
-        this.points.setText(String.valueOf(
-                this.player.ftm + 2 * this.player.fgm + this.player.tpm));
-        this.rebounds.setText(String.valueOf(this.player.reb));
-        this.assists.setText(String.valueOf(this.player.ast));
-        this.fouls.setText(String.valueOf(this.player.pf));
+        this.points.setText(String.valueOf(data.pts));
+        this.rebounds.setText(String.valueOf(data.reb));
+        this.assists.setText(String.valueOf(data.ast));
+        this.fouls.setText(String.valueOf(data.pf));
         return this;
     }
 
@@ -158,19 +161,22 @@ public class PlayerViewCompact extends LinearLayout {
 
     @OnClick(R.id.reboundButton)
     public void reboundsButtonClicked() {
-        rebounds.setText(String.valueOf(++player.reb));
+        this.rebounds.setText(String.valueOf(player.reb + 1));
+        ((InGameActivity)context).addRebound(player.index);
         showToast();
     }
 
     @OnClick(R.id.assistButton)
     public void assistsButtonClicked() {
-        assists.setText(String.valueOf(++player.ast));
+        this.assists.setText(String.valueOf(player.ast + 1));
+        ((InGameActivity)context).addAssist(player.index);
         showToast();
     }
 
     @OnClick(R.id.foulButton)
     public void foulButtonClicked() {
-        fouls.setText(String.valueOf(++player.pf));
+        this.fouls.setText(String.valueOf(player.pf + 1));
+        ((InGameActivity)context).addFoul(player.index);
         showToast();
     }
 }

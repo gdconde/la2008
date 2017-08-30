@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -221,6 +222,30 @@ public class InGameActivity extends BaseActivity {
         finishedGamesUpdate.put("games_finished/" + gameKey, this.gameName);
         mDatabase.getReference().updateChildren(finishedGamesUpdate);
         finish();
+    }
+
+    public void addRebound(int playerIndex) {
+        for (int i = 0; i < playersOnCourt.size(); i++) {
+            if (playersOnCourt.get(i).index == playerIndex) {
+                playersOnCourt.get(i).reb++;
+            }
+        }
+    }
+
+    public void addAssist(int playerIndex) {
+        for (int i = 0; i < playersOnCourt.size(); i++) {
+            if (playersOnCourt.get(i).index == playerIndex) {
+                playersOnCourt.get(i).ast++;
+            }
+        }
+    }
+
+    public void addFoul(int playerIndex) {
+        for (int i = 0; i < playersOnCourt.size(); i++) {
+            if (playersOnCourt.get(i).index == playerIndex) {
+                playersOnCourt.get(i).pf++;
+            }
+        }
     }
 
 }
